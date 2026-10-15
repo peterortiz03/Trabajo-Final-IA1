@@ -1,54 +1,91 @@
-# Trabajo Final — Inteligencia Artificial I
+# Trabajo Final — Inteligencia Artificial I · 2026
 
-Proyecto académico de comparación de huellas dactilares sintéticas. Estado al 15/10/2026: dataset generado y normalización geométrica v1 implementada. Reconocimiento y evaluación del modelo pendientes.
+**Sistema de reconocimiento de huellas dactilares controlado por reconocimiento de voz**  
+Ingeniería en Mecatrónica · Facultad de Ingeniería · Universidad Nacional de Cuyo
 
-## Datos
+El proyecto desarrolla un agente de control de acceso basado en identidades de huellas sintéticas. El sistema deberá reconocer si una muestra corresponde a una identidad autorizada, identificarla y responder a los comandos de voz **Reconocer**, **Identificar** y **Salir**.
 
-Se utilizan siete identidades sintéticas de Anguli: tres autorizados y cuatro intrusos. El conjunto contiene 220 capturas: 120 de entrenamiento, 50 de validación y 50 de prueba. Las ampliaciones de entrenamiento incorporan deformaciones locales y rotaciones hasta ±90°. Semillas, parámetros y hashes documentan la procedencia. No se utilizan huellas reales.
+La consigna establece K-means con k = 3 para las identidades autorizadas, una distancia y un umbral de aceptación/rechazo, y K-NN para los comandos de voz. Este repositorio registra el desarrollo progresivo; los módulos pendientes todavía no están implementados.
 
-## Entorno
+## Estado del proyecto
 
-Python y un entorno virtual local. Dependencias de los programas en `requirements.txt`:
+| Etapa | Estado al 15/10/2026 | Evidencia o siguiente tarea |
+|---|---|---|
+| Dataset de huellas sintéticas | Completada, versión 1 | 220 muestras, semillas, parámetros y catálogos |
+| Normalización geométrica de huellas | Implementada, versión 1 | Región de interés, centrado, orientación y máscaras |
+| Acondicionamiento adicional de imágenes | Pendiente de definir y validar | Contraste y filtrado según la representación de características |
+| Características de huellas, K-means y umbral | Pendiente | Vectores discriminantes, k = 3 y rechazo de intrusos |
+| Dataset y características de comandos de voz | Pendiente | Reconocer, Identificar y Salir |
+| Clasificación de comandos con K-NN | Pendiente | Entrenamiento y evaluación del módulo de voz |
+| Integración del agente | Pendiente | Flujo de interacción y control de acceso |
+| Evaluación, PCA e informe final | Pendiente | Métricas, visualización, conclusiones y defensa |
+
+La normalización geométrica v1 no equivale a haber completado todo el preprocesamiento mencionado en la consigna. La normalización de contraste y el filtrado deberán definirse al elegir y validar las características; no se anticipa que todas las técnicas posibles sean necesarias.
+
+## Lectura recomendada
+
+1. [Bitácora de dataset y normalización](notebooks/01_bitacora_dataset_normalizacion.ipynb): decisiones, archivos, resultados y comprobaciones ejecutadas.
+2. [Índice de documentación](documentos/README.md): estado vigente y antecedentes de cada etapa.
+3. [Uso de IA generativa](documentos/uso_ia_generativa.md): tareas asistidas, ejemplos de solicitudes y verificación.
+
+## Dataset de huellas
+
+Se utilizan siete bases de Anguli: tres identidades autorizadas y cuatro intrusas. El conjunto contiene **220 capturas: 120 de entrenamiento, 50 de validación y 50 de prueba**. Las ampliaciones incorporan deformaciones locales, cambios de calidad y rotaciones hasta ±90°. No se utilizan huellas reales.
+
+Las identidades autorizadas comparten sus bases entre particiones para representar capturas distintas de dedos conocidos. Los intrusos de validación y prueba son identidades distintas. La diversidad se limita a siete bases; no se afirma generalización a datos reales.
+
+## Entorno y consulta de resultados
+
+El entorno registrado para la normalización publicada es Python 3.14.0. Las versiones de las bibliotecas están en `requirements.txt` y en el registro de ejecución.
+
+Desde PowerShell, en la raíz del repositorio, si aún no existe un entorno virtual:
 
 ```powershell
-py -m venv .venv
-.\.venv\Scripts\python.exe -m pip install -r requirements.txt
+py -3.14 -m venv .venv
 ```
 
-Si el entorno ya existe y funciona, conservarlo. Para ejecutar los notebooks desde VS Code instalar también `ipykernel` en ese entorno:
+Instalar dependencias en ese entorno:
 
 ```powershell
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
 .\.venv\Scripts\python.exe -m pip install ipykernel
 ```
 
-## Recorrido del proyecto
+`ipykernel` es una dependencia adicional para ejecutar notebooks. En VS Code, seleccionar el intérprete de `.venv`, abrir la bitácora y ejecutar sus celdas. El notebook solo lee archivos. Las salidas guardadas permiten consultarlo en GitHub sin instalar Python.
 
-- `src/`: programas y funciones reutilizables.
-- `config/`: configuraciones de generación y normalización.
-- `datos/bases/`: patrones de Anguli y procedencia.
-- `datos/originales/`: capturas sintéticas antes de normalizar.
-- `datos/procesados/normalizacion_final_v1/`: resultados finales y catálogo.
-- `notebooks/01_bitacora_dataset_normalizacion.ipynb`: explicación del avance y comprobaciones.
-- `documentos/`: decisiones e instrucciones.
-- `resultados/`: evidencia de ensayos anteriores.
+**Una clonación ya contiene los datos y resultados finales: no es necesario regenerarlos para consultar o verificar el avance.**
 
-## Uso de la normalización
+## Organización
 
-Si los originales ya existen:
+| Ruta | Contenido |
+|---|---|
+| `src/` | Programas y funciones de generación y normalización |
+| `config/` | Configuraciones de las etapas |
+| `datos/bases/` | Bases de Anguli y archivos de procedencia |
+| `datos/originales/` | Las 220 capturas anteriores a la normalización |
+| `datos/procesados/normalizacion_final_v1/` | Representaciones finales, máscaras, catálogo y controles |
+| `notebooks/` | Bitácoras de avances y análisis reproducibles |
+| `documentos/` | Instrucciones, decisiones y registros de apoyo |
+
+`resultados/` y `datos/procesados/conjunto_v1/` corresponden a salidas intermedias locales que no se incluyen en esta publicación. Se pueden reconstruir con los programas correspondientes; no se requieren para la verificación final del notebook.
+
+El catálogo vigente es [`catalogo_normalizado.csv`](datos/procesados/normalizacion_final_v1/catalogo_normalizado.csv). Para las siguientes etapas se utilizan las columnas **normalizada** y **alternativa_180**. La columna heredada `procesado` conserva rutas del procesamiento preliminar; esas imágenes no se distribuyen en esta versión.
+
+Por muestra se guardan tres PNG: imagen normalizada, alternativa a 180° y máscara de región. Representan **una sola muestra**. La dirección del eje es ambigua en 180°; el futuro comparador deberá contemplar ambas orientaciones o ser invariante a ese giro.
+
+## Normalización de nuevas ejecuciones
+
+La función reutilizable está en `src/normalizacion_final.py`. Para aplicar el procedimiento a los originales publicados y escribir una salida nueva:
 
 ```powershell
-.\.venv\Scripts\python.exe src/normalizar_todas.py
+.\.venv\Scripts\python.exe src/normalizar_todas.py --salida normalizacion_verificacion
 ```
 
-La ejecución no reemplaza carpetas existentes. No es necesario repetirla si ya se generaron las 220 salidas correctamente.
+La carpeta indicada no debe existir. Los originales se conservan. Para que el notebook revise una salida alternativa se debe ajustar su variable `NOMBRE_SALIDA`.
 
-El catálogo de entrada es `datos/metadatos_con_rotaciones_train_v1.csv`. Para las siguientes etapas se utiliza `datos/procesados/normalizacion_final_v1/catalogo_normalizado.csv`, leyendo las columnas `normalizada` y `alternativa_180`.
+## Reproducción completa desde las bases
 
-Por muestra se guardan tres PNG: representación principal, alternativa girada 180° y máscara de región. Son 220 muestras, no 660. La orientación del eje es ambigua en 180°; el futuro método de comparación deberá contemplarlo. La versión actual centra y gira, sin igualar contraste, corregir deformación elástica ni normalizar resolución física.
-
-## Reproducción desde las bases
-
-En una copia de trabajo sin salidas generadas, ejecutar en orden:
+En una copia de trabajo independiente que contenga `src/`, `config/`, las dependencias y `datos/bases/`, pero sin catálogos ni salidas generadas:
 
 ```powershell
 .\.venv\Scripts\python.exe src/generar_conjunto.py
@@ -57,8 +94,10 @@ En una copia de trabajo sin salidas generadas, ejecutar en orden:
 .\.venv\Scripts\python.exe src/normalizar_todas.py
 ```
 
-Conservar todos los módulos de `src/`, incluidos los del piloto, porque los generadores reutilizan funciones anteriores. Las bases y sus configuraciones deben estar en las rutas registradas. No cambiar las particiones al regenerar.
+La ejecución sigue ese orden. Los generadores reutilizan funciones del piloto, por lo que deben conservarse todos los módulos de `src/`. No ejecutar la secuencia sobre las salidas publicadas: los programas rechazan carpetas existentes. La reproducción desde las bases PNG no requiere instalar Anguli; generar nuevamente las bases sí requiere su generador y configuración.
 
-## Alcance
+## Resultados del avance y límites
 
-Este dataset sirve para el escenario académico definido, con diversidad limitada a siete bases. No demuestra generalización a huellas reales. La prueba se reserva para evaluación final; las imágenes de inspección del notebook pertenecen a desarrollo.
+La ejecución publicada procesó 220 muestras: 218 sin avisos, 2 para revisión y 0 errores. Los avisos de A01_M43 y A02_M44 corresponden a regiones que alcanzan un borde del original. El notebook verifica integridad, particiones, dimensiones y la alternativa de 180°; estos controles no miden la precisión de reconocimiento.
+
+La normalización actual conserva la escala en píxeles, sin igualar contraste, corregir deformaciones elásticas ni establecer una dirección anatómica única. El conjunto de prueba se reserva para evaluación final. La bitácora documenta el desarrollo; no sustituye el informe final en PDF exigido por la consigna.
