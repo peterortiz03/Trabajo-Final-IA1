@@ -17,3 +17,13 @@ Thumbs.db
 .env
 .env.*
 !.env.example
+
+
+# Antecedentes locales de la etapa de huellas
+/LEEME_PILOTO.md
+/datos/procesados/conjunto_v1/
+/resultados/piloto_deformaciones/
+/resultados/conjunto_v1/
+/resultados/ampliacion_train_v1/
+/resultados/rotaciones_train_v1/
+/resultados/normalizacion_etapa1/
