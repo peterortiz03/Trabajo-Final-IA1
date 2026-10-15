@@ -1,2 +1,2 @@
-# Trabajo-Final---IA1
+# Trabajo-Final-IA1
 Realizacion de interpretaodor de huellas dactilares.
