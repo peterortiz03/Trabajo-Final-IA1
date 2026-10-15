@@ -1,0 +1,13 @@
+{
+  "python": "3.14.0",
+  "numpy": "2.3.5",
+  "scipy": "1.17.0",
+  "pillow": "12.3.0",
+  "sha256_catalogo": "4aa30e08d4f2d530bf6a0301e8e735750cb7fa6841b884a63c347071001b7526",
+  "sha256_config": "40e48f52a2ef479510a2ae8600fc400959d807c951d086df16596a5f062a334c",
+  "codigo": {
+    "roi_normalizacion_v1.py": "1b1d4f66adca6c0bc397ba5f39176b04b6983b46fdd78d2ea16ac8f682435e61",
+    "normalizacion_final.py": "0064020d5f29245007658f62c426ce594251730ae28cc6bbafb224987cbb2d38",
+    "normalizar_todas.py": "929b796e8df66e5ad17fd682a5623156fa3cd7742f5cb0804de252c72b3a1445"
+  }
+}

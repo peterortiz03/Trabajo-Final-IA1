@@ -1,0 +1,17 @@
+{
+  "roi": {
+    "lado_salida": 512,
+    "sigma_deteccion": 2.0,
+    "fraccion_contraste": 0.12,
+    "diferencia_minima_fondo": 12.0,
+    "radio_cierre": 5,
+    "margen_mascara": 6,
+    "margen_recorte": 8,
+    "area_minima": 500,
+    "contraste_minimo": 20
+  },
+  "relacion_autovalores_minima": 1.2,
+  "interpolacion": 1,
+  "contraste_modificado": false,
+  "ambiguedad_180": true
+}

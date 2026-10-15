@@ -1,0 +1,13 @@
+{
+  "solicitadas": 220,
+  "correctas": 218,
+  "revisar": 2,
+  "errores": 0,
+  "particiones": {
+    "entrenamiento": 120,
+    "validacion": 50,
+    "prueba": 50
+  },
+  "ambiguedad_180": true,
+  "contraste_modificado": false
+}
