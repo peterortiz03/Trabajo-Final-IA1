@@ -1,0 +1,10 @@
+Verificación en copia local reproducida del conjunto, no en la PC del usuario.
+220 procesadas: 218 ok, 2 avisos de borde (A01_M43, A02_M44), 0 errores.
+120 entrenamiento; 50 validación; 50 prueba.
+Originales: hashes intactos. Todas las salidas: uint8, 512x512.
+Alternativas 180: giro exacto de la representación principal en los 220 casos.
+Desarrollo: eje residual máximo 0.163454 grados; relación de autovalores mínima 1.784.
+Prueba: solo aplicación del método fijo y comprobaciones mecánicas, sin selección de parámetros ni inspección visual.
+Ensayo geométrico independiente con elipse a -90,-60,-30,0,30,60,90 grados: eje corregido (<1 grado).
+Imagen blanca rechazada. Inspección visual de panel A01_M52.
+No se evalúa reconocimiento ni orientación anatómica única.

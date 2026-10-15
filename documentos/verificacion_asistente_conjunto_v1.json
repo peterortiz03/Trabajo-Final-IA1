@@ -1,0 +1,41 @@
+{
+  "total": 160,
+  "completo": true,
+  "cantidades_por_grupo_y_particion": {
+    "autorizado/entrenamiento": 60,
+    "autorizado/validacion": 30,
+    "autorizado/prueba": 30,
+    "intruso/validacion": 20,
+    "intruso/prueba": 20
+  },
+  "reservas_demo": 10,
+  "duplicados_exactos": 0,
+  "candidatos_casi_duplicados_entre_particiones": [],
+  "criterio_casi_duplicados": "menos de 1.5% de píxeles binarios diferentes en ROI central; sin registro geométrico",
+  "jacobiano_muestreo_min": 0.8630685066041894,
+  "jacobiano_muestreo_max": 1.1660424034633114,
+  "bytes_imagenes": 20418909,
+  "previsualizacion_prueba": false,
+  "entorno_ejecucion": {
+    "python": "3.12.14",
+    "sistema": "Linux-6.18.44-x86_64-with-glibc2.39",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "pillow": "12.3.0",
+    "matplotlib": "3.10.8",
+    "generador": "conjunto-1.0.0",
+    "rng": "NumPy PCG64 con SeedSequence por muestra/componente",
+    "codigo": {
+      "generar_conjunto.py": "f592938178eb88c616cd0d0a3bb4856892d7b4358177de36286c5981943b24ce",
+      "piloto_deformaciones.py": "0c6497181c0c862333631c7c5583932b488319dcafde7cb77644ec1ce2188fe7"
+    },
+    "sha256_config": "3a329f32799626f6be23e3df75f365e4c8ee84021828b950de040f33d8df6446"
+  },
+  "verificacion_adicional": {
+    "hashes_png_verificados": 320,
+    "corridas_completas_identicas": true,
+    "regeneracion_aislada_A01_M21_identica": true,
+    "perfiles_equilibrados_por_identidad_y_particion": true,
+    "ejecucion_local_usuario_pendiente": true
+  }
+}
