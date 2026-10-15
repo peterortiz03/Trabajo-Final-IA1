@@ -1,0 +1,19 @@
+# Entorno y caches locales
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+tmp/
+*.tmp
+Thumbs.db
+.DS_Store
+# Paquetes descargados: conservar los archivos extraídos relevantes
+*.zip
+# Archivos locales de credenciales
+.env
+.env.*
+!.env.example

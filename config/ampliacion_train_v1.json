@@ -1,0 +1,115 @@
+{
+  "version": "ampliacion-train-1.0.0",
+  "perfiles": [
+    {
+      "nombre": "deformacion_mayor",
+      "amplitud_local_px": [
+        6,
+        8
+      ],
+      "rotacion_max_grados": 2,
+      "traslacion_max_px": 3,
+      "contraste": [
+        0.88,
+        1
+      ],
+      "desenfoque_sigma": [
+        0.15,
+        0.3
+      ],
+      "ruido_sigma": [
+        0.8,
+        1.5
+      ],
+      "recorte_borde": false
+    },
+    {
+      "nombre": "posicion_mas_variable",
+      "amplitud_local_px": [
+        3,
+        5
+      ],
+      "rotacion_max_grados": 7,
+      "traslacion_max_px": 8,
+      "contraste": [
+        0.85,
+        1
+      ],
+      "desenfoque_sigma": [
+        0.2,
+        0.35
+      ],
+      "ruido_sigma": [
+        1,
+        2
+      ],
+      "recorte_borde": false
+    },
+    {
+      "nombre": "contraste_reducido",
+      "amplitud_local_px": [
+        3,
+        5
+      ],
+      "rotacion_max_grados": 3,
+      "traslacion_max_px": 4,
+      "contraste": [
+        0.55,
+        0.72
+      ],
+      "desenfoque_sigma": [
+        0.25,
+        0.45
+      ],
+      "ruido_sigma": [
+        1.5,
+        3
+      ],
+      "recorte_borde": false
+    },
+    {
+      "nombre": "captura_menos_nitida",
+      "amplitud_local_px": [
+        3,
+        5
+      ],
+      "rotacion_max_grados": 3,
+      "traslacion_max_px": 4,
+      "contraste": [
+        0.8,
+        0.95
+      ],
+      "desenfoque_sigma": [
+        0.55,
+        0.8
+      ],
+      "ruido_sigma": [
+        3,
+        5
+      ],
+      "recorte_borde": false
+    },
+    {
+      "nombre": "contacto_parcial",
+      "amplitud_local_px": [
+        4,
+        7
+      ],
+      "rotacion_max_grados": 5,
+      "traslacion_max_px": 6,
+      "contraste": [
+        0.75,
+        0.95
+      ],
+      "desenfoque_sigma": [
+        0.3,
+        0.5
+      ],
+      "ruido_sigma": [
+        1.5,
+        3
+      ],
+      "recorte_borde": true
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "identidades": [
+    {
+      "id": "P01",
+      "base": "datos/bases/piloto_01/Fingerprints/fp_1/1.png",
+      "sha256_base": "f3c10c83760a1f1bc52e01db07c6d21326863a277217948f5ebf98c19ec2c91b",
+      "semilla_base": 101,
+      "config_anguli": "datos/bases/piloto_01/Anguli.conf",
+      "semillas_muestras": [
+        10101,
+        10102,
+        10103,
+        10104
+      ]
+    },
+    {
+      "id": "P02",
+      "base": "datos/bases/piloto_02/Fingerprints/fp_1/1.png",
+      "sha256_base": "88dd8cb903a1b80254e6aa30c9617b30a4aa3d4cf756dc955012175e17d33a6b",
+      "semilla_base": 202,
+      "config_anguli": "datos/bases/piloto_02/Anguli.conf",
+      "semillas_muestras": [
+        20201,
+        20202,
+        20203,
+        20204
+      ]
+    }
+  ],
+  "perfiles": [
+    {
+      "nombre": "Local leve",
+      "amplitud_px": 2.5,
+      "rotacion_max_grados": 0,
+      "traslacion_max_px": 0,
+      "desenfoque_sigma_px": 0,
+      "ruido_sigma_gris": 0
+    },
+    {
+      "nombre": "Local moderada",
+      "amplitud_px": 5,
+      "rotacion_max_grados": 0,
+      "traslacion_max_px": 0,
+      "desenfoque_sigma_px": 0,
+      "ruido_sigma_gris": 0
+    },
+    {
+      "nombre": "Leve y movimiento",
+      "amplitud_px": 2.5,
+      "rotacion_max_grados": 2,
+      "traslacion_max_px": 2,
+      "desenfoque_sigma_px": 0,
+      "ruido_sigma_gris": 0
+    },
+    {
+      "nombre": "Moderada y calidad",
+      "amplitud_px": 5,
+      "rotacion_max_grados": 0,
+      "traslacion_max_px": 0,
+      "desenfoque_sigma_px": 0.35,
+      "ruido_sigma_gris": 1.5
+    }
+  ]
+}

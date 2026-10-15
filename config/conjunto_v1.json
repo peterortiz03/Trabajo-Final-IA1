@@ -1,0 +1,215 @@
+{
+  "version": "conjunto-1.0.0",
+  "identidades": [
+    {
+      "id": "A01",
+      "grupo": "autorizado",
+      "particion": "",
+      "base": "datos/bases/piloto_01/Fingerprints/fp_1/1.png",
+      "config_anguli": "datos/bases/piloto_01/Anguli.conf",
+      "semilla_base": 101,
+      "sha256_base": "f3c10c83760a1f1bc52e01db07c6d21326863a277217948f5ebf98c19ec2c91b",
+      "indice_semillas": 1,
+      "tipo_morfologico": "Right Loop"
+    },
+    {
+      "id": "A02",
+      "grupo": "autorizado",
+      "particion": "",
+      "base": "datos/bases/piloto_02/Fingerprints/fp_1/1.png",
+      "config_anguli": "datos/bases/piloto_02/Anguli.conf",
+      "semilla_base": 202,
+      "sha256_base": "88dd8cb903a1b80254e6aa30c9617b30a4aa3d4cf756dc955012175e17d33a6b",
+      "indice_semillas": 2,
+      "tipo_morfologico": "Double Loop"
+    },
+    {
+      "id": "A03",
+      "grupo": "autorizado",
+      "particion": "",
+      "base": "datos/bases/autorizado_03/Fingerprints/fp_1/1.png",
+      "config_anguli": "datos/bases/autorizado_03/Anguli.conf",
+      "semilla_base": 303,
+      "sha256_base": "5ed72e2cd34a68f8cd59546e88731228858eb63302f32b20a4916291936badd3",
+      "indice_semillas": 3,
+      "tipo_morfologico": "Right Loop"
+    },
+    {
+      "id": "I01",
+      "grupo": "intruso",
+      "particion": "validacion",
+      "base": "datos/bases/intruso_val_01/Fingerprints/fp_1/1.png",
+      "config_anguli": "datos/bases/intruso_val_01/Anguli.conf",
+      "semilla_base": 404,
+      "sha256_base": "855cd8ee8eb99941125976939b125060f9b698d8522dbee11f133370e4b9b407",
+      "indice_semillas": 4,
+      "tipo_morfologico": "Arch"
+    },
+    {
+      "id": "I02",
+      "grupo": "intruso",
+      "particion": "validacion",
+      "base": "datos/bases/intruso_val_02/Fingerprints/fp_1/1.png",
+      "config_anguli": "datos/bases/intruso_val_02/Anguli.conf",
+      "semilla_base": 505,
+      "sha256_base": "ba81be874613c276fe082484bbb5a9539b4a6a13bcae1cf79862307cd7b71ad3",
+      "indice_semillas": 5,
+      "tipo_morfologico": "Double Loop"
+    },
+    {
+      "id": "I03",
+      "grupo": "intruso",
+      "particion": "prueba",
+      "base": "datos/bases/intruso_test_01/Fingerprints/fp_1/1.png",
+      "config_anguli": "datos/bases/intruso_test_01/Anguli.conf",
+      "semilla_base": 606,
+      "sha256_base": "0aa22d63138308e911a1ae3ca741ebe16147e6080bd3e3f0ab447ce4613fa1aa",
+      "indice_semillas": 6,
+      "tipo_morfologico": "Right Loop"
+    },
+    {
+      "id": "I04",
+      "grupo": "intruso",
+      "particion": "prueba",
+      "base": "datos/bases/intruso_test_02/Fingerprints/fp_1/1.png",
+      "config_anguli": "datos/bases/intruso_test_02/Anguli.conf",
+      "semilla_base": 707,
+      "sha256_base": "3bfff935fc69667a76104ffb11907685490bc347751a29c6bcc2558f17333cb7",
+      "indice_semillas": 7,
+      "tipo_morfologico": "Arch"
+    }
+  ],
+  "perfiles": [
+    {
+      "nombre": "local_leve",
+      "amplitud_local_px": [
+        2,
+        3
+      ],
+      "rotacion_max_grados": 1.5,
+      "traslacion_max_px": 2,
+      "contraste": [
+        0.9,
+        1
+      ],
+      "desenfoque_sigma": [
+        0.15,
+        0.25
+      ],
+      "ruido_sigma": [
+        0.7,
+        1.2
+      ],
+      "recorte_borde": false
+    },
+    {
+      "nombre": "local_moderada",
+      "amplitud_local_px": [
+        4,
+        6
+      ],
+      "rotacion_max_grados": 2,
+      "traslacion_max_px": 3,
+      "contraste": [
+        0.9,
+        1
+      ],
+      "desenfoque_sigma": [
+        0.15,
+        0.3
+      ],
+      "ruido_sigma": [
+        0.8,
+        1.5
+      ],
+      "recorte_borde": false
+    },
+    {
+      "nombre": "movimiento",
+      "amplitud_local_px": [
+        2.5,
+        4
+      ],
+      "rotacion_max_grados": 4,
+      "traslacion_max_px": 4,
+      "contraste": [
+        0.85,
+        1
+      ],
+      "desenfoque_sigma": [
+        0.2,
+        0.35
+      ],
+      "ruido_sigma": [
+        1,
+        2
+      ],
+      "recorte_borde": false
+    },
+    {
+      "nombre": "contraste_y_calidad",
+      "amplitud_local_px": [
+        3,
+        5
+      ],
+      "rotacion_max_grados": 2,
+      "traslacion_max_px": 3,
+      "contraste": [
+        0.72,
+        0.9
+      ],
+      "desenfoque_sigma": [
+        0.3,
+        0.5
+      ],
+      "ruido_sigma": [
+        1.5,
+        2.5
+      ],
+      "recorte_borde": false
+    },
+    {
+      "nombre": "contacto_parcial",
+      "amplitud_local_px": [
+        3,
+        5
+      ],
+      "rotacion_max_grados": 3,
+      "traslacion_max_px": 4,
+      "contraste": [
+        0.85,
+        1
+      ],
+      "desenfoque_sigma": [
+        0.2,
+        0.35
+      ],
+      "ruido_sigma": [
+        1,
+        2
+      ],
+      "recorte_borde": true
+    }
+  ],
+  "preprocesamiento": {
+    "formato": "PNG L8, crestas oscuras, fondo claro",
+    "tamano_ancho_alto": [
+      275,
+      400
+    ],
+    "roi_salida": "lienzo nativo completo; sin recorte ni reescala",
+    "roi_contraste_y0_y1_x0_x1": [
+      50,
+      350,
+      35,
+      240
+    ],
+    "percentiles_contraste": [
+      1,
+      99
+    ],
+    "sigma_suavizado_px": 0.3,
+    "binarizacion": false,
+    "esqueletizado": false
+  }
+}
