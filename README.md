@@ -15,7 +15,8 @@ La consigna establece K-means con k = 3 para las identidades autorizadas, una di
 | Normalización geométrica de huellas | Implementada, versión 1 | Región de interés, centrado, orientación y máscaras |
 | Acondicionamiento adicional de imágenes | Pendiente de definir y validar | Contraste y filtrado según la representación de características |
 | Características de huellas, K-means y umbral | Pendiente | Vectores discriminantes, k = 3 y rechazo de intrusos |
-| Dataset y características de comandos de voz | Pendiente | Reconocer, Identificar y Salir |
+| Dataset de comandos de voz | Capturador v1 preparado; prueba de micrófono pendiente | [Captura y controles](documentos/dataset_audio.md) |
+| Preprocesamiento y características de voz | Pendiente | Recorte, remuestreo y representación acústica |
 | Clasificación de comandos con K-NN | Pendiente | Entrenamiento y evaluación del módulo de voz |
 | Integración del agente | Pendiente | Flujo de interacción y control de acceso |
 | Evaluación, PCA e informe final | Pendiente | Métricas, visualización, conclusiones y defensa |
@@ -101,3 +102,29 @@ La ejecución sigue ese orden. Los generadores reutilizan funciones del piloto, 
 La ejecución publicada procesó 220 muestras: 218 sin avisos, 2 para revisión y 0 errores. Los avisos de A01_M43 y A02_M44 corresponden a regiones que alcanzan un borde del original. El notebook verifica integridad, particiones, dimensiones y la alternativa de 180°; estos controles no miden la precisión de reconocimiento.
 
 La normalización actual conserva la escala en píxeles, sin igualar contraste, corregir deformaciones elásticas ni establecer una dirección anatómica única. El conjunto de prueba se reserva para evaluación final. La bitácora documenta el desarrollo; no sustituye el informe final en PDF exigido por la consigna.
+
+## Captura de comandos de voz — primer hito (17/10/2026)
+
+Se incorpora un grabador de consola para **reconocer**, **identificar** y **salir**.
+Las clases son las palabras; H001, H002, etc. identifican hablantes para organizar
+la futura evaluación por persona. No hay cantidades fijas de participantes o muestras.
+
+Desde PowerShell, en la raíz del proyecto y usando el entorno existente:
+
+```powershell
+.\.venv\Scripts\python.exe -m pip install --only-binary=:all: -r requirements-audio.txt
+.\.venv\Scripts\python.exe src/grabar_audio.py
+```
+
+Las dependencias de captura están separadas en `requirements-audio.txt`; se mantiene
+el NumPy de huellas y no se modifica `requirements.txt`. Los datos se crean en
+`datos/audio/`, excluido de Git por defecto. La configuración está en
+`config/audio_v1.json`. No se capturan datos antes de confirmar y finalizar la
+cuenta regresiva. El programa no implementa K-NN ni escucha continua.
+
+La [documentación de audio](documentos/dataset_audio.md) explica flujo, numeración,
+metadatos, limitaciones y prueba local. El
+[notebook de revisión](notebooks/02_dataset_audio_preprocesamiento.ipynb) lee
+las capturas cuando existen; no contiene resultados humanos precargados.
+Las pruebas automáticas de archivos no sustituyen la verificación de micrófono
+y reproducción en Windows.

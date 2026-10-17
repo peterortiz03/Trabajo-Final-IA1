@@ -1,0 +1,5 @@
+# Captura v1: conserva el NumPy registrado para huellas.
+numpy==2.3.5
+sounddevice==0.5.3
+cffi==2.0.0
+pycparser==2.23

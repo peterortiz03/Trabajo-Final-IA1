@@ -1,0 +1,17 @@
+{
+  "version": "audio_captura_v1",
+  "duracion_s": 3.0,
+  "cuenta_regresiva_s": 3,
+  "frecuencia_captura_hz": null,
+  "frecuencias_alternativas_hz": [48000, 44100, 16000],
+  "calidad": {
+    "rms_bajo_dbfs": -45.0,
+    "pico_saturacion": 0.999,
+    "fraccion_saturada_aviso": 0.001
+  },
+  "formato_procesado_previsto": {
+    "frecuencia_hz": 16000,
+    "canales": 1,
+    "subtipo": "PCM_16"
+  }
+}
