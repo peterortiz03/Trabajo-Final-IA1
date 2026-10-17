@@ -1,0 +1,21 @@
+{
+  "version": "audio_preprocesamiento_v1",
+  "frecuencia_hz": 16000,
+  "quitar_media": true,
+  "ventana_ms": 20,
+  "salto_ms": 10,
+  "percentil_ruido": 20,
+  "umbral_fuerte_min_dbfs": -42,
+  "umbral_debil_min_dbfs": -48,
+  "contraste_fuerte_db": 12,
+  "contraste_debil_db": 6,
+  "hueco_max_ms": 120,
+  "isla_min_ms": 60,
+  "actividad_min_ms": 120,
+  "margen_ms": 150,
+  "borde_aviso_ms": 50,
+  "pico_objetivo": 0.8,
+  "ganancia_max_db": 6,
+  "pico_saturacion": 0.999,
+  "fraccion_saturada_aviso": 0.001
+}

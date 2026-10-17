@@ -16,7 +16,8 @@ La consigna establece K-means con k = 3 para las identidades autorizadas, una di
 | Acondicionamiento adicional de imágenes | Pendiente de definir y validar | Contraste y filtrado según la representación de características |
 | Características de huellas, K-means y umbral | Pendiente | Vectores discriminantes, k = 3 y rechazo de intrusos |
 | Dataset de comandos de voz | Capturador v1 preparado; prueba de micrófono pendiente | [Captura y controles](documentos/dataset_audio.md) |
-| Preprocesamiento y características de voz | Pendiente | Recorte, remuestreo y representación acústica |
+| Preprocesamiento de comandos de voz | Implementado v1; revisión local por escucha pendiente | [Método e incrementalidad](documentos/preprocesamiento_audio.md) |
+| Características acústicas de voz | Pendiente | Representación de tamaño fijo para K-NN |
 | Clasificación de comandos con K-NN | Pendiente | Entrenamiento y evaluación del módulo de voz |
 | Integración del agente | Pendiente | Flujo de interacción y control de acceso |
 | Evaluación, PCA e informe final | Pendiente | Métricas, visualización, conclusiones y defensa |
@@ -128,3 +129,24 @@ metadatos, limitaciones y prueba local. El
 las capturas cuando existen; no contiene resultados humanos precargados.
 Las pruebas automáticas de archivos no sustituyen la verificación de micrófono
 y reproducción en Windows.
+
+## Preprocesamiento de audio — segundo hito (17/10/2026)
+
+La etapa conserva originales y genera WAV mono a 16 kHz con recorte de silencios
+externos y amplitud controlada. No implementa características acústicas ni K-NN.
+Usa NumPy y SciPy del entorno registrado, sin dependencias nuevas.
+
+```powershell
+.\.venv\Scripts\python.exe src/preprocesar_dataset_audio.py
+```
+
+Repetir el comando procesa nuevas muestras y verifica/omite resultados existentes
+de la misma versión. La configuración está en `config/preprocesamiento_audio_v1.json`.
+Las decisiones humanas se registran en `config/revisiones_audio_v1.json` y no borran
+avisos. Los cambios de método generan otra carpeta versionada conservando las anteriores.
+
+La [documentación del hito](documentos/preprocesamiento_audio.md) explica método,
+metadatos y límites. El notebook 02 compara los originales y procesados. El
+procesamiento automático de 60 muestras se verificó en el entorno del asistente;
+la escucha de los recortes en Windows queda pendiente. H001/H002 se utilizan para
+desarrollo; otras personas deberán reservarse para la evaluación final.

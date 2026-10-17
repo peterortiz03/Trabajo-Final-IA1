@@ -1,5 +1,8 @@
 # Dataset de comandos de voz — captura v1
 
+Este documento registra el primer hito. El preprocesamiento incorporado en el
+segundo hito está explicado en [preprocesamiento_audio.md](preprocesamiento_audio.md).
+
 ## Objetivo y alcance
 
 Se prepara un dataset ampliable para reconocer las palabras **reconocer**,
@@ -182,7 +185,9 @@ Resultados pendientes de registrar: versión e instalación en Windows, disposit
 formato elegido, reproducción, numeración tras reinicio, aviso de silencio y prueba
 de interrupción. No se presume que estos controles ya fueron ejecutados por el autor.
 
-## Próximos hitos
+## Secuencia prevista al cierre de captura
+
+El hito 2 que sigue ya cuenta con implementación; consultar su documento específico.
 
 Hito 2: funciones reutilizables de lectura, validación, conversión a mono, remuestreo
 con antialias a 16 kHz, detección aproximada de actividad, recorte con márgenes y
