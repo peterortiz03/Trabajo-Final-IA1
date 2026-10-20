@@ -1,6 +1,6 @@
 # Dataset de comandos de voz — captura v1
 
-Este documento registra el primer hito. El preprocesamiento incorporado en el
+Este documento registra la captura y su avance al 20/10/2026. El preprocesamiento incorporado en el
 segundo hito está explicado en [preprocesamiento_audio.md](preprocesamiento_audio.md).
 
 ## Objetivo y alcance
@@ -10,7 +10,8 @@ Se prepara un dataset ampliable para reconocer las palabras **reconocer**,
 (página 4) exige K-NN sobre características acústicas; no exige escucha permanente.
 La activación prevista mediante tecla es compatible con lo que explicita el texto.
 Este hito implementa captura guiada, conservación, metadatos y controles iniciales.
-No implementa clasificación, extracción definitiva ni preprocesamiento de señales.
+El grabador no implementa clasificación ni extracción definitiva. El preprocesamiento
+de señales se ejecuta en un programa separado, ya incorporado al proyecto.
 
 El código se añadió sobre el commit `141b60aab3cd15423afcae903c37eeaa3be988fb`.
 No se modifican los programas, catálogos ni imágenes de huellas.
@@ -142,8 +143,9 @@ No determina si se dijo la palabra correcta.
 | Mediciones | rms_dbfs, pico, fraccion_saturada |
 | Procedencia | configuracion_ref, fecha_utc, dispositivo, api_audio, sha256_original |
 
-En este hito `estado_procesamiento=pendiente`, `particion=sin_asignar` y
-`ruta_procesada` está vacía. Una muestra guardada no se declara automáticamente
+Al guardar una captura nueva, `estado_procesamiento=pendiente`,
+`particion=sin_asignar` y `ruta_procesada` está vacía. El lote de preprocesamiento
+actualiza después el estado y la ruta procesada. Una muestra guardada no se declara automáticamente
 apta para entrenar. La configuración efectiva se conserva en
 `datos/audio/configuraciones/<sha256>.json`; incluye cambios de duración por consola.
 El SHA-256 del original detecta cambios en sus bytes. Una grabación humana se
@@ -181,11 +183,12 @@ La siguiente prueba comprueba el programa, no define el tamaño del dataset:
    No debe aparecer una fila nueva por la toma interrumpida.
 6. Comprobar el resumen y las rutas del CSV. La palabra **salir** no cierra el grabador.
 
-Resultados pendientes de registrar: versión e instalación en Windows, dispositivo,
-formato elegido, reproducción, numeración tras reinicio, aviso de silencio y prueba
-de interrupción. No se presume que estos controles ya fueron ejecutados por el autor.
+El autor informó funcionamiento correcto de la captura y del preprocesamiento
+en Windows. El corte de 150 muestras cuenta con verificación de integridad local.
+No se dispone en este cierre de un registro individual de cada paso de la prueba
+de aceptación anterior; no se presenta esa lista como íntegramente ejecutada.
 
-## Secuencia prevista al cierre de captura
+## Continuidad del dataset y evaluación
 
 El hito 2 que sigue ya cuenta con implementación; consultar su documento específico.
 
@@ -235,5 +238,51 @@ No se ejecutó Windows ni se tuvo acceso a un micrófono humano.
 - Dependencias resueltas y descargadas para Windows x86-64 / CPython 3.14.
 - Ninguna señal de las pruebas se incorpora al dataset del proyecto.
 
-Estos resultados verifican lógica de archivos e interacción simulada. La calidad
-de voz, latencia, controladores y reproducción real siguen pendientes en Windows.
+Estos resultados verifican lógica de archivos e interacción simulada. La captura real en Windows fue posteriormente informada como operativa por el
+autor. La calidad de cada palabra y recorte requiere revisión humana; no se ha
+medido aquí la latencia del dispositivo.
+
+## Registro de avance — 20/10/2026
+
+La primera versión documentada reúne **150 tomas de cinco hablantes (H001–H005)**:
+10 por comando y persona, 30 por persona y 50 por clase. La recolección permanece
+abierta; la meta inicial es incorporar al menos ocho personas, sin establecer un
+máximo ni suponer que esa cantidad garantiza precisión de reconocimiento.
+
+| Hablante | Reconocer | Identificar | Salir | Total | Con avisos en captura |
+|---|---:|---:|---:|---:|---:|
+| H001 | 10 | 10 | 10 | 30 | 2 |
+| H002 | 10 | 10 | 10 | 30 | 4 |
+| H003 | 10 | 10 | 10 | 30 | 4 |
+| H004 | 10 | 10 | 10 | 30 | 3 |
+| H005 | 10 | 10 | 10 | 30 | 2 |
+| **Total** | **50** | **50** | **50** | **150** | **15** |
+
+El CSV entregado contiene 150 identificadores únicos y 150 hashes originales
+distintos. Las 150 filas tienen ruta procesada y permanecen `sin_asignar`.
+La ejecución local en Windows informó **150 originales y metadatos coherentes**.
+Esta evidencia proviene del catálogo y de la salida de terminal aportada por el
+autor; la revisión documental no volvió a calcular hashes sobre los WAV.
+
+El procedimiento activo es `audio_preprocesamiento_v1_3f3a7a105289`:
+
+| Resultado de la ejecución local | Cantidad |
+|---|---:|
+| Procesados sin avisos | 127 |
+| Procesados con avisos | 23 |
+| Nuevos en la repetición del lote | 0 |
+| Resultados existentes verificados y omitidos | 150 |
+
+La terminal registró 15 avisos `picos_cercanos_al_limite_original`, 6
+`amplificacion_limitada` y 2 `actividad_cerca_del_final`. Los avisos de captura
+(15 tomas) y los de procesamiento (23 tomas) corresponden a controles diferentes;
+no se suman como si fueran muestras distintas. Los tipos de aviso pueden
+coexistir en una misma toma en futuras ejecuciones.
+
+Estos conteos verifican el avance de captura y procesamiento; no son tasas de
+acierto ni certifican que las 150 tomas sean aptas para entrenar. La configuración
+de revisión recibida registra explícitamente la conservación de
+`H002_S001_identificar_0009`, cuya palabra fue confirmada completa por escucha.
+Conservar otras tomas al grabarlas no equivale a registrar la revisión de su
+recorte procesado. No se declara terminada la revisión auditiva individual de
+los 23 resultados con avisos.

@@ -9,14 +9,14 @@ La consigna establece K-means con k = 3 para las identidades autorizadas, una di
 
 ## Estado del proyecto
 
-| Etapa | Estado al 15/10/2026 | Evidencia o siguiente tarea |
+| Etapa | Estado al 20/10/2026 | Evidencia o siguiente tarea |
 |---|---|---|
 | Dataset de huellas sintéticas | Completada, versión 1 | 220 muestras, semillas, parámetros y catálogos |
 | Normalización geométrica de huellas | Implementada, versión 1 | Región de interés, centrado, orientación y máscaras |
 | Acondicionamiento adicional de imágenes | Pendiente de definir y validar | Contraste y filtrado según la representación de características |
 | Características de huellas, K-means y umbral | Pendiente | Vectores discriminantes, k = 3 y rechazo de intrusos |
-| Dataset de comandos de voz | Capturador v1 preparado; prueba de micrófono pendiente | [Captura y controles](documentos/dataset_audio.md) |
-| Preprocesamiento de comandos de voz | Implementado v1; revisión local por escucha pendiente | [Método e incrementalidad](documentos/preprocesamiento_audio.md) |
+| Dataset de comandos de voz | Primera versión documentada: 150 tomas, 5 hablantes; ampliable | [Captura y controles](documentos/dataset_audio.md) |
+| Preprocesamiento de comandos de voz | Ejecutado en Windows: 127 sin avisos y 23 con avisos; revisión documentada parcial | [Método e incrementalidad](documentos/preprocesamiento_audio.md) |
 | Características acústicas de voz | Pendiente | Representación de tamaño fijo para K-NN |
 | Clasificación de comandos con K-NN | Pendiente | Entrenamiento y evaluación del módulo de voz |
 | Integración del agente | Pendiente | Flujo de interacción y control de acceso |
@@ -28,7 +28,8 @@ La normalización geométrica v1 no equivale a haber completado todo el preproce
 
 1. [Bitácora de dataset y normalización](notebooks/01_bitacora_dataset_normalizacion.ipynb): decisiones, archivos, resultados y comprobaciones ejecutadas.
 2. [Índice de documentación](documentos/README.md): estado vigente y antecedentes de cada etapa.
-3. [Uso de IA generativa](documentos/uso_ia_generativa.md): tareas asistidas, ejemplos de solicitudes y verificación.
+3. [Bitácora de audio](notebooks/02_dataset_audio_preprocesamiento.ipynb): captura, método, resultados y límites de la primera versión.
+4. [Uso de IA generativa](documentos/uso_ia_generativa.md): tareas asistidas, ejemplos de solicitudes y verificación.
 
 ## Dataset de huellas
 
@@ -53,19 +54,20 @@ Instalar dependencias en ese entorno:
 .\.venv\Scripts\python.exe -m pip install ipykernel
 ```
 
-`ipykernel` es una dependencia adicional para ejecutar notebooks. En VS Code, seleccionar el intérprete de `.venv`, abrir la bitácora y ejecutar sus celdas. El notebook solo lee archivos. Las salidas guardadas permiten consultarlo en GitHub sin instalar Python.
+`ipykernel` es una dependencia adicional para ejecutar notebooks. En VS Code, seleccionar el intérprete de `.venv`, abrir la bitácora y ejecutar sus celdas. El notebook solo lee archivos. Las salidas guardadas de la bitácora de huellas permiten consultarla en GitHub sin instalar Python. La bitácora de audio se publica sin salidas y contiene un resumen textual fechado.
 
-**Una clonación ya contiene los datos y resultados finales: no es necesario regenerarlos para consultar o verificar el avance.**
+**Una clonación contiene los datos y resultados publicados de huellas; no es necesario regenerarlos para consultar ese avance. Los audios y sus catálogos permanecen locales, excluidos de Git.**
 
 ## Organización
 
 | Ruta | Contenido |
 |---|---|
-| `src/` | Programas y funciones de generación y normalización |
+| `src/` | Generación y normalización de huellas; captura y preprocesamiento de audio |
 | `config/` | Configuraciones de las etapas |
 | `datos/bases/` | Bases de Anguli y archivos de procedencia |
 | `datos/originales/` | Las 220 capturas anteriores a la normalización |
 | `datos/procesados/normalizacion_final_v1/` | Representaciones finales, máscaras, catálogo y controles |
+| `datos/audio/` | Originales, procesados y catálogos locales; excluidos de Git |
 | `notebooks/` | Bitácoras de avances y análisis reproducibles |
 | `documentos/` | Instrucciones, decisiones y registros de apoyo |
 
@@ -126,7 +128,8 @@ cuenta regresiva. El programa no implementa K-NN ni escucha continua.
 La [documentación de audio](documentos/dataset_audio.md) explica flujo, numeración,
 metadatos, limitaciones y prueba local. El
 [notebook de revisión](notebooks/02_dataset_audio_preprocesamiento.ipynb) lee
-las capturas cuando existen; no contiene resultados humanos precargados.
+las capturas cuando existen y presenta un resumen textual del corte de 150 muestras.
+No incorpora voces ni salidas de ejecución; la reproducción local es opcional.
 Las pruebas automáticas de archivos no sustituyen la verificación de micrófono
 y reproducción en Windows.
 
@@ -147,6 +150,25 @@ avisos. Los cambios de método generan otra carpeta versionada conservando las a
 
 La [documentación del hito](documentos/preprocesamiento_audio.md) explica método,
 metadatos y límites. El notebook 02 compara los originales y procesados. El
-procesamiento automático de 60 muestras se verificó en el entorno del asistente;
-la escucha de los recortes en Windows queda pendiente. H001/H002 se utilizan para
-desarrollo; otras personas deberán reservarse para la evaluación final.
+procesamiento local en Windows quedó registrado con 150 muestras de H001–H005:
+127 sin avisos y 23 con avisos. Repetir el lote verificó y omitió los 150 resultados,
+sin nuevas salidas; la verificación de originales informó integridad coherente.
+La revisión auditiva individual se registra por separado y no se presume completa.
+
+Este corte cierra la documentación de captura y preprocesamiento v1 y permite
+iniciar la extracción de características. La recolección continúa hasta incorporar
+al menos ocho hablantes como meta inicial, sin cupos máximos. Las 150 muestras siguen
+`sin_asignar`: antes de entrenar y evaluar se fijará un mapa persistente por hablante.
+H001/H002 se utilizaron en el desarrollo; las voces usadas para elegir parámetros
+no deberán considerarse prueba final independiente. Se reservarán personas nuevas
+para la evaluación final y se documentarán por separado las demostraciones.
+
+Los 15 avisos en captura describen los originales. En procesamiento se informaron
+15 picos cercanos al límite original, 6 amplificaciones limitadas y 2 actividades
+cercanas al final. Un aviso no implica descarte automático. El detalle y los límites
+se registran en la documentación y en el notebook.
+
+Antes de publicar el notebook, borrar sus salidas; `REPRODUCIR_AUDIO=False` evita
+incrustar voces durante una ejecución normal. Para escucharlas localmente se puede
+activar esa opción y después limpiar las salidas. Respaldar `datos/audio/` por
+separado: Git no conserva esos archivos ignorados.

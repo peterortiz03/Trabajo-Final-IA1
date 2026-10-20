@@ -158,7 +158,7 @@ límites de recorte, ganancia, hash de salida, firma, avisos nuevos y revisión 
 El JSON individual conserva el detalle y el entorno de ejecución. La revisión
 humana es un registro aparte y nunca borra la evidencia automática.
 
-## Comprobaciones de esta entrega
+## Antecedente de verificación — piloto de 60 muestras
 
 Pruebas realizadas en el entorno del asistente el 17/10/2026:
 
@@ -177,8 +177,54 @@ Pruebas realizadas en el entorno del asistente el 17/10/2026:
 - Segunda ejecución: 0 nuevos y 60 omitidos; integridad de los originales verificada.
 
 Las pruebas de señal no son datos de entrenamiento. Los controles de archivos no
-sustituyen escuchar el antes y después. Falta validar el recorte por escucha en
-Windows y en más personas. No se midió precisión de reconocimiento.
+sustituyen escuchar el antes y después. La ejecución posterior en Windows amplió el conjunto a cinco personas, como
+se registra a continuación. La validación auditiva individual se documenta por
+separado. No se midió precisión de reconocimiento.
+
+## Registro de avance — 20/10/2026
+
+La primera versión documentada reúne **150 tomas de cinco hablantes (H001–H005)**:
+10 por comando y persona, 30 por persona y 50 por clase. La recolección permanece
+abierta; la meta inicial es incorporar al menos ocho personas, sin establecer un
+máximo ni suponer que esa cantidad garantiza precisión de reconocimiento.
+
+| Hablante | Reconocer | Identificar | Salir | Total | Con avisos en captura |
+|---|---:|---:|---:|---:|---:|
+| H001 | 10 | 10 | 10 | 30 | 2 |
+| H002 | 10 | 10 | 10 | 30 | 4 |
+| H003 | 10 | 10 | 10 | 30 | 4 |
+| H004 | 10 | 10 | 10 | 30 | 3 |
+| H005 | 10 | 10 | 10 | 30 | 2 |
+| **Total** | **50** | **50** | **50** | **150** | **15** |
+
+El CSV entregado contiene 150 identificadores únicos y 150 hashes originales
+distintos. Las 150 filas tienen ruta procesada y permanecen `sin_asignar`.
+La ejecución local en Windows informó **150 originales y metadatos coherentes**.
+Esta evidencia proviene del catálogo y de la salida de terminal aportada por el
+autor; la revisión documental no volvió a calcular hashes sobre los WAV.
+
+El procedimiento activo es `audio_preprocesamiento_v1_3f3a7a105289`:
+
+| Resultado de la ejecución local | Cantidad |
+|---|---:|
+| Procesados sin avisos | 127 |
+| Procesados con avisos | 23 |
+| Nuevos en la repetición del lote | 0 |
+| Resultados existentes verificados y omitidos | 150 |
+
+La terminal registró 15 avisos `picos_cercanos_al_limite_original`, 6
+`amplificacion_limitada` y 2 `actividad_cerca_del_final`. Los avisos de captura
+(15 tomas) y los de procesamiento (23 tomas) corresponden a controles diferentes;
+no se suman como si fueran muestras distintas. Los tipos de aviso pueden
+coexistir en una misma toma en futuras ejecuciones.
+
+Estos conteos verifican el avance de captura y procesamiento; no son tasas de
+acierto ni certifican que las 150 tomas sean aptas para entrenar. La configuración
+de revisión recibida registra explícitamente la conservación de
+`H002_S001_identificar_0009`, cuya palabra fue confirmada completa por escucha.
+Conservar otras tomas al grabarlas no equivale a registrar la revisión de su
+recorte procesado. No se declara terminada la revisión auditiva individual de
+los 23 resultados con avisos.
 
 ## Revisión local y siguiente paso
 
@@ -196,7 +242,10 @@ extracción acústica y K-NN tendrán otro hito.
 
 Los audios y catálogos permanecen ignorados por Git. Hacer copia local de
 `datos/audio/`. Un notebook ejecutado puede incrustar audio en las salidas:
-limpiarlas antes de publicarlo si ese uso no fue acordado.
+limpiarlas antes de publicarlo. El notebook se distribuye con
+`REPRODUCIR_AUDIO=False`; habilitarlo solo para la revisión local y limpiar después
+las salidas. El cierre de documentación no supone una partición definitiva ni
+una aprobación automática del dataset para entrenamiento.
 
 ## Referencias y uso de IA
 
