@@ -3,5 +3,900 @@
     "decision": "conservar",
     "motivo": "El autor confirmó por escucha que la palabra se oye completa. Conservar el aviso automático de actividad cercana al final.",
     "fecha": "2026-10-17"
+  },
+  "H001_S001_reconocer_0001": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H001_S001_reconocer_0002": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H001_S001_reconocer_0003": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H001_S001_reconocer_0004": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H001_S001_reconocer_0005": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H001_S001_reconocer_0006": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H001_S001_reconocer_0007": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H001_S001_reconocer_0008": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H001_S001_reconocer_0009": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H001_S001_reconocer_0010": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H001_S001_identificar_0001": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H001_S001_identificar_0002": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H001_S001_identificar_0003": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H001_S001_identificar_0004": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H001_S001_identificar_0005": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H001_S001_identificar_0006": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H001_S001_identificar_0007": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H001_S001_identificar_0008": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H001_S001_identificar_0009": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H001_S001_identificar_0010": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H001_S001_salir_0001": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H001_S001_salir_0002": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H001_S001_salir_0003": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H001_S001_salir_0004": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H001_S001_salir_0005": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H001_S001_salir_0006": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H001_S001_salir_0007": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H001_S001_salir_0008": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H001_S001_salir_0009": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H001_S001_salir_0010": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H002_S001_reconocer_0001": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H002_S001_reconocer_0002": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H002_S001_reconocer_0003": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H002_S001_reconocer_0004": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H002_S001_reconocer_0005": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H002_S001_reconocer_0006": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H002_S001_reconocer_0007": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H002_S001_reconocer_0008": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H002_S001_reconocer_0009": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H002_S001_reconocer_0010": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H002_S001_identificar_0001": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H002_S001_identificar_0002": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H002_S001_identificar_0003": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H002_S001_identificar_0004": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H002_S001_identificar_0005": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H002_S001_identificar_0006": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H002_S001_identificar_0007": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H002_S001_identificar_0008": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H002_S001_identificar_0010": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H002_S001_salir_0001": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H002_S001_salir_0002": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H002_S001_salir_0003": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H002_S001_salir_0004": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H002_S001_salir_0005": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H002_S001_salir_0006": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H002_S001_salir_0007": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H002_S001_salir_0008": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H002_S001_salir_0009": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H002_S001_salir_0010": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H003_S001_reconocer_0001": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H003_S001_reconocer_0002": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H003_S001_reconocer_0003": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H003_S001_reconocer_0004": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H003_S001_reconocer_0005": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H003_S001_reconocer_0006": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H003_S001_reconocer_0007": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H003_S001_reconocer_0008": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H003_S001_reconocer_0009": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H003_S001_reconocer_0010": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H003_S001_identificar_0001": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H003_S001_identificar_0002": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H003_S001_identificar_0003": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H003_S001_identificar_0004": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H003_S001_identificar_0005": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H003_S001_identificar_0006": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H003_S001_identificar_0007": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H003_S001_identificar_0008": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H003_S001_identificar_0009": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H003_S001_identificar_0010": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H003_S001_salir_0001": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H003_S001_salir_0002": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H003_S001_salir_0003": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H003_S001_salir_0004": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H003_S001_salir_0005": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H003_S001_salir_0006": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H003_S001_salir_0007": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H003_S001_salir_0008": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H003_S001_salir_0009": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H003_S001_salir_0010": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H004_S001_reconocer_0001": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H004_S001_reconocer_0002": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H004_S001_reconocer_0003": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H004_S001_reconocer_0004": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H004_S001_reconocer_0005": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H004_S001_reconocer_0006": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H004_S001_reconocer_0007": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H004_S001_reconocer_0008": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H004_S001_reconocer_0009": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H004_S001_reconocer_0010": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H004_S001_identificar_0001": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H004_S001_identificar_0002": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H004_S001_identificar_0003": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H004_S001_identificar_0004": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H004_S001_identificar_0005": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H004_S001_identificar_0006": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H004_S001_identificar_0007": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H004_S001_identificar_0008": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H004_S001_identificar_0009": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H004_S001_identificar_0010": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H004_S001_salir_0001": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H004_S001_salir_0002": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H004_S001_salir_0003": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H004_S001_salir_0004": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H004_S001_salir_0005": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H004_S001_salir_0006": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H004_S001_salir_0007": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H004_S001_salir_0008": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H004_S001_salir_0009": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H004_S001_salir_0010": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H005_S001_reconocer_0001": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H005_S001_reconocer_0002": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H005_S001_reconocer_0003": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H005_S001_reconocer_0004": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H005_S001_reconocer_0005": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H005_S001_reconocer_0006": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H005_S001_reconocer_0007": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H005_S001_reconocer_0008": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H005_S001_reconocer_0009": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H005_S001_reconocer_0010": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H005_S001_identificar_0001": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H005_S001_identificar_0002": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H005_S001_identificar_0003": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H005_S001_identificar_0004": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H005_S001_identificar_0005": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H005_S001_identificar_0006": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H005_S001_identificar_0007": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H005_S001_identificar_0008": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H005_S001_identificar_0009": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H005_S001_identificar_0010": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H005_S001_salir_0001": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H005_S001_salir_0002": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H005_S001_salir_0003": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H005_S001_salir_0004": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H005_S001_salir_0005": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H005_S001_salir_0006": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H005_S001_salir_0007": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H005_S001_salir_0008": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H005_S001_salir_0009": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H005_S001_salir_0010": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H006_S001_reconocer_0001": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H006_S001_reconocer_0002": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H006_S001_reconocer_0003": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H006_S001_reconocer_0004": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H006_S001_reconocer_0005": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H006_S001_reconocer_0006": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H006_S001_reconocer_0007": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H006_S001_reconocer_0008": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H006_S001_reconocer_0009": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H006_S001_reconocer_0010": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H006_S001_identificar_0001": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H006_S001_identificar_0002": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H006_S001_identificar_0003": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H006_S001_identificar_0004": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H006_S001_identificar_0005": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H006_S001_identificar_0006": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H006_S001_identificar_0007": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H006_S001_identificar_0008": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H006_S001_identificar_0009": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H006_S001_identificar_0010": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H006_S001_salir_0001": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H006_S001_salir_0002": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H006_S001_salir_0003": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H006_S001_salir_0004": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H006_S001_salir_0005": {
+    "decision": "excluir",
+    "motivo": "e",
+    "fecha": "2026-10-20"
+  },
+  "H006_S001_salir_0006": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H006_S001_salir_0007": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H006_S001_salir_0008": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H006_S001_salir_0009": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
+  },
+  "H006_S001_salir_0010": {
+    "decision": "conservar",
+    "motivo": "Revisión por escucha: comando correcto, completo y entendible.",
+    "fecha": "2026-10-20"
   }
 }
