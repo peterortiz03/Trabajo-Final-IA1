@@ -9,20 +9,25 @@ La consigna establece K-means con k = 3 para las identidades autorizadas, una di
 
 ## Estado del proyecto
 
-| Etapa | Estado al 20/10/2026 | Evidencia o siguiente tarea |
+| Etapa | Estado al 20/10/2026 | Resultado o siguiente tarea |
 |---|---|---|
-| Dataset de huellas sintéticas | Completada, versión 1 | 220 muestras, semillas, parámetros y catálogos |
-| Normalización geométrica de huellas | Implementada, versión 1 | Región de interés, centrado, orientación y máscaras |
-| Acondicionamiento adicional de imágenes | Pendiente de definir y validar | Contraste y filtrado según la representación de características |
-| Características de huellas, K-means y umbral | Pendiente | Vectores discriminantes, k = 3 y rechazo de intrusos |
-| Dataset de comandos de voz | Primera versión documentada: 150 tomas, 5 hablantes; ampliable | [Captura y controles](documentos/dataset_audio.md) |
-| Preprocesamiento de comandos de voz | Ejecutado en Windows: 127 sin avisos y 23 con avisos; revisión documentada parcial | [Método e incrementalidad](documentos/preprocesamiento_audio.md) |
-| Características acústicas de voz | Pendiente | Representación de tamaño fijo para K-NN |
-| Clasificación de comandos con K-NN | Pendiente | Entrenamiento y evaluación del módulo de voz |
-| Integración del agente | Pendiente | Flujo de interacción y control de acceso |
-| Evaluación, PCA e informe final | Pendiente | Métricas, visualización, conclusiones y defensa |
+| Dataset de huellas sintéticas | Implementado | 220 capturas con procedencia, semillas y parámetros |
+| Normalización geométrica de huellas | Implementada | Región de interés, centrado, orientación y máscaras |
+| Extracción de características de huellas | Implementada y verificada | Descriptor GLCM de 144 componentes; 170 muestras de desarrollo vectorizadas y 50 de prueba reservadas |
+| Dataset de comandos de voz | Disponible y ampliable | 180 grabaciones de seis hablantes |
+| Preprocesamiento de audio | Implementado | 180 grabaciones procesadas: 152 sin avisos y 28 con avisos |
+| Revisión auditiva registrada | Completada para el corte actual | 179 muestras con decisión conservar y una con decisión excluir |
+| Extracción de características de audio | Implementada y verificada | 179 vectores de 160 componentes |
+| Particiones de audio | Pendiente | Asignación persistente por hablante antes del ajuste de modelos |
+| Escalado y gráficos PCA | Pendiente | Ajuste sobre entrenamiento y exploración de los vectores |
+| Agrupamiento de huellas con K-means | Pendiente | k = 3, correspondencia entre grupos e identidades y umbral de rechazo |
+| Clasificación de comandos con K-NN | Pendiente | Entrenamiento y evaluación con separación por hablante |
+| Integración del agente | Pendiente | Conexión entre comandos de voz y reconocimiento de huellas |
+| Evaluación final e informe | Pendiente | Resultados con datos reservados, conclusiones y defensa |
 
-La normalización geométrica v1 no equivale a haber completado todo el preprocesamiento mencionado en la consigna. La normalización de contraste y el filtrado deberán definirse al elegir y validar las características; no se anticipa que todas las técnicas posibles sean necesarias.
+El extractor de huellas añade acondicionamiento de contraste y cuantización a la normalización geométrica anterior. La versión actual utiliza textura en escala de grises, sin binarización ni esqueletizado.
+
+Las comprobaciones realizadas verifican integridad, dimensiones, repetibilidad y funcionamiento del código. Todavía no se ha medido la precisión de reconocimiento ni la capacidad de generalización de los modelos.
 
 ## Lectura recomendada
 
@@ -56,18 +61,19 @@ Instalar dependencias en ese entorno:
 
 `ipykernel` es una dependencia adicional para ejecutar notebooks. En VS Code, seleccionar el intérprete de `.venv`, abrir la bitácora y ejecutar sus celdas. El notebook solo lee archivos. Las salidas guardadas de la bitácora de huellas permiten consultarla en GitHub sin instalar Python. La bitácora de audio se publica sin salidas y contiene un resumen textual fechado.
 
-**Una clonación contiene los datos y resultados publicados de huellas; no es necesario regenerarlos para consultar ese avance. Los audios y sus catálogos permanecen locales, excluidos de Git.**
+**El repositorio incluye las imágenes de huellas, los audios originales y procesados, y sus catálogos. Las matrices de características generadas permanecen locales y pueden reproducirse ejecutando los extractores.**
 
 ## Organización
 
 | Ruta | Contenido |
 |---|---|
-| `src/` | Generación y normalización de huellas; captura y preprocesamiento de audio |
+| `src/` | Generación, captura, preprocesamiento y extracción de características |
 | `config/` | Configuraciones de las etapas |
 | `datos/bases/` | Bases de Anguli y archivos de procedencia |
 | `datos/originales/` | Las 220 capturas anteriores a la normalización |
 | `datos/procesados/normalizacion_final_v1/` | Representaciones finales, máscaras, catálogo y controles |
-| `datos/audio/` | Originales, procesados y catálogos locales; excluidos de Git |
+| `datos/audio/` | Audios originales y procesados, catálogos y registros publicados |
+| `datos/caracteristicas/` | Ejecuciones locales de vectorización, matrices y registros de procedencia |
 | `notebooks/` | Bitácoras de avances y análisis reproducibles |
 | `documentos/` | Instrucciones, decisiones y registros de apoyo |
 
@@ -168,7 +174,36 @@ Los 15 avisos en captura describen los originales. En procesamiento se informaro
 cercanas al final. Un aviso no implica descarte automático. El detalle y los límites
 se registran en la documentación y en el notebook.
 
-Antes de publicar el notebook, borrar sus salidas; `REPRODUCIR_AUDIO=False` evita
-incrustar voces durante una ejecución normal. Para escucharlas localmente se puede
-activar esa opción y después limpiar las salidas. Respaldar `datos/audio/` por
-separado: Git no conserva esos archivos ignorados.
+Antes de publicar un notebook, revisar sus salidas. La opción `REPRODUCIR_AUDIO=False` evita incrustar reproducciones durante la ejecución habitual. Los audios y catálogos están versionados en el repositorio; las ejecuciones de características permanecen locales según sus reglas de exclusión. Mantener también una copia de respaldo del trabajo local.
+
+## Cierre de extracción de características — 20/10/2026
+
+Los apartados anteriores de captura y preprocesamiento conservan los resultados históricos de sus primeras ejecuciones. El estado vigente incorpora 180 grabaciones de seis hablantes y la revisión auditiva registrada.
+
+### Huellas
+
+El extractor genera un vector de 144 características mediante matrices de coocurrencia con máscara. Combina tres bloques espaciales, tres distancias, cuatro direcciones y cuatro medidas de textura.
+
+La extracción de desarrollo produce una matriz de **170 × 144**: 120 muestras de entrenamiento y 50 de validación. Las otras 50 muestras permanecen reservadas para prueba. La comparación entre cada imagen y su giro exacto de 180°, girando también la máscara, produjo una diferencia máxima de 0.
+
+### Audio
+
+El extractor describe cada palabra mediante diez segmentos relativos, con medidas de cruces por cero, amplitud absoluta y MFCC. Produce 160 características por grabación.
+
+Las revisiones registran **179 muestras conservadas y una excluida**, `H006_S001_salir_0005`. La matriz vigente contiene **179 × 160** valores: 60 ejemplos de reconocer, 60 de identificar y 59 de salir. Las 180 filas del catálogo siguen sin partición asignada.
+
+La repetición de la extracción produjo una diferencia máxima de 0. Los avisos técnicos se conservan aunque una muestra tenga decisión humana de conservar.
+
+### Verificación y alcance
+
+En una copia del repositorio, el asistente ejecutó las 51 pruebas automáticas existentes y regeneró ambos conjuntos de vectores. Todas las pruebas aprobaron y todos los valores generados fueron finitos. Esta comprobación no incluyó una nueva escucha de las grabaciones; las decisiones auditivas corresponden a la revisión registrada por el autor.
+
+Todavía no se ajustaron escaladores, PCA, K-means ni K-NN. La extracción correcta no demuestra por sí sola separación de clases o precisión de reconocimiento.
+
+### Documentación de esta etapa
+
+- [Características de huellas](documentos/caracteristicas_huellas_hito1.md).
+- [Características de audio](documentos/caracteristicas_audio_hito2.md).
+- [Guía de vectorización y clasificación](documentos/guia_vectorizacion_y_clasificacion.md).
+- [Notebook de huellas](notebooks/03_caracteristicas_huellas.ipynb).
+- [Notebook de audio](notebooks/04_caracteristicas_audio.ipynb).

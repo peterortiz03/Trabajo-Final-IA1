@@ -81,9 +81,7 @@ Los MFCC resumen la forma del espectro. Se calculan con ventana Hann, FFT de
 512 puntos, 26 filtros Mel, logaritmo natural y DCT. No representan directamente
 una palabra ni una probabilidad.
 
-La ejecución revisada produjo 180 vectores de 160 componentes, todos finitos y
-repetibles. Trece muestras conservaron avisos del extractor. Un aviso solicita
-revisión; no demuestra por sí solo que una grabación deba descartarse.
+La ejecución posterior a la revisión auditiva produjo 179 vectores de 160 componentes, todos finitos y repetibles. De las 180 grabaciones registradas, 179 tienen decisión conservar y una tiene decisión excluir. Doce muestras vectorizadas conservan avisos del extractor. Los avisos permanecen registrados y no equivalen automáticamente a un descarte.
 
 ## 4. Por qué habrá que escalar
 
@@ -121,9 +119,7 @@ normalizará, vectorizará, escalará y comparará con esos centros.
 El centro más cercano siempre existe, incluso para un intruso. Por eso la
 distancia al centro necesita un umbral de rechazo ajustado con entrenamiento y
 validación. Las huellas intrusas de validación pueden evaluar el rechazo, pero
-no deben participar en el ajuste del escalador inicial. Las 50 muestras de
-prueba permanecen reservadas mientras se eligen descriptor, número de grupos y
-umbrales.
+no deben participar en el ajuste del escalador inicial. Las 50 muestras de prueba permanecen reservadas mientras se eligen y validan el descriptor, el escalado y los umbrales. El número de grupos para las identidades autorizadas queda fijado por la consigna: k = 3.
 
 Como las huellas actuales son sintéticas, una captura de un dedo físico o de un
 sensor diferente representa otro dominio. Su funcionamiento deberá comprobarse

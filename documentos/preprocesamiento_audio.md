@@ -1,5 +1,7 @@
 # Preprocesamiento de comandos de voz — versión 1
 
+> **Actualización del estado vigente — 20/10/2026:** el repositorio contiene 180 grabaciones de seis hablantes, sus procesados y catálogos. La revisión auditiva registrada conserva 179 muestras y excluye `H006_S001_salir_0005`. La extracción actual produce 179 vectores de 160 características; las particiones continúan sin asignar. Los apartados que describen 150 muestras, 180 vectores anteriores a la exclusión o revisiones pendientes conservan el estado histórico de esas ejecuciones. Las referencias antiguas a audios exclusivamente locales corresponden a la política inicial, anterior a su publicación.
+
 ## Objetivo y alcance
 
 Este hito transforma cada original en una representación temporal común: WAV mono,

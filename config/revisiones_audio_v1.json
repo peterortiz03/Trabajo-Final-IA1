@@ -871,7 +871,7 @@
   },
   "H006_S001_salir_0005": {
     "decision": "excluir",
-    "motivo": "e",
+    "motivo": "Exceso de ruido de fondo",
     "fecha": "2026-10-20"
   },
   "H006_S001_salir_0006": {
