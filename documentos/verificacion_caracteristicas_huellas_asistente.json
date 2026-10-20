@@ -1,0 +1,52 @@
+{
+  "fecha": "2026-10-20",
+  "ejecutor": "asistente, entorno Linux; no Windows del estudiante",
+  "commit_fuente": "8fc2850f6cefc8fe645e2006b0cc2646f5d1161a",
+  "python": "3.12.14",
+  "dependencias": {
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "Pillow": "12.3.0",
+    "matplotlib": "3.10.8"
+  },
+  "pruebas_unittest": {
+    "ejecutadas": 11,
+    "fallidas": 0,
+    "comando": "python -m unittest discover -s tests -p test_caracteristicas_huellas.py -v"
+  },
+  "extraccion": {
+    "id_extractor": "glcm_opuestas_v1_b929c1cffe47",
+    "ejecucion": "ejecucion_20261020T122326_742471Z",
+    "total_catalogo": 220,
+    "estados": {
+      "vectorizada": 170,
+      "diferida_prueba": 50
+    },
+    "forma_X": [
+      170,
+      144
+    ],
+    "valores_finitos": true,
+    "vectorizadas_por_particion": {
+      "entrenamiento": 120,
+      "validacion": 50
+    },
+    "muestras_con_avisos_extractor": 0,
+    "vectorizadas_con_aviso_normalizacion": 2,
+    "verificadas_180": 170,
+    "diferencia_max_180": 0.0,
+    "salida": "datos/caracteristicas/huellas/glcm_opuestas_v1_b929c1cffe47/ejecucion_20261020T122326_742471Z",
+    "nota": "Vectorizable no significa aprobada para modelado ni identidad reconocida."
+  },
+  "notebook": {
+    "celdas_codigo_ejecutadas": 6,
+    "metodo": "exec de celdas en orden con Python y backend Agg, no kernel de VS Code",
+    "figuras_revisadas": 2
+  },
+  "pendiente": [
+    "Windows/Python 3.14 del estudiante",
+    "Capacidad discriminante del descriptor",
+    "Escalado, PCA, K-means y umbrales"
+  ],
+  "prueba_final": "50 muestras diferidas; sus PNG no se abrieron durante extracción y análisis"
+}
