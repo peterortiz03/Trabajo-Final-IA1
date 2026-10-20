@@ -1,0 +1,186 @@
+{
+  "fecha_revision": "2026-10-20",
+  "origen": "Ejecución realizada por el estudiante en Windows 11 con Python 3.14.0.",
+  "id_extractor": "audio_segmentos_v1_1caab0e82325",
+  "ejecucion": "ejecucion_20261020T191828_653873Z",
+  "version_preprocesamiento": "audio_preprocesamiento_v1_3f3a7a105289",
+  "forma_X": [
+    180,
+    160
+  ],
+  "valores_finitos": true,
+  "hablantes": 6,
+  "muestras_por_comando": {
+    "reconocer": 60,
+    "identificar": 60,
+    "salir": 60
+  },
+  "decisiones_revision": {
+    "pendiente": 179,
+    "conservar": 1
+  },
+  "particiones": {
+    "sin_asignar": 180
+  },
+  "avisos_extractor": {
+    "muestras": 13,
+    "ventanas_casi_silenciosas": 12,
+    "contexto_fuera_del_wav_completado_con_ceros": 1,
+    "superposicion_con_avisos_preprocesamiento": 3
+  },
+  "avisos_preprocesamiento": {
+    "muestras": 28,
+    "sin_avisos": 152
+  },
+  "repetibilidad": {
+    "muestras_verificadas": 180,
+    "diferencia_maxima": 0.0
+  },
+  "integridad": {
+    "hashes_manifiesto_coinciden": true,
+    "csv_y_npz_coinciden_exactamente": true,
+    "ids_alineados": true,
+    "nombres_alineados": true,
+    "columnas_constantes": 0
+  },
+  "muestras_con_avisos_extractor": [
+    {
+      "muestra_id": "H001_S001_reconocer_0003",
+      "hablante": "H001",
+      "comando": "reconocer",
+      "avisos_extractor": [
+        "ventanas_casi_silenciosas:4"
+      ],
+      "avisos_preprocesamiento": [],
+      "decision_revision": "pendiente"
+    },
+    {
+      "muestra_id": "H001_S001_identificar_0001",
+      "hablante": "H001",
+      "comando": "identificar",
+      "avisos_extractor": [
+        "ventanas_casi_silenciosas:9"
+      ],
+      "avisos_preprocesamiento": [
+        "picos_cercanos_al_limite_original"
+      ],
+      "decision_revision": "pendiente"
+    },
+    {
+      "muestra_id": "H001_S001_identificar_0010",
+      "hablante": "H001",
+      "comando": "identificar",
+      "avisos_extractor": [
+        "ventanas_casi_silenciosas:1"
+      ],
+      "avisos_preprocesamiento": [],
+      "decision_revision": "pendiente"
+    },
+    {
+      "muestra_id": "H001_S001_salir_0007",
+      "hablante": "H001",
+      "comando": "salir",
+      "avisos_extractor": [
+        "ventanas_casi_silenciosas:8"
+      ],
+      "avisos_preprocesamiento": [],
+      "decision_revision": "pendiente"
+    },
+    {
+      "muestra_id": "H002_S001_identificar_0009",
+      "hablante": "H002",
+      "comando": "identificar",
+      "avisos_extractor": [
+        "contexto_fuera_del_wav_completado_con_ceros"
+      ],
+      "avisos_preprocesamiento": [
+        "actividad_cerca_del_final"
+      ],
+      "decision_revision": "conservar"
+    },
+    {
+      "muestra_id": "H003_S001_salir_0009",
+      "hablante": "H003",
+      "comando": "salir",
+      "avisos_extractor": [
+        "ventanas_casi_silenciosas:2"
+      ],
+      "avisos_preprocesamiento": [],
+      "decision_revision": "pendiente"
+    },
+    {
+      "muestra_id": "H004_S001_identificar_0003",
+      "hablante": "H004",
+      "comando": "identificar",
+      "avisos_extractor": [
+        "ventanas_casi_silenciosas:1"
+      ],
+      "avisos_preprocesamiento": [],
+      "decision_revision": "pendiente"
+    },
+    {
+      "muestra_id": "H005_S001_salir_0002",
+      "hablante": "H005",
+      "comando": "salir",
+      "avisos_extractor": [
+        "ventanas_casi_silenciosas:6"
+      ],
+      "avisos_preprocesamiento": [
+        "actividad_cerca_del_final"
+      ],
+      "decision_revision": "pendiente"
+    },
+    {
+      "muestra_id": "H006_S001_reconocer_0005",
+      "hablante": "H006",
+      "comando": "reconocer",
+      "avisos_extractor": [
+        "ventanas_casi_silenciosas:21"
+      ],
+      "avisos_preprocesamiento": [],
+      "decision_revision": "pendiente"
+    },
+    {
+      "muestra_id": "H006_S001_reconocer_0007",
+      "hablante": "H006",
+      "comando": "reconocer",
+      "avisos_extractor": [
+        "ventanas_casi_silenciosas:7"
+      ],
+      "avisos_preprocesamiento": [],
+      "decision_revision": "pendiente"
+    },
+    {
+      "muestra_id": "H006_S001_reconocer_0010",
+      "hablante": "H006",
+      "comando": "reconocer",
+      "avisos_extractor": [
+        "ventanas_casi_silenciosas:1"
+      ],
+      "avisos_preprocesamiento": [],
+      "decision_revision": "pendiente"
+    },
+    {
+      "muestra_id": "H006_S001_identificar_0009",
+      "hablante": "H006",
+      "comando": "identificar",
+      "avisos_extractor": [
+        "ventanas_casi_silenciosas:22"
+      ],
+      "avisos_preprocesamiento": [],
+      "decision_revision": "pendiente"
+    },
+    {
+      "muestra_id": "H006_S001_salir_0005",
+      "hablante": "H006",
+      "comando": "salir",
+      "avisos_extractor": [
+        "ventanas_casi_silenciosas:24"
+      ],
+      "avisos_preprocesamiento": [],
+      "decision_revision": "pendiente"
+    }
+  ],
+  "interpretacion": "Los avisos no impidieron vectorizar. Requieren revisión; no equivalen a aprobación para modelado.",
+  "decision_posterior": "H006 se destinará a entrenamiento mediante el mapa persistente del hito 3; esta ejecución no modificó particiones."
+}
