@@ -1,0 +1,29 @@
+{
+  "configuracion": {
+    "version": "audio_preprocesamiento_v1",
+    "frecuencia_hz": 16000,
+    "quitar_media": true,
+    "ventana_ms": 20,
+    "salto_ms": 10,
+    "percentil_ruido": 20,
+    "umbral_fuerte_min_dbfs": -42,
+    "umbral_debil_min_dbfs": -48,
+    "contraste_fuerte_db": 12,
+    "contraste_debil_db": 6,
+    "hueco_max_ms": 120,
+    "isla_min_ms": 60,
+    "actividad_min_ms": 120,
+    "margen_ms": 150,
+    "borde_aviso_ms": 50,
+    "pico_objetivo": 0.8,
+    "ganancia_max_db": 6,
+    "pico_saturacion": 0.999,
+    "fraccion_saturada_aviso": 0.001
+  },
+  "algoritmo": "1.0.0",
+  "sha256_codigo": "88292178f4e49eee02cae00652ed5ff0a3493787c4b0b9c0f1de2091ae8efadc",
+  "numpy": "2.3.5",
+  "scipy": "1.17.0",
+  "sha256_ejecutor": "234f2a59b9d3449fced6c7931dadb8756dbc1ea4f76aaf3a72e1f9b8fc570a6b",
+  "firma_procedimiento": "3f3a7a105289b16f394a538823ad71b973a35e8c578c5990ebeb41b2b9a7a19b"
+}

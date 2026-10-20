@@ -1,0 +1,37 @@
+{
+  "muestra_id": "H003_S001_reconocer_0001",
+  "sha256_original": "8aadbc76002801c98f3d8b67c2037de32cbc277d69569e90fb4f8388e1b1ecb3",
+  "firma_procedimiento": "3f3a7a105289b16f394a538823ad71b973a35e8c578c5990ebeb41b2b9a7a19b",
+  "fecha_utc": "2026-10-17T19:45:55+00:00",
+  "python": "3.14.0",
+  "plataforma": "Windows",
+  "ruta_procesada": "datos/audio/procesados/audio_preprocesamiento_v1_3f3a7a105289/muestras/H003_S001_reconocer_0001/audio.wav",
+  "sha256_procesado": "ee8fbbf100ad981fbd0cee4a7850fe27ed19aa6e2d578eed9af5a860001e3494",
+  "detalle": {
+    "estado": "procesado_con_avisos",
+    "avisos": [
+      "picos_cercanos_al_limite_original"
+    ],
+    "frecuencia_original_hz": 48000,
+    "canales_original": 1,
+    "duracion_original_s": 3.0,
+    "frecuencia_procesada_hz": 16000,
+    "canales_procesados": 1,
+    "pico_original": 1.0,
+    "fraccion_saturada_original": 0.0005138888888888889,
+    "rms_original_dbfs": -17.79440453720181,
+    "piso_energia_dbfs": -89.67829809989897,
+    "umbral_fuerte_dbfs": -42.0,
+    "umbral_debil_dbfs": -48.0,
+    "actividad_estimada_s": 0.86,
+    "inicio_actividad_s": 1.08,
+    "fin_actividad_s": 1.94,
+    "recorte_inicio_s": 0.93,
+    "recorte_fin_s": 2.09,
+    "duracion_procesada_s": 1.16,
+    "cuadros_procesados": 18560,
+    "ganancia_db": -2.0908753044460644,
+    "pico_procesado": 0.8,
+    "rms_procesado_dbfs": -15.752112508969141
+  }
+}

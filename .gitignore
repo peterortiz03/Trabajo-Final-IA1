@@ -27,5 +27,4 @@ Thumbs.db
 /resultados/ampliacion_train_v1/
 /resultados/rotaciones_train_v1/
 /resultados/normalizacion_etapa1/
-# Audio humano: originales, catálogos y registros permanecen locales.
-/datos/audio/
+

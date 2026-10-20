@@ -1,0 +1,18 @@
+{
+  "version": "audio_preprocesamiento_v1_3f3a7a105289",
+  "firma_procedimiento": "3f3a7a105289b16f394a538823ad71b973a35e8c578c5990ebeb41b2b9a7a19b",
+  "total": 150,
+  "nuevos": 0,
+  "omitidos": 150,
+  "estados": {
+    "procesado": 127,
+    "procesado_con_avisos": 23
+  },
+  "avisos": {
+    "picos_cercanos_al_limite_original": 15,
+    "amplificacion_limitada": 6,
+    "actividad_cerca_del_final": 2
+  },
+  "revisiones_sin_muestra": [],
+  "actualizado_utc": "2026-10-20T03:23:38+00:00"
+}
