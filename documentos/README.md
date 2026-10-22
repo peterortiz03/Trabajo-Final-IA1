@@ -2,6 +2,8 @@
 
 ## Documentación vigente
 
+- [Verificación estadística](verificacion_estadistica.md): notebook 05, partición de desarrollo de audio y diagnóstico previo a PCA.
+
 - [README del repositorio](../README.md): objetivo completo, estado de etapas e instrucciones de consulta.
 - [Bitácora de huellas](../notebooks/01_bitacora_dataset_normalizacion.ipynb): explicación del avance y resultados ejecutados.
 - [Normalización final](normalizacion_final.md): contrato de la función reutilizable y salidas.

@@ -28,3 +28,6 @@ Thumbs.db
 /resultados/rotaciones_train_v1/
 /resultados/normalizacion_etapa1/
 
+
+# Diagnósticos locales reproducibles: tablas, gráficos y catálogos de uso
+/resultados/verificacion_estadistica/

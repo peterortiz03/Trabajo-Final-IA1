@@ -9,7 +9,7 @@ La consigna establece K-means con k = 3 para las identidades autorizadas, una di
 
 ## Estado del proyecto
 
-| Etapa | Estado al 20/10/2026 | Resultado o siguiente tarea |
+| Etapa | Estado al 22/10/2026 | Resultado o siguiente tarea |
 |---|---|---|
 | Dataset de huellas sintéticas | Implementado | 220 capturas con procedencia, semillas y parámetros |
 | Normalización geométrica de huellas | Implementada | Región de interés, centrado, orientación y máscaras |
@@ -18,7 +18,8 @@ La consigna establece K-means con k = 3 para las identidades autorizadas, una di
 | Preprocesamiento de audio | Implementado | 180 grabaciones procesadas: 152 sin avisos y 28 con avisos |
 | Revisión auditiva registrada | Completada para el corte actual | 179 muestras con decisión conservar y una con decisión excluir |
 | Extracción de características de audio | Implementada y verificada | 179 vectores de 160 componentes |
-| Particiones de audio | Pendiente | Asignación persistente por hablante antes del ajuste de modelos |
+| Particiones de audio | Mapa de desarrollo definido | Seis hablantes actuales a entrenamiento; nuevas voces requieren asignación explícita |
+| Verificación estadística | Implementada | Notebook 05: medias y DE por clase, separación y revisión por hablante; prueba reservada |
 | Escalado y gráficos PCA | Pendiente | Ajuste sobre entrenamiento y exploración de los vectores |
 | Agrupamiento de huellas con K-means | Pendiente | k = 3, correspondencia entre grupos e identidades y umbral de rechazo |
 | Clasificación de comandos con K-NN | Pendiente | Entrenamiento y evaluación con separación por hablante |
@@ -207,3 +208,29 @@ Todavía no se ajustaron escaladores, PCA, K-means ni K-NN. La extracción corre
 - [Guía de vectorización y clasificación](documentos/guia_vectorizacion_y_clasificacion.md).
 - [Notebook de huellas](notebooks/03_caracteristicas_huellas.ipynb).
 - [Notebook de audio](notebooks/04_caracteristicas_audio.ipynb).
+
+## Verificación estadística antes de PCA — 22/10/2026
+
+El [notebook 05](notebooks/05_verificacion_estadistica.ipynb) compara **cada columna**
+entre muestras de una clase: identidad en huellas y palabra en audio. Exporta cantidades,
+medias, desviaciones muestrales (`ddof=1`), controles e indicador de separación,
+y muestra valores individuales y media ± DE para columnas con separación baja,
+mediana y alta. No ajusta modelos ni selecciona automáticamente características.
+
+El análisis principal de huellas utiliza únicamente entrenamiento autorizado.
+El [mapa de audio](config/particiones_audio_v1.json) destina H001–H006 a entrenamiento
+para aprovechar el corte actual en desarrollo. La partición se aplica como una capa
+explícita en el notebook: el catálogo histórico conserva `sin_asignar`. Las futuras
+etapas deben reutilizar el mapa, sin interpretar el catálogo histórico como asignación
+vigente. Un hablante nuevo o una contradicción bloquean el uso hasta una decisión explícita.
+
+La clase de voz es el comando, no la persona. El objetivo sigue siendo reconocer las
+palabras de voces nuevas. Se reservarán personas nuevas para validación y prueba final;
+actualmente no hay prueba independiente de audio. La demostración con una voz ya usada
+no mide generalización a hablantes desconocidos. H001/H002 participaron en desarrollo.
+
+Las matrices pueden regenerarse con los extractores existentes. Abrir el notebook 05
+con el kernel `.venv` y ejecutar sus celdas. Las salidas se guardan en una carpeta nueva
+bajo `resultados/verificacion_estadistica/`. Las cantidades no están fijadas en código.
+Ver [método, instrucciones y resultados del asistente](documentos/verificacion_estadistica.md).
+Los párrafos anteriores conservan sus cortes históricos.

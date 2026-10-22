@@ -1,0 +1,15 @@
+{
+  "version": "particiones_audio_v1",
+  "fecha_decision": "2026-10-22",
+  "criterio": "Usar los seis hablantes actuales para entrenamiento y diagnóstico; reservar nuevas voces para validación y prueba futuras. No se afirma evaluación independiente actual.",
+  "aplicacion": "Capa explícita en el notebook 05; conserva el catálogo original. Futuras etapas deben reutilizar este mapa y verificar conflictos.",
+  "nuevos_hablantes": "requieren_asignacion_explicita",
+  "hablantes": {
+    "H001": {"particion": "entrenamiento", "motivo": "Participó en desarrollo del preprocesamiento."},
+    "H002": {"particion": "entrenamiento", "motivo": "Participó en desarrollo del preprocesamiento."},
+    "H003": {"particion": "entrenamiento", "motivo": "Corte actual destinado a desarrollo; no se afirma independencia."},
+    "H004": {"particion": "entrenamiento", "motivo": "Corte actual destinado a desarrollo; no se afirma independencia."},
+    "H005": {"particion": "entrenamiento", "motivo": "Corte actual destinado a desarrollo; no se afirma independencia."},
+    "H006": {"particion": "entrenamiento", "motivo": "Uso en entrenamiento ya previsto en el notebook 04."}
+  }
+}
