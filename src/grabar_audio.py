@@ -63,6 +63,24 @@ def seleccionar_carpeta(base, prefijo, titulo):
         print('Elegí uno de los identificadores mostrados o N.')
 
 
+def configurar_dispositivo(sd, indice, cfg):
+    """Negocia el mismo formato para consola e interfaz, sin abrir la captura."""
+    d = sd.query_devices(indice)
+    preferida = cfg['frecuencia_captura_hz']
+    frecuencias = ([preferida] if preferida is not None else
+                   list(dict.fromkeys([int(d['default_samplerate'])] + cfg['frecuencias_alternativas_hz'])))
+    for canales in (1, 2):
+        if canales > d['max_input_channels']:
+            continue
+        for fs in frecuencias:
+            try:
+                sd.check_input_settings(device=indice, channels=canales, samplerate=fs, dtype='int16')
+            except sd.PortAudioError:
+                continue
+            return indice, fs, canales, d['name'], sd.query_hostapis(d['hostapi'])['name']
+    raise RuntimeError('Ese dispositivo no admite la configuración. Probá otra entrada o frecuencia.')
+
+
 def elegir_dispositivo(sd, cfg):
     dispositivos = sd.query_devices()
     apis = sd.query_hostapis()
@@ -81,21 +99,38 @@ def elegir_dispositivo(sd, cfg):
             print('Ingresá un número de la lista.')
             continue
         indice = int(valor)
-        d = dispositivos[indice]
-        preferida = cfg['frecuencia_captura_hz']
-        frecuencias = ([preferida] if preferida is not None else
-                       list(dict.fromkeys([int(d['default_samplerate'])] + cfg['frecuencias_alternativas_hz'])))
-        for canales in (1, 2):
-            if canales > d['max_input_channels']:
-                continue
-            for fs in frecuencias:
-                try:
-                    sd.check_input_settings(device=indice, channels=canales, samplerate=fs, dtype='int16')
-                except sd.PortAudioError:
-                    continue
-                print(f'Captura: {fs} Hz, {canales} canal(es), PCM16. Original sin transformar.')
-                return indice, fs, canales, d['name'], apis[d['hostapi']]['name']
-        print('Ese dispositivo no admite la configuración. Probá otra entrada o frecuencia.')
+        try:
+            formato = configurar_dispositivo(sd, indice, cfg)
+        except RuntimeError as e:
+            print(e)
+            continue
+        print(f'Captura: {formato[1]} Hz, {formato[2]} canal(es), PCM16. Original sin transformar.')
+        return formato
+
+
+def capturar_pcm(sd, dispositivo, fs, canales, cfg, al_iniciar=None, cancelar=None):
+    """Captura fija en memoria. La GUI puede avisar y cancelar sin tocar Tk.
+
+    La cuenta regresiva pertenece al llamador. Sin cancelar se conserva la espera
+    original de consola. El stream siempre se libera, incluso ante un error.
+    """
+    if cancelar is not None and cancelar.is_set():
+        raise InterruptedError('Captura cancelada.')
+    try:
+        audio = sd.rec(round(cfg['duracion_s'] * fs), samplerate=fs,
+                       channels=canales, dtype='int16', device=dispositivo, blocking=False)
+        if al_iniciar is not None:
+            al_iniciar()
+        if cancelar is not None:
+            while sd.get_stream().active:
+                if cancelar.wait(.03):
+                    raise InterruptedError('Captura cancelada.')
+        estado = sd.wait()
+        if estado:
+            raise RuntimeError(f'La captura tuvo pérdidas de audio ({estado}). Repetí la toma.')
+        return audio
+    finally:
+        sd.stop()
 
 
 def capturar(sd, dispositivo, fs, canales, cfg, comando):
@@ -104,12 +139,8 @@ def capturar(sd, dispositivo, fs, canales, cfg, comando):
     for restante in range(cfg['cuenta_regresiva_s'], 0, -1):
         print(restante, flush=True)
         time.sleep(1)
-    audio = sd.rec(round(cfg['duracion_s'] * fs), samplerate=fs,
-                   channels=canales, dtype='int16', device=dispositivo, blocking=False)
-    print(f">>> GRABANDO ({cfg['duracion_s']:g} segundos) <<<", flush=True)
-    estado = sd.wait()
-    if estado:
-        raise RuntimeError(f'La captura tuvo pérdidas de audio ({estado}). Repetí la toma.')
+    audio = capturar_pcm(sd, dispositivo, fs, canales, cfg,
+        al_iniciar=lambda: print(f">>> GRABANDO ({cfg['duracion_s']:g} segundos) <<<", flush=True))
     print('CAPTURA TERMINADA')
     return audio
 

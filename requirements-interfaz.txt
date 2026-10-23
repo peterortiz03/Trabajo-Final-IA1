@@ -1,0 +1,4 @@
+# Tkinter viene con el instalador oficial de Python para Windows.
+# No se incorpora otra biblioteca de interfaz ni se cambian versiones.
+-r requirements-clusterizacion.txt
+-r requirements-audio.txt

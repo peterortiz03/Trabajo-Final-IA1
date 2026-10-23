@@ -6,6 +6,7 @@ Lee parámetros NPZ sin pickle. FAR/FRR son tasas empíricas de calibración.
 import argparse
 from collections import Counter
 import csv
+import hashlib
 from datetime import datetime, timezone
 import importlib.metadata
 from pathlib import Path
@@ -206,7 +207,15 @@ def cargar_sistema(carpeta):
     p = Path(carpeta)
     resumen = leer_json(p / "resumen.json")
     for nombre in ("umbral.json", "modelo_congelado.npz", "correspondencia_congelada.json"):
-        if sha(p / nombre) != resumen["archivos_sha256"][nombre]:
+        esperado = resumen["archivos_sha256"][nombre]
+        coincide = sha(p / nombre) == esperado
+        if not coincide and nombre.endswith('.json'):
+            # Git puede convertir CRLF/LF. Solo admitimos ese cambio de bytes;
+            # no se reserializa JSON ni se toleran valores o espacios distintos.
+            contenido = (p / nombre).read_bytes().replace(b'\r\n', b'\n')
+            coincide = esperado in {hashlib.sha256(t).hexdigest() for t in
+                                    (contenido, contenido.replace(b'\n', b'\r\n'))}
+        if not coincide:
             raise ValueError(f"Calibración modificada: {nombre}")
     m = leer_parametros(p / "modelo_congelado.npz", p / "correspondencia_congelada.json")
     return m, float(leer_json(p / "umbral.json")["umbral"])
