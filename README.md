@@ -9,7 +9,7 @@ La consigna establece K-means con k = 3 para las identidades autorizadas, una di
 
 ## Estado del proyecto
 
-| Etapa | Estado al 22/10/2026 | Resultado o siguiente tarea |
+| Etapa | Estado al 23/10/2026 | Resultado o siguiente tarea |
 |---|---|---|
 | Dataset de huellas sintéticas | Implementado | 220 capturas con procedencia, semillas y parámetros |
 | Normalización geométrica de huellas | Implementada | Región de interés, centrado, orientación y máscaras |
@@ -23,7 +23,8 @@ La consigna establece K-means con k = 3 para las identidades autorizadas, una di
 | Escalado y gráficos PCA | Implementados | Referencia con todas las características; PCA de huellas y audio ajustado solo con entrenamiento |
 | Agrupamiento de huellas con K-means | Versión de desarrollo verificada | k = 3 sobre 72 columnas seleccionadas de 144; identificación 120/120 en entrenamiento y 30/30 en validación autorizada |
 | Aceptación y rechazo de huellas | Calibrados con validación | Umbral euclidiano global 5.292172576: 29/30 autorizadas aceptadas y 0/20 intrusos aceptados; prueba reservada |
-| Clasificación de comandos con K-NN | Pendiente | Entrenamiento y evaluación con separación por hablante |
+| Clasificación de comandos con K-NN | Desarrollo implementado y documentado | 160 columnas; k=1; CV LOSO de selección 169/179; validación con nuevas personas pendiente |
+| Prueba práctica de voz | Ejecutada en Windows | Voz conocida: 15/15 comandos; ensayo sintético adicional documentado por separado |
 | Integración del agente | Pendiente | Conexión entre comandos de voz y reconocimiento de huellas |
 | Evaluación final e informe | Pendiente | Resultados con datos reservados, conclusiones y defensa |
 
@@ -38,6 +39,7 @@ Se verificaron integridad, dimensiones, repetibilidad y funcionamiento del códi
 3. [Bitácora de audio](notebooks/02_dataset_audio_preprocesamiento.ipynb): captura, método, resultados y límites de la primera versión.
 4. [Uso de IA generativa](documentos/uso_ia_generativa.md): tareas asistidas, ejemplos de solicitudes y verificación.
 5. [Bitácora de PCA, K-means y rechazo](notebooks/06_clusterizacion_pca.ipynb): referencia de 144 columnas, mejora a 72 y calibración; consulta de solo lectura con evidencias incluidas.
+6. [Bitácora de PCA y K-NN de audio](notebooks/07_pca_knn_audio.ipynb): método, evaluación por hablante, pruebas con micrófono y cierre de desarrollo; lectura sin entrenar ni grabar.
 
 ## Dataset de huellas
 
@@ -62,7 +64,7 @@ Instalar dependencias en ese entorno:
 .\.venv\Scripts\python.exe -m pip install ipykernel
 ```
 
-`ipykernel` es una dependencia adicional para ejecutar notebooks. En VS Code, seleccionar el intérprete de `.venv`, abrir la bitácora y ejecutar sus celdas. El notebook solo lee archivos. Las salidas guardadas de la bitácora de huellas permiten consultarla en GitHub sin instalar Python. La bitácora de audio se publica sin salidas y contiene un resumen textual fechado.
+`ipykernel` es una dependencia adicional para ejecutar notebooks. En VS Code, seleccionar el intérprete de `.venv`, abrir la bitácora y ejecutar sus celdas. El notebook solo lee archivos. Las salidas guardadas de la bitácora de huellas permiten consultarla en GitHub sin instalar Python. El notebook 02 conserva su corte histórico. La bitácora 07 incluye salidas verificadas y figuras de las ejecuciones Windows de voz.
 
 **El repositorio incluye las imágenes de huellas, los audios originales y procesados, y sus catálogos. Las matrices de características generadas permanecen locales y pueden reproducirse ejecutando los extractores.**
 
@@ -70,7 +72,7 @@ Instalar dependencias en ese entorno:
 
 | Ruta | Contenido |
 |---|---|
-| `src/` | Generación, captura, preprocesamiento y extracción de características |
+| `src/` | Generación, captura, preprocesamiento, extracción y modelos de desarrollo |
 | `config/` | Configuraciones de las etapas |
 | `datos/bases/` | Bases de Anguli y archivos de procedencia |
 | `datos/originales/` | Las 220 capturas anteriores a la normalización |
@@ -282,3 +284,47 @@ no muestras ni grupos; la cantidad se deriva de las distancias observadas.
 
 Se conserva esta versión de desarrollo para continuar con voz, integración y planificación
 de la evaluación final. No se sigue ajustando para forzar cero errores en validación.
+
+
+## Cierre de desarrollo: PCA y K-NN de audio — 23/10/2026
+
+La [bitácora 07](notebooks/07_pca_knn_audio.ipynb) conserva las 160 características
+originales. StandardScaler y PCA se ajustan con entrenamiento; PCA solo visualiza,
+sin intervenir en K-NN. PC1+PC2 explican 27,75 % de varianza; 52 componentes alcanzan
+95 %. No se reduce a la mitad el vector ni se utiliza K-means para audio.
+
+Se compararon k=1,3,5,7 con voto uniforme o por distancia, dejando fuera un
+hablante por vez (LOSO) y ajustando el escalador dentro de cada pliegue. La mejor
+opción fue k=1 uniforme: 169/179 aciertos (94,41 %), frente a 165/179 con k=5
+uniforme. Son métricas de selección interna, no prueba final independiente.
+Se conservan los diez errores y las revisiones vigentes, sin eliminar audios válidos.
+
+El modelo fijo se probó en Windows con 15 comandos nuevos de H001: 15/15 aciertos.
+Una palabra desconocida se interpretó como salir; un intento de silencio no generó
+vector. Es una demostración con voz conocida, no generalización a personas nuevas.
+El ensayo adicional de cuatro voces sintéticas reproducidas desde un celular
+se documenta como exploración: 14/17 intentos; 14/16 audios efectivamente reproducidos
+tras aclarar un inicio fuera de tiempo. No sustituye validación humana.
+
+La documentación y evidencia seleccionada están en
+[cierre_etapa07.md](documentos/cierre_etapa07.md) y
+[resultados_etapa07/README.md](documentos/resultados_etapa07/README.md).
+El notebook puede consultarse sin WAV ni matrices locales y no vuelve a entrenar.
+Para reproducir el ajuste o realizar otra prueba con las herramientas ya instaladas:
+
+```powershell
+.\.venv\Scripts\python.exe src/knn_audio.py
+.\.venv\Scripts\python.exe src/probar_knn_audio.py --hablante H001
+.\.venv\Scripts\python.exe src/diagnosticar_knn_audio.py
+```
+
+Cada programa tiene un propósito distinto: ajustar el modelo, consultar el modelo
+guardado o diagnosticar los errores LOSO. Las consultas no se agregan al entrenamiento.
+Para reutilizar una corrida determinada, pasar `--modelo "resultados/knn_audio/FECHA"`
+a los dos últimos. No ejecutar nuevamente el ajuste para cada consulta.
+
+Se cierra la implementación y documentación de desarrollo de esta etapa. Quedan
+pendientes validación con personas nuevas, rechazo de palabras desconocidas si se
+requiere en la aplicación, integración del agente y evaluación final reservada.
+Las fechas de carpetas están en UTC; la primera corrida K-NN 20261023T033845Z
+corresponde al 23/10/2026 00:38 en Argentina.

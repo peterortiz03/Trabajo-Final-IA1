@@ -1,0 +1,36 @@
+{
+  "prediccion": null,
+  "estado": "sin_vector_revisar",
+  "detalle": {
+    "estado": "sin_salida_revisar",
+    "avisos": [
+      "sin_actividad_suficiente_segun_energia"
+    ],
+    "frecuencia_original_hz": 48000,
+    "canales_original": 1,
+    "duracion_original_s": 3.0,
+    "frecuencia_procesada_hz": 16000,
+    "canales_procesados": 1,
+    "pico_original": 0.00018310546875,
+    "fraccion_saturada_original": 0.0,
+    "rms_original_dbfs": -97.84428645394748,
+    "piso_energia_dbfs": -105.23767403108614,
+    "umbral_fuerte_dbfs": -42.0,
+    "umbral_debil_dbfs": -48.0
+  },
+  "extraccion": null,
+  "avisos": [
+    "sin_actividad_suficiente_segun_energia"
+  ],
+  "muestra": "toma_017",
+  "esperada": "silencio",
+  "captura": {
+    "dispositivo": "Micrófono (Realtek(R) Audio)",
+    "api": "Windows WASAPI",
+    "frecuencia_hz": 48000,
+    "canales": 1
+  },
+  "sha256_original": "cca7bbef9a739df302cfcd2cbc142790d462bf343ad816f9eca152bc363da299",
+  "modelo_sha256": "6c945c9a8126fe3ce81ccf495071ed488ea73ee33ad02533abb71507342306dc",
+  "acierto": null
+}

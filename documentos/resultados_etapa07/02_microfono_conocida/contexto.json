@@ -1,0 +1,64 @@
+{
+  "hablante": "H001",
+  "voces_entrenamiento": [
+    "H001",
+    "H002",
+    "H003",
+    "H004",
+    "H005",
+    "H006"
+  ],
+  "modelo_sha256": "6c945c9a8126fe3ce81ccf495071ed488ea73ee33ad02533abb71507342306dc",
+  "fecha_utc": "20261023T115814_373387Z",
+  "python": "3.14.0",
+  "configuracion_pp": {
+    "version": "audio_preprocesamiento_v1",
+    "frecuencia_hz": 16000,
+    "quitar_media": true,
+    "ventana_ms": 20,
+    "salto_ms": 10,
+    "percentil_ruido": 20,
+    "umbral_fuerte_min_dbfs": -42,
+    "umbral_debil_min_dbfs": -48,
+    "contraste_fuerte_db": 12,
+    "contraste_debil_db": 6,
+    "hueco_max_ms": 120,
+    "isla_min_ms": 60,
+    "actividad_min_ms": 120,
+    "margen_ms": 150,
+    "borde_aviso_ms": 50,
+    "pico_objetivo": 0.8,
+    "ganancia_max_db": 6,
+    "pico_saturacion": 0.999,
+    "fraccion_saturada_aviso": 0.001
+  },
+  "configuracion_extractor": {
+    "version": "audio_segmentos_v1",
+    "frecuencia_hz": 16000,
+    "segmentos": 10,
+    "ventana_ms": 25,
+    "salto_ms": 10,
+    "n_fft": 512,
+    "n_mel": 26,
+    "fmin_hz": 0,
+    "fmax_hz": 8000,
+    "indices_mfcc": [
+      1,
+      2,
+      4,
+      5
+    ],
+    "piso_potencia": 1e-12,
+    "rms_minimo": 1e-05
+  },
+  "vocabulario": [
+    "identificar",
+    "reconocer",
+    "salir"
+  ],
+  "rondas": 0,
+  "uso": "Diagnóstico; sin incorporar al dataset ni reentrenar ni evaluar prueba reservada.",
+  "ejecucion_modelo": "20261023T033845_362145Z",
+  "sesion_original_sha256": "217effebb2118867a00c505e6de13b0ed668b57b7a3aa487abe8701a7f821dee",
+  "nota": "Selección de metadatos de sesion.json; se omite únicamente la ruta personal absoluta del modelo."
+}

@@ -36,3 +36,8 @@ Thumbs.db
 /resultados/clusterizacion_pca/
 /resultados/mejora_huellas/
 /resultados/rechazo_huellas/
+
+# Corridas locales de audio; evidencia seleccionada en documentos/resultados_etapa07/
+/resultados/knn_audio/
+/resultados/prueba_audio/
+/resultados/diagnostico_knn_audio/

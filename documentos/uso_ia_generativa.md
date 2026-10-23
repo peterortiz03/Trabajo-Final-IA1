@@ -75,3 +75,35 @@ Estos controles no equivalen a una evaluación biométrica independiente.
 La bitácora final consulta evidencias de esas ejecuciones reales y no vuelve a ajustar
 modelos. Se conserva A02_M22 como falso rechazo. Prueba final, K-NN de voz e integración
 continúan pendientes. La IA no generó nuevas mediciones ni resultados finales no ejecutados.
+
+
+## Ampliación: PCA y K-NN de audio — 23/10/2026
+
+ChatGPT asistió en la implementación de K-NN conservando 160 características,
+estandarización por pliegue LOSO, PCA exploratorio y comparación acotada de ocho
+alternativas. También asistió con pruebas de micrófono, diagnóstico de errores,
+explicaciones teóricas y documentación de cierre. No se atribuye al modelo
+conversacional la captura ni la pronunciación de los audios del dataset.
+
+Ejemplos de solicitudes reales de esta etapa:
+
+> que hace el programa probar_knn_audio y que hace el diagnosticar_knn_audio?
+
+> A todas les deje el mimsom H007 porque no tenia ganas de cambiarlo.
+
+> completar bien la documentación para ya concluir con esta etapa
+
+El autor ejecutó el ajuste y pruebas prácticas en Windows/Python 3.14.0 y compartió
+las carpetas UTC 20261023T033845_362145Z, 20261023T115814_373387Z y
+20261023T121951_936996Z. Se revisaron resúmenes, predicciones, figuras y metadatos.
+El registro de la conversación anterior informó tres pruebas nuevas aprobadas
+en Windows y seis pruebas del software aprobadas por el asistente en Linux;
+no se presentan como pruebas nuevamente ejecutadas durante este cierre editorial.
+
+Para el cierre se recuperaron los tres paquetes originales, se verificó su
+coherencia y los hashes de la corrida de entrenamiento, y se ejecutaron las celdas
+de lectura del notebook sobre la evidencia seleccionada. No se ajustaron modelos,
+se grabaron voces ni se evaluó prueba final. La documentación distingue el ensayo
+con voz humana conocida del ensayo de voces sintéticas reproducidas por celular.
+La aclaración del autor sobre la primera toma sintética se conserva como anotación,
+sin alterar CSV ni resumen original. La evaluación con nuevas personas sigue pendiente.

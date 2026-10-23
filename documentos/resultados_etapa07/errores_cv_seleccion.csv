@@ -1,0 +1,11 @@
+﻿k,votos,muestra,hablante,real,prediccion
+1,uniform,H001_S001_salir_0002,H001,salir,identificar
+1,uniform,H001_S001_salir_0005,H001,salir,identificar
+1,uniform,H001_S001_salir_0007,H001,salir,identificar
+1,uniform,H002_S001_reconocer_0010,H002,reconocer,identificar
+1,uniform,H005_S001_reconocer_0008,H005,reconocer,identificar
+1,uniform,H005_S001_salir_0002,H005,salir,identificar
+1,uniform,H006_S001_reconocer_0005,H006,reconocer,salir
+1,uniform,H006_S001_reconocer_0007,H006,reconocer,salir
+1,uniform,H006_S001_reconocer_0010,H006,reconocer,salir
+1,uniform,H006_S001_salir_0009,H006,salir,identificar

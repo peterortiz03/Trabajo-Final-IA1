@@ -1,0 +1,148 @@
+{
+  "fecha_utc": "20261023T032609_581538Z",
+  "python": "3.12.14",
+  "plataforma": "Linux-6.18.55-x86_64-with-glibc2.39",
+  "dependencias": {
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "matplotlib": "3.10.8",
+    "scikit-learn": "1.8.0"
+  },
+  "config": {
+    "version": "knn_audio_160_v1",
+    "mapa_audio": "config/particiones_audio_v1.json",
+    "comandos": [
+      "identificar",
+      "reconocer",
+      "salir"
+    ],
+    "vecinos": [
+      1,
+      3,
+      5,
+      7
+    ],
+    "votos": [
+      "uniform",
+      "distance"
+    ],
+    "distancia": "euclidean",
+    "criterio": "Mayor recall macro medio por hablante en LOSO de entrenamiento; empate: voto uniforme y luego menor k",
+    "referencia": {
+      "k": 5,
+      "votos": "uniform"
+    },
+    "pca": {
+      "n_components": null,
+      "svd_solver": "full",
+      "whiten": false
+    },
+    "nota": "Todas las columnas originales; PCA solo para visualizar. LOSO es seleccion interna de desarrollo, no prueba independiente."
+  },
+  "extraccion": "datos/caracteristicas/audio/audio_segmentos_v1_1caab0e82325/ejecucion_20261022T150222_254091Z",
+  "manifiesto_extraccion_sha256": "e43a62f53e6d7099de3d17db2f7a449d18d1f53a8f9145269d0ba0156255fedc",
+  "cantidades": {
+    "entrenamiento": 179
+  },
+  "hablantes_entrenamiento": [
+    "H001",
+    "H002",
+    "H003",
+    "H004",
+    "H005",
+    "H006"
+  ],
+  "dimension": 160,
+  "columnas_eliminadas": [],
+  "constantes_train": [],
+  "parametros": {
+    "k": 1,
+    "votos": "uniform"
+  },
+  "cv_referencia": {
+    "n": 179,
+    "exactitud": 0.9217877094972067,
+    "recall_macro": 0.9216572504708097,
+    "f1_macro": 0.9229600550047685,
+    "por_comando": {
+      "identificar": {
+        "precision": 0.821917808219178,
+        "recall": 1.0,
+        "f1": 0.9022556390977443,
+        "n": 60
+      },
+      "reconocer": {
+        "precision": 1.0,
+        "recall": 0.8666666666666667,
+        "f1": 0.9285714285714286,
+        "n": 60
+      },
+      "salir": {
+        "precision": 0.9814814814814815,
+        "recall": 0.8983050847457628,
+        "f1": 0.9380530973451328,
+        "n": 59
+      }
+    }
+  },
+  "cv_seleccion": {
+    "n": 179,
+    "exactitud": 0.9441340782122905,
+    "recall_macro": 0.9439736346516007,
+    "f1_macro": 0.9441460372176116,
+    "por_comando": {
+      "identificar": {
+        "precision": 0.8955223880597015,
+        "recall": 1.0,
+        "f1": 0.9448818897637795,
+        "n": 60
+      },
+      "reconocer": {
+        "precision": 1.0,
+        "recall": 0.9166666666666666,
+        "f1": 0.9565217391304348,
+        "n": 60
+      },
+      "salir": {
+        "precision": 0.9473684210526315,
+        "recall": 0.9152542372881356,
+        "f1": 0.9310344827586207,
+        "n": 59
+      }
+    }
+  },
+  "validacion": null,
+  "pc1_pc2_porcentaje": 27.747446248867714,
+  "componentes_95": 52,
+  "prueba_evaluada": false,
+  "pca_utilizado_para_clasificar": false,
+  "advertencia": "LOSO se usó para elegir parámetros; métricas de desarrollo, no prueba independiente. Las voces actuales participaron del desarrollo previo.",
+  "archivos_sha256": {
+    "predicciones_cv_seleccion.csv": "9200785b3d746dcb10c5ef02f0719a25c4d76e8f4c5ac9f946961c529dd74fed",
+    "knn_audio_v1.json": "ed5a7a326e5f3127f1d2b582aa29458749fcf691f515db20e42d37e8cd85773f",
+    "varianza_acumulada.png": "5b164840db17e2c86e92bbc74f701aae7903a4a219bea99779df9c1295b6a059",
+    "matriz_cv_referencia.csv": "3379f8a4009296ffa86d0be66db3398cd5c2c5346529614b1009892f6c0b98a7",
+    "parametros_escalado.csv": "a5368bd18ff3a5a10d95b2013f68dd68e60f3f6b3a60f274ddb1d69b21d7b620",
+    "metricas_comando_cv_referencia.csv": "08b28a2de96611cabe611fe898065d5014f9603b0adaa184bfb23a502a7e629d",
+    "metricas_hablante_cv_seleccion.csv": "4f1c4fb705ec66c397488939a312f27951f2276ad699aead59245f9c490e1435",
+    "knn_audio.py": "5a141d8ea2dc0f11d1f38678e0e9ee7f50ec3f49e59d6d3c1fa54701c62bf1f2",
+    "matriz_cv_seleccion.csv": "6993b438240722ced6e9bdd7a4f38ce545ed6ba0a76fbbf1bb23a5dd13031b5b",
+    "varianza_explicada.csv": "7f01d75b205a1fbd20cd0af275504f3e7cc959875f7248d420ef46fe378dd8c5",
+    "cantidades.csv": "29b9243c98db61061b5d6e9cb32d8739e4c9d1eebf19e53733b10017344fbcf9",
+    "contratos_pliegues.json": "010b8c32375dc287caf0b3988b7bf15df25352a072853b41890431ff3a68a742",
+    "config_extractor.json": "724560d5ec715cac4c361a79d3d0b37040a338bfbb46a6729d23a1676b0017e5",
+    "metricas_comando_cv_seleccion.csv": "b402a823ac772cd7fb24d6c6f0b4445ac936d2a2ecca470fb4e2243f67dfa5a5",
+    "catalogo_uso.csv": "86d0ac68f81b4e3e7936beea6c9185d6eba45840c99f799f742e26199f60a67b",
+    "parametros_elegidos.json": "c43992ced58e38ee67b3f23926338c4f4d39b44016867d202c1c9f9f6a29fba9",
+    "errores_cv_seleccion.csv": "bb32049fa388cddcfd0751b17da488a67f2fae5c248a103e6f66f3dacf22a12d",
+    "pca_palabras_hablantes.png": "90daf687e77d090fe7fd2e7ee2036cb954795f8763389c0366a95461c71b01a3",
+    "detalle_cv_hablante.csv": "79b76d96543533db109c9752af7b96b5d89b936c144c21369ca59a8d315dcaae",
+    "comparacion_k.png": "1ac52e9694b248c6e15b9de8094d15f336f29201c0c3013e4c7f2f5d1f749b0d",
+    "particiones_audio_v1.json": "ea519d37e6e0cd8d9a8d20ec62afa0f718086b103d8b8360157c55283a0aff41",
+    "modelo.npz": "6649b2106fb5f2e35c1c8389f02c9c4c89913c341e9a7c2575051da627d3dc23",
+    "metricas_hablante_cv_referencia.csv": "1ae1fa9f904cb7820a052afd514727a097f0b6e8137483f9021d3b52d21c2184",
+    "comparacion_cv.csv": "4b47ea78f04277693b618834f50b78f1d74dc294adaa184e465ac77289891ab5",
+    "verificacion_estadistica.py": "1cf0738c029b09c586cda77af2b788d68dc86bc6342a38c42f76aa45a941c062",
+    "matriz_cv_seleccion.png": "96e0ba1f14265ad3fd131f79973b582b352c7ecc45102141f18ed74f46bcb012"
+  }
+}

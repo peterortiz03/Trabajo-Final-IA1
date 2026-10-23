@@ -1,0 +1,180 @@
+{
+  "prediccion": "salir",
+  "estado": "prediccion_con_avisos",
+  "detalle": {
+    "estado": "procesado_con_avisos",
+    "avisos": [
+      "amplificacion_limitada"
+    ],
+    "frecuencia_original_hz": 48000,
+    "canales_original": 1,
+    "duracion_original_s": 3.0,
+    "frecuencia_procesada_hz": 16000,
+    "canales_procesados": 1,
+    "pico_original": 0.21990966796875,
+    "fraccion_saturada_original": 0.0,
+    "rms_original_dbfs": -38.070773436487364,
+    "piso_energia_dbfs": -110.88021553991621,
+    "umbral_fuerte_dbfs": -42.0,
+    "umbral_debil_dbfs": -48.0,
+    "actividad_estimada_s": 0.29,
+    "inicio_actividad_s": 1.29,
+    "fin_actividad_s": 1.58,
+    "recorte_inicio_s": 1.14,
+    "recorte_fin_s": 1.73,
+    "duracion_procesada_s": 0.59,
+    "cuadros_procesados": 9440,
+    "ganancia_db": 6.0,
+    "pico_procesado": 0.43909306699961553,
+    "rms_procesado_dbfs": -25.003079333339905
+  },
+  "extraccion": {
+    "version": "audio_segmentos_v1",
+    "dimension": 160,
+    "frecuencia_hz": 16000,
+    "limites_actividad_muestras": [
+      2400,
+      7040
+    ],
+    "duracion_actividad_s": 0.29,
+    "ventana_muestras": 400,
+    "salto_muestras": 160,
+    "ventanas": 29,
+    "ventanas_por_segmento": [
+      3,
+      3,
+      3,
+      3,
+      2,
+      3,
+      3,
+      3,
+      3,
+      3
+    ],
+    "centros_muestras": [
+      2480,
+      2640,
+      2800,
+      2960,
+      3120,
+      3280,
+      3440,
+      3600,
+      3760,
+      3920,
+      4080,
+      4240,
+      4400,
+      4560,
+      4720,
+      4880,
+      5040,
+      5200,
+      5360,
+      5520,
+      5680,
+      5840,
+      6000,
+      6160,
+      6320,
+      6480,
+      6640,
+      6800,
+      6960
+    ],
+    "segmentos_por_ventana": [
+      1,
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      3,
+      4,
+      4,
+      4,
+      5,
+      5,
+      6,
+      6,
+      6,
+      7,
+      7,
+      7,
+      8,
+      8,
+      8,
+      9,
+      9,
+      9,
+      10,
+      10,
+      10
+    ],
+    "bordes_segmentos_s": [
+      0.15,
+      0.179,
+      0.208,
+      0.237,
+      0.266,
+      0.295,
+      0.324,
+      0.353,
+      0.382,
+      0.411,
+      0.44
+    ],
+    "rms_actividad": 0.08012258086317156,
+    "avisos": []
+  },
+  "avisos": [
+    "amplificacion_limitada"
+  ],
+  "vecinos_diagnostico": [
+    {
+      "muestra": "H001_S001_salir_0001",
+      "hablante": "H001",
+      "palabra": "salir",
+      "distancia": 9.341463857819075
+    },
+    {
+      "muestra": "H001_S001_salir_0004",
+      "hablante": "H001",
+      "palabra": "salir",
+      "distancia": 11.205351474937004
+    },
+    {
+      "muestra": "H001_S001_salir_0008",
+      "hablante": "H001",
+      "palabra": "salir",
+      "distancia": 11.556273738419051
+    },
+    {
+      "muestra": "H001_S001_salir_0003",
+      "hablante": "H001",
+      "palabra": "salir",
+      "distancia": 12.288490759317202
+    },
+    {
+      "muestra": "H002_S001_salir_0001",
+      "hablante": "H002",
+      "palabra": "salir",
+      "distancia": 12.394946649029814
+    }
+  ],
+  "nota_vecinos": "Hasta cinco para inspección; el voto usa el k guardado, no necesariamente cinco. Distancia no es confianza.",
+  "muestra": "toma_014",
+  "esperada": "salir",
+  "captura": {
+    "dispositivo": "Micrófono (Realtek(R) Audio)",
+    "api": "Windows WASAPI",
+    "frecuencia_hz": 48000,
+    "canales": 1
+  },
+  "sha256_original": "34f13b67b7018b976709aa2970cac5a0a5da9777349879a48effc04d591c6363",
+  "modelo_sha256": "6c945c9a8126fe3ce81ccf495071ed488ea73ee33ad02533abb71507342306dc",
+  "acierto": true
+}

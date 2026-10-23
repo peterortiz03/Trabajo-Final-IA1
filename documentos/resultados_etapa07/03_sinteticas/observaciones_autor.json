@@ -1,0 +1,22 @@
+{
+  "fecha_documentacion": "2026-10-23",
+  "fuente": "Aclaraciones del autor en la conversación; no inferidas del audio.",
+  "voces": "Cuatro voces sintéticas reproducidas desde un celular, todas registradas como H007.",
+  "asignacion_tomas_por_voz": "No registrada; no se calcula rendimiento por voz o acento.",
+  "toma_001": "La reproducción no se inició a tiempo. Incidente de ejecución, no confusión de K-NN.",
+  "recuento_original": {
+    "intentos": 17,
+    "aciertos": 14,
+    "proporcion": 0.8235294117647058
+  },
+  "analisis_complementario": {
+    "audios_efectivamente_reproducidos": 16,
+    "aciertos": 14,
+    "proporcion": 0.875,
+    "errores_clasificacion": [
+      "toma_014",
+      "toma_015"
+    ]
+  },
+  "advertencia": "Se conserva intacto el CSV y resumen original. El análisis complementario no elimina la toma ni modifica el clasificador."
+}

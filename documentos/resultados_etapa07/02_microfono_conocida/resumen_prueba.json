@@ -1,0 +1,8 @@
+{
+  "intentos": 17,
+  "comandos_intentados": 15,
+  "aciertos": 15,
+  "sin_vector": 1,
+  "exactitud_por_intento": 1.0,
+  "nota": "Prueba práctica de desarrollo; sin_vector cuenta como fallo en comandos conocidos. No es prueba final independiente."
+}

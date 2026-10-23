@@ -2,6 +2,10 @@
 
 ## Documentación vigente
 
+- [Bitácora 07](../notebooks/07_pca_knn_audio.ipynb): PCA de audio, K-NN, evaluación interna y pruebas prácticas.
+- [Cierre de la etapa 07](cierre_etapa07.md): decisiones, resultados, reproducción y pendientes.
+- [Evidencias de voz](resultados_etapa07/README.md): corrida Windows y sesiones prácticas; sin redistribuir grabaciones nuevas.
+
 - [Bitácora 06](../notebooks/06_clusterizacion_pca.ipynb): PCA, referencia de 144 columnas, selección de 72, K-means y calibración del rechazo; lectura sin entrenar modelos.
 - [Cierre de la etapa 06](cierre_etapa06.md): decisiones, distancia euclidiana, 51 umbrales candidatos, instrucciones y alcance de las evidencias.
 - [Evidencias de Windows](resultados_etapa06/README.md): tres ejecuciones del autor, tablas, gráficos y parámetros congelados para consulta/reutilización.
