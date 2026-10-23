@@ -1,0 +1,22 @@
+{
+  "version": "clusterizacion_pca_v1",
+  "semilla": 20261022,
+  "kmeans": {
+    "n_clusters": 3,
+    "init": "k-means++",
+    "n_init": 20,
+    "max_iter": 300,
+    "tol": 0.0001,
+    "algorithm": "lloyd"
+  },
+  "pca": {
+    "n_components": null,
+    "svd_solver": "full",
+    "whiten": false
+  },
+  "mostrar_pc3": [
+    "huellas"
+  ],
+  "mapa_audio": "config/particiones_audio_v1.json",
+  "nota": "Todas las columnas. Ajuste solo con entrenamiento; huellas solo autorizadas. Sin umbral de rechazo."
+}
