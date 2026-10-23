@@ -1,0 +1,12 @@
+{
+  "version": "knn_audio_160_v1",
+  "mapa_audio": "config/particiones_audio_v1.json",
+  "comandos": ["identificar", "reconocer", "salir"],
+  "vecinos": [1, 3, 5, 7],
+  "votos": ["uniform", "distance"],
+  "distancia": "euclidean",
+  "criterio": "Mayor recall macro medio por hablante en LOSO de entrenamiento; empate: voto uniforme y luego menor k",
+  "referencia": {"k": 5, "votos": "uniform"},
+  "pca": {"n_components": null, "svd_solver": "full", "whiten": false},
+  "nota": "Todas las columnas originales; PCA solo para visualizar. LOSO es seleccion interna de desarrollo, no prueba independiente."
+}
