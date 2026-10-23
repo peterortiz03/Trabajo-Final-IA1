@@ -41,3 +41,7 @@ Thumbs.db
 /resultados/knn_audio/
 /resultados/prueba_audio/
 /resultados/diagnostico_knn_audio/
+
+# Consultas opcionales del preparador; nunca se incorporan al entrenamiento.
+/consultas/
+/resultados/diagnostico_preparacion/

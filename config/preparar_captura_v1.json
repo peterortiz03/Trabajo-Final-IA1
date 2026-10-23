@@ -1,0 +1,7 @@
+{
+  "version": "preparar_captura_v1",
+  "config_generador": "config/conjunto_v1.json",
+  "perfil_inicial": "local_leve",
+  "semilla_inicial": 2026102301,
+  "semillas_verificacion": [2026102301, 2026102302, 2026102303]
+}
