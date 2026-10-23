@@ -20,15 +20,16 @@ La consigna establece K-means con k = 3 para las identidades autorizadas, una di
 | Extracción de características de audio | Implementada y verificada | 179 vectores de 160 componentes |
 | Particiones de audio | Mapa de desarrollo definido | Seis hablantes actuales a entrenamiento; nuevas voces requieren asignación explícita |
 | Verificación estadística | Implementada | Notebook 05: medias y DE por clase, separación y revisión por hablante; prueba reservada |
-| Escalado y gráficos PCA | Pendiente | Ajuste sobre entrenamiento y exploración de los vectores |
-| Agrupamiento de huellas con K-means | Pendiente | k = 3, correspondencia entre grupos e identidades y umbral de rechazo |
+| Escalado y gráficos PCA | Implementados | Referencia con todas las características; PCA de huellas y audio ajustado solo con entrenamiento |
+| Agrupamiento de huellas con K-means | Versión de desarrollo verificada | k = 3 sobre 72 columnas seleccionadas de 144; identificación 120/120 en entrenamiento y 30/30 en validación autorizada |
+| Aceptación y rechazo de huellas | Calibrados con validación | Umbral euclidiano global 5.292172576: 29/30 autorizadas aceptadas y 0/20 intrusos aceptados; prueba reservada |
 | Clasificación de comandos con K-NN | Pendiente | Entrenamiento y evaluación con separación por hablante |
 | Integración del agente | Pendiente | Conexión entre comandos de voz y reconocimiento de huellas |
 | Evaluación final e informe | Pendiente | Resultados con datos reservados, conclusiones y defensa |
 
 El extractor de huellas añade acondicionamiento de contraste y cuantización a la normalización geométrica anterior. La versión actual utiliza textura en escala de grises, sin binarización ni esqueletizado.
 
-Las comprobaciones realizadas verifican integridad, dimensiones, repetibilidad y funcionamiento del código. Todavía no se ha medido la precisión de reconocimiento ni la capacidad de generalización de los modelos.
+Se verificaron integridad, dimensiones, repetibilidad y funcionamiento del código, y se midieron identificación y rechazo en desarrollo. La calibración usa la misma validación con la que se informa su resultado; todavía no se realizó una evaluación final independiente. Las variantes de unas pocas bases sintéticas no prueban generalización a huellas reales.
 
 ## Lectura recomendada
 
@@ -36,6 +37,7 @@ Las comprobaciones realizadas verifican integridad, dimensiones, repetibilidad y
 2. [Índice de documentación](documentos/README.md): estado vigente y antecedentes de cada etapa.
 3. [Bitácora de audio](notebooks/02_dataset_audio_preprocesamiento.ipynb): captura, método, resultados y límites de la primera versión.
 4. [Uso de IA generativa](documentos/uso_ia_generativa.md): tareas asistidas, ejemplos de solicitudes y verificación.
+5. [Bitácora de PCA, K-means y rechazo](notebooks/06_clusterizacion_pca.ipynb): referencia de 144 columnas, mejora a 72 y calibración; consulta de solo lectura con evidencias incluidas.
 
 ## Dataset de huellas
 
@@ -79,6 +81,8 @@ Instalar dependencias en ese entorno:
 | `documentos/` | Instrucciones, decisiones y registros de apoyo |
 
 `resultados/` y `datos/procesados/conjunto_v1/` corresponden a salidas intermedias locales que no se incluyen en esta publicación. Se pueden reconstruir con los programas correspondientes; no se requieren para la verificación final del notebook.
+
+Los modelos y ejecuciones completas de PCA, mejora y rechazo permanecen locales bajo `resultados/`. Una selección de tablas, resúmenes y gráficos de las ejecuciones reales de Windows se publica en [`documentos/resultados_etapa06/`](documentos/resultados_etapa06/) para consultar el notebook 06 sin regenerar modelos. Se conservan también los parámetros NPZ/JSON congelados de rechazo en ese registro; son los usados en la calibración, no resultados de prueba.
 
 El catálogo vigente es [`catalogo_normalizado.csv`](datos/procesados/normalizacion_final_v1/catalogo_normalizado.csv). Para las siguientes etapas se utilizan las columnas **normalizada** y **alternativa_180**. La columna heredada `procesado` conserva rutas del procesamiento preliminar; esas imágenes no se distribuyen en esta versión.
 
@@ -199,7 +203,7 @@ La repetición de la extracción produjo una diferencia máxima de 0. Los avisos
 
 En una copia del repositorio, el asistente ejecutó las 51 pruebas automáticas existentes y regeneró ambos conjuntos de vectores. Todas las pruebas aprobaron y todos los valores generados fueron finitos. Esta comprobación no incluyó una nueva escucha de las grabaciones; las decisiones auditivas corresponden a la revisión registrada por el autor.
 
-Todavía no se ajustaron escaladores, PCA, K-means ni K-NN. La extracción correcta no demuestra por sí sola separación de clases o precisión de reconocimiento.
+Al cerrar ese hito de extracción del 20/10 todavía no se habían ajustado escaladores, PCA, K-means ni K-NN. Los avances posteriores de PCA, K-means y rechazo se registran en el cierre de desarrollo de esta misma página. La extracción correcta, por sí sola, no demuestra separación de clases ni precisión de reconocimiento.
 
 ### Documentación de esta etapa
 
@@ -234,3 +238,47 @@ con el kernel `.venv` y ejecutar sus celdas. Las salidas se guardan en una carpe
 bajo `resultados/verificacion_estadistica/`. Las cantidades no están fijadas en código.
 Ver [método, instrucciones y resultados del asistente](documentos/verificacion_estadistica.md).
 Los párrafos anteriores conservan sus cortes históricos.
+
+## Cierre de desarrollo: PCA, K-means y rechazo — 22/10/2026
+
+La [bitácora 06](notebooks/06_clusterizacion_pca.ipynb) documenta el recorrido completo,
+incluyendo la referencia inicial que mezclaba A01/A03. Los identificadores de ejecución
+están en UTC: algunos comienzan con 20261023 aunque el trabajo se realizó el 22/10 en Argentina.
+
+| Medida de desarrollo | Referencia 144 columnas | Selección 72 columnas |
+|---|---:|---:|
+| Identificación sin rechazo en entrenamiento | 79/120 | 120/120 |
+| Identificación sin rechazo en validación autorizada | 21/30 | 30/30 |
+| ARI de validación autorizada | 0.5436 | 1.0000 |
+
+La selección conserva la mejor mitad según separación entre identidades respecto de
+variación interna. Se eligió entre tres variantes mediante CV interna de entrenamiento,
+recalculando selección y escalado dentro de cada pliegue. Esa selección es supervisada;
+K-means recibe solo los vectores y mantiene k=3. No se cambiaron las bases ni se descartaron capturas.
+
+El modelo congelado usa distancia euclidiana en 72 columnas estandarizadas. El umbral
+global, calibrado con 30 autorizados y 20 intrusos de validación, es **5.292172576**:
+acepta 29/30 autorizados y 0/20 intrusos. A02_M22 es el falso rechazo conservado.
+FAR observada=0 %, FRR=3.33 %; son resultados de la misma calibración y no de prueba final.
+Los intrusos analizados provienen de dos bases; no se afirma seguridad biométrica real.
+
+La bitácora lee [evidencias de las ejecuciones Windows](documentos/resultados_etapa06/README.md)
+y puede ejecutarse sin regenerar matrices o modelos. Para reproducir los análisis completos:
+
+```powershell
+.\.venv\Scripts\python.exe -m pip install --only-binary=:all: -r requirements-clusterizacion.txt
+.\.venv\Scripts\python.exe src/extraer_dataset_huellas.py
+.\.venv\Scripts\python.exe src/extraer_dataset_audio.py
+.\.venv\Scripts\python.exe src/clusterizacion_pca.py
+.\.venv\Scripts\python.exe src/mejorar_clusterizacion_huellas.py
+.\.venv\Scripts\python.exe src/calibrar_rechazo_huellas.py
+```
+
+Esta secuencia crea cortes nuevos: no hace falta repetirla para leer la bitácora o
+reutilizar el modelo publicado. No utilizar `--incluir-prueba` durante desarrollo.
+La inferencia de un vector nuevo con el modelo y umbral congelados está documentada en
+[cierre_etapa06.md](documentos/cierre_etapa06.md). Las 51 candidatas son valores de umbral,
+no muestras ni grupos; la cantidad se deriva de las distancias observadas.
+
+Se conserva esta versión de desarrollo para continuar con voz, integración y planificación
+de la evaluación final. No se sigue ajustando para forzar cero errores en validación.

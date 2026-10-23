@@ -1,0 +1,13 @@
+﻿modelo,semilla,particion,ari,coincidencia
+referencia,20261022,entrenamiento,0.44768417180411013,0.6583333333333333
+referencia,20261022,validacion,0.5436337625178826,0.7
+referencia,20261023,entrenamiento,0.44768417180411013,0.6583333333333333
+referencia,20261023,validacion,0.5436337625178826,0.7
+referencia,20261024,entrenamiento,0.44768417180411013,0.6583333333333333
+referencia,20261024,validacion,0.5436337625178826,0.7
+seleccionada,20261022,entrenamiento,1.0,1.0
+seleccionada,20261022,validacion,1.0,1.0
+seleccionada,20261023,entrenamiento,1.0,1.0
+seleccionada,20261023,validacion,1.0,1.0
+seleccionada,20261024,entrenamiento,1.0,1.0
+seleccionada,20261024,validacion,1.0,1.0

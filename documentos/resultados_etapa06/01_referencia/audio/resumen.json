@@ -1,0 +1,13 @@
+{
+  "muestras_por_particion": {
+    "entrenamiento": 179
+  },
+  "caracteristicas_entrada": 160,
+  "constantes_train": [],
+  "pc1_pc2_porcentaje": 27.747446248867707,
+  "pc3_porcentaje": 9.581742758150682,
+  "componentes_90": 37,
+  "componentes_95": 52,
+  "validacion_disponible": false,
+  "prueba_analizada": false
+}

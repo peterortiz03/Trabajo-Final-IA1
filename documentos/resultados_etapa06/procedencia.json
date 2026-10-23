@@ -1,0 +1,279 @@
+{
+  "origen": "Ejecuciones del autor en Windows, compartidas en la conversación",
+  "zona_fechas_ejecuciones": "UTC; no se reinterpretan los identificadores como fechas locales",
+  "archivos": [
+    {
+      "ruta": "01_referencia/resumen.json",
+      "sha256": "98921d99ecf486e88024572fa6f3ac9e8724f7c98e0dacfe2f84ea195e869392",
+      "zip_fuente": "20261022T160116_346229Z.zip",
+      "ruta_en_zip": "20261022T160116_346229Z/resumen.json",
+      "zip_sha256": "7db99968f8a7a196d483a4abc5cc2ae9c75a73195256c179162aa45bf1e4b9bd"
+    },
+    {
+      "ruta": "01_referencia/clusterizacion_pca_v1.json",
+      "sha256": "e2b3788e3c7ba90f6335bf936ef55b7f1da15b2873bbf6342f79ed4a11a7eeb1",
+      "zip_fuente": "20261022T160116_346229Z.zip",
+      "ruta_en_zip": "20261022T160116_346229Z/clusterizacion_pca_v1.json",
+      "zip_sha256": "7db99968f8a7a196d483a4abc5cc2ae9c75a73195256c179162aa45bf1e4b9bd"
+    },
+    {
+      "ruta": "01_referencia/particiones_audio_v1.json",
+      "sha256": "1071c2995d75dbb64bff67875716220ee5701a523b79f4d56778478c300e3815",
+      "zip_fuente": "20261022T160116_346229Z.zip",
+      "ruta_en_zip": "20261022T160116_346229Z/particiones_audio_v1.json",
+      "zip_sha256": "7db99968f8a7a196d483a4abc5cc2ae9c75a73195256c179162aa45bf1e4b9bd"
+    },
+    {
+      "ruta": "01_referencia/huellas/resumen.json",
+      "sha256": "f2560d7ce9400c9fa863702f09789c89e3b9915130d78b2ba3f3d0fd7e0a7ff2",
+      "zip_fuente": "20261022T160116_346229Z.zip",
+      "ruta_en_zip": "20261022T160116_346229Z/huellas/resumen.json",
+      "zip_sha256": "7db99968f8a7a196d483a4abc5cc2ae9c75a73195256c179162aa45bf1e4b9bd"
+    },
+    {
+      "ruta": "01_referencia/huellas/pca_clases.png",
+      "sha256": "35bffd4c160622d1d9caf5e198ffc39c6f257a6888a6866cd3b832f2be27947b",
+      "zip_fuente": "20261022T160116_346229Z.zip",
+      "ruta_en_zip": "20261022T160116_346229Z/huellas/pca_clases.png",
+      "zip_sha256": "7db99968f8a7a196d483a4abc5cc2ae9c75a73195256c179162aa45bf1e4b9bd"
+    },
+    {
+      "ruta": "01_referencia/huellas/pca_grupos.png",
+      "sha256": "4d4e6f6b0e39e84020018dd2361710ec619435f4f6ff30647faa18ed7ec9eb53",
+      "zip_fuente": "20261022T160116_346229Z.zip",
+      "ruta_en_zip": "20261022T160116_346229Z/huellas/pca_grupos.png",
+      "zip_sha256": "7db99968f8a7a196d483a4abc5cc2ae9c75a73195256c179162aa45bf1e4b9bd"
+    },
+    {
+      "ruta": "01_referencia/huellas/pca_pc3.png",
+      "sha256": "f7cb62489ea85ee7126e580bc6cf8e204d9a6f72ce36b534ab1e394895d5d0f5",
+      "zip_fuente": "20261022T160116_346229Z.zip",
+      "ruta_en_zip": "20261022T160116_346229Z/huellas/pca_pc3.png",
+      "zip_sha256": "7db99968f8a7a196d483a4abc5cc2ae9c75a73195256c179162aa45bf1e4b9bd"
+    },
+    {
+      "ruta": "01_referencia/huellas/varianza_acumulada.png",
+      "sha256": "70bd50bad13e2dbbcb7c88a33d50f6ad7a32be44dbf4f97ef2abbfb4e0400dc2",
+      "zip_fuente": "20261022T160116_346229Z.zip",
+      "ruta_en_zip": "20261022T160116_346229Z/huellas/varianza_acumulada.png",
+      "zip_sha256": "7db99968f8a7a196d483a4abc5cc2ae9c75a73195256c179162aa45bf1e4b9bd"
+    },
+    {
+      "ruta": "01_referencia/huellas/varianza_explicada.csv",
+      "sha256": "98a82baa79314e10467234c37045e4862e58415c9b255cf0b7b7ccecd5067409",
+      "zip_fuente": "20261022T160116_346229Z.zip",
+      "ruta_en_zip": "20261022T160116_346229Z/huellas/varianza_explicada.csv",
+      "zip_sha256": "7db99968f8a7a196d483a4abc5cc2ae9c75a73195256c179162aa45bf1e4b9bd"
+    },
+    {
+      "ruta": "01_referencia/huellas/identidad_grupo_entrenamiento.csv",
+      "sha256": "72dbcde2b2950c35d1bd54046bece99b075137d2a96c91d5e13906d8e1df58d1",
+      "zip_fuente": "20261022T160116_346229Z.zip",
+      "ruta_en_zip": "20261022T160116_346229Z/huellas/identidad_grupo_entrenamiento.csv",
+      "zip_sha256": "7db99968f8a7a196d483a4abc5cc2ae9c75a73195256c179162aa45bf1e4b9bd"
+    },
+    {
+      "ruta": "01_referencia/huellas/identidad_grupo_validacion.csv",
+      "sha256": "75ffcec6c660d23e5ede81019d02850f9097ba02e3b9a77081a00b1d182059d4",
+      "zip_fuente": "20261022T160116_346229Z.zip",
+      "ruta_en_zip": "20261022T160116_346229Z/huellas/identidad_grupo_validacion.csv",
+      "zip_sha256": "7db99968f8a7a196d483a4abc5cc2ae9c75a73195256c179162aa45bf1e4b9bd"
+    },
+    {
+      "ruta": "01_referencia/audio/resumen.json",
+      "sha256": "83e0c89874e630361a6e6c2dd5b7254afeace6b5a727fce57df3765c1ee6300f",
+      "zip_fuente": "20261022T160116_346229Z.zip",
+      "ruta_en_zip": "20261022T160116_346229Z/audio/resumen.json",
+      "zip_sha256": "7db99968f8a7a196d483a4abc5cc2ae9c75a73195256c179162aa45bf1e4b9bd"
+    },
+    {
+      "ruta": "01_referencia/audio/pca_clases.png",
+      "sha256": "cec41043886652a29bf5a6f9bed82fc4becabba380daea59843b8f4372737dc1",
+      "zip_fuente": "20261022T160116_346229Z.zip",
+      "ruta_en_zip": "20261022T160116_346229Z/audio/pca_clases.png",
+      "zip_sha256": "7db99968f8a7a196d483a4abc5cc2ae9c75a73195256c179162aa45bf1e4b9bd"
+    },
+    {
+      "ruta": "01_referencia/audio/pca_hablantes.png",
+      "sha256": "814d5856bcef8a44941ae2686b1150cb05d29feb7becaa143fdfeff2c914ea2a",
+      "zip_fuente": "20261022T160116_346229Z.zip",
+      "ruta_en_zip": "20261022T160116_346229Z/audio/pca_hablantes.png",
+      "zip_sha256": "7db99968f8a7a196d483a4abc5cc2ae9c75a73195256c179162aa45bf1e4b9bd"
+    },
+    {
+      "ruta": "01_referencia/audio/varianza_acumulada.png",
+      "sha256": "8b09152a16460d7c21fdcfe7c069841e6ec871a7d0d28a55df793f9c7c179db6",
+      "zip_fuente": "20261022T160116_346229Z.zip",
+      "ruta_en_zip": "20261022T160116_346229Z/audio/varianza_acumulada.png",
+      "zip_sha256": "7db99968f8a7a196d483a4abc5cc2ae9c75a73195256c179162aa45bf1e4b9bd"
+    },
+    {
+      "ruta": "01_referencia/audio/varianza_explicada.csv",
+      "sha256": "0730b5a30d832a82bdf5e9ea8d57d4c23f95ff9c1681c9a9e0d29b555854c3b9",
+      "zip_fuente": "20261022T160116_346229Z.zip",
+      "ruta_en_zip": "20261022T160116_346229Z/audio/varianza_explicada.csv",
+      "zip_sha256": "7db99968f8a7a196d483a4abc5cc2ae9c75a73195256c179162aa45bf1e4b9bd"
+    },
+    {
+      "ruta": "02_seleccion/resumen.json",
+      "sha256": "885b2fb0b18fb813996579615f8fb0f5db57d0d9c8df3cde42b810708584a522",
+      "zip_fuente": "20261023T014705_319737Z.zip",
+      "ruta_en_zip": "20261023T014705_319737Z/resumen.json",
+      "zip_sha256": "2667d2c5435e594c084688687d05455631f7bd448903c7866ae8f707c4de4eed"
+    },
+    {
+      "ruta": "02_seleccion/decision_solo_train.json",
+      "sha256": "67a8a7e80bb9b1bc86ae78780f4566c6551dd0f37857b5c21d84937b586709b1",
+      "zip_fuente": "20261023T014705_319737Z.zip",
+      "ruta_en_zip": "20261023T014705_319737Z/decision_solo_train.json",
+      "zip_sha256": "2667d2c5435e594c084688687d05455631f7bd448903c7866ae8f707c4de4eed"
+    },
+    {
+      "ruta": "02_seleccion/comparacion_cv_train.csv",
+      "sha256": "8c77f3dc28559151df26c1017d84bb1cb60fc6d0045fda006b5c5a10c81bec2c",
+      "zip_fuente": "20261023T014705_319737Z.zip",
+      "ruta_en_zip": "20261023T014705_319737Z/comparacion_cv_train.csv",
+      "zip_sha256": "2667d2c5435e594c084688687d05455631f7bd448903c7866ae8f707c4de4eed"
+    },
+    {
+      "ruta": "02_seleccion/estabilidad.csv",
+      "sha256": "0b9c326dadd7be6db5e649f2db9a5d4f55156d6831a900128e2ace3f73d7ff74",
+      "zip_fuente": "20261023T014705_319737Z.zip",
+      "ruta_en_zip": "20261023T014705_319737Z/estabilidad.csv",
+      "zip_sha256": "2667d2c5435e594c084688687d05455631f7bd448903c7866ae8f707c4de4eed"
+    },
+    {
+      "ruta": "02_seleccion/ranking_y_seleccion.csv",
+      "sha256": "92018af02b0ab525d9872985e173f612ff88df7f58b844358011d6cbf43822cd",
+      "zip_fuente": "20261023T014705_319737Z.zip",
+      "ruta_en_zip": "20261023T014705_319737Z/ranking_y_seleccion.csv",
+      "zip_sha256": "2667d2c5435e594c084688687d05455631f7bd448903c7866ae8f707c4de4eed"
+    },
+    {
+      "ruta": "02_seleccion/resultados_por_perfil.csv",
+      "sha256": "c9d52a3adc34b3c7181bae0357c6e675f0d66db72cd672c9e4c69735619128cb",
+      "zip_fuente": "20261023T014705_319737Z.zip",
+      "ruta_en_zip": "20261023T014705_319737Z/resultados_por_perfil.csv",
+      "zip_sha256": "2667d2c5435e594c084688687d05455631f7bd448903c7866ae8f707c4de4eed"
+    },
+    {
+      "ruta": "02_seleccion/comparacion_grupos.png",
+      "sha256": "1ed52c193d8fddf33e6a8c1d1e6ba8b1bb9b740376d07c05c3ae3ec06ecfa298",
+      "zip_fuente": "20261023T014705_319737Z.zip",
+      "ruta_en_zip": "20261023T014705_319737Z/comparacion_grupos.png",
+      "zip_sha256": "2667d2c5435e594c084688687d05455631f7bd448903c7866ae8f707c4de4eed"
+    },
+    {
+      "ruta": "02_seleccion/pca_seleccionada.png",
+      "sha256": "1ab91877e2517cdd4b74436df3564cf72061d65a883040cf536a97701fd07772",
+      "zip_fuente": "20261023T014705_319737Z.zip",
+      "ruta_en_zip": "20261023T014705_319737Z/pca_seleccionada.png",
+      "zip_sha256": "2667d2c5435e594c084688687d05455631f7bd448903c7866ae8f707c4de4eed"
+    },
+    {
+      "ruta": "02_seleccion/seleccionada/identidad_grupo_entrenamiento.csv",
+      "sha256": "3162637cfe0e05ce5ffca48426834eab95c825502b18f8eac8b454126c4635eb",
+      "zip_fuente": "20261023T014705_319737Z.zip",
+      "ruta_en_zip": "20261023T014705_319737Z/seleccionada/identidad_grupo_entrenamiento.csv",
+      "zip_sha256": "2667d2c5435e594c084688687d05455631f7bd448903c7866ae8f707c4de4eed"
+    },
+    {
+      "ruta": "02_seleccion/seleccionada/identidad_grupo_validacion.csv",
+      "sha256": "a372297502d0caffef83d569365e36821251ca1c5ef88f30838efdaee0b79b49",
+      "zip_fuente": "20261023T014705_319737Z.zip",
+      "ruta_en_zip": "20261023T014705_319737Z/seleccionada/identidad_grupo_validacion.csv",
+      "zip_sha256": "2667d2c5435e594c084688687d05455631f7bd448903c7866ae8f707c4de4eed"
+    },
+    {
+      "ruta": "02_seleccion/seleccionada/correspondencia.json",
+      "sha256": "af947d116c9c1ac9004af4826595c7897c62bd0c793341b18b1290aa2c3defc8",
+      "zip_fuente": "20261023T014705_319737Z.zip",
+      "ruta_en_zip": "20261023T014705_319737Z/seleccionada/correspondencia.json",
+      "zip_sha256": "2667d2c5435e594c084688687d05455631f7bd448903c7866ae8f707c4de4eed"
+    },
+    {
+      "ruta": "03_rechazo/resumen.json",
+      "sha256": "69d765335975ba89ba7182c5bf39a6d8965f86071a33234f87fd04fe89ce5a5c",
+      "zip_fuente": "20261023T021746_872267Z.zip",
+      "ruta_en_zip": "20261023T021746_872267Z/resumen.json",
+      "zip_sha256": "133f58789fea5f720d3aa9e47e5d097a7374b71d27dcea007a80e22030a6403b"
+    },
+    {
+      "ruta": "03_rechazo/umbral.json",
+      "sha256": "b20cb9997768defa42fbe934e28ce1ca21d2870ddecb503506efa0bb0369b8c0",
+      "zip_fuente": "20261023T021746_872267Z.zip",
+      "ruta_en_zip": "20261023T021746_872267Z/umbral.json",
+      "zip_sha256": "133f58789fea5f720d3aa9e47e5d097a7374b71d27dcea007a80e22030a6403b"
+    },
+    {
+      "ruta": "03_rechazo/decisiones_validacion.csv",
+      "sha256": "990a71b6e43e58acf9a92d2e977d56784a561d285dc1f59e32c4debedc308b98",
+      "zip_fuente": "20261023T021746_872267Z.zip",
+      "ruta_en_zip": "20261023T021746_872267Z/decisiones_validacion.csv",
+      "zip_sha256": "133f58789fea5f720d3aa9e47e5d097a7374b71d27dcea007a80e22030a6403b"
+    },
+    {
+      "ruta": "03_rechazo/errores_validacion.csv",
+      "sha256": "cb171260de003fe7478565d2d89de77f55ebb8555a521cd41c4677c1558246b6",
+      "zip_fuente": "20261023T021746_872267Z.zip",
+      "ruta_en_zip": "20261023T021746_872267Z/errores_validacion.csv",
+      "zip_sha256": "133f58789fea5f720d3aa9e47e5d097a7374b71d27dcea007a80e22030a6403b"
+    },
+    {
+      "ruta": "03_rechazo/tasas_por_umbral.csv",
+      "sha256": "4b962e664cd8903740edcadea01ceea3122aca60b80ed7638cfb90abd42b13bb",
+      "zip_fuente": "20261023T021746_872267Z.zip",
+      "ruta_en_zip": "20261023T021746_872267Z/tasas_por_umbral.csv",
+      "zip_sha256": "133f58789fea5f720d3aa9e47e5d097a7374b71d27dcea007a80e22030a6403b"
+    },
+    {
+      "ruta": "03_rechazo/matriz_acceso.csv",
+      "sha256": "e01c49bbadf2f77d8597e5d72f08c0945cc695592020183f60f4cc00482d532d",
+      "zip_fuente": "20261023T021746_872267Z.zip",
+      "ruta_en_zip": "20261023T021746_872267Z/matriz_acceso.csv",
+      "zip_sha256": "133f58789fea5f720d3aa9e47e5d097a7374b71d27dcea007a80e22030a6403b"
+    },
+    {
+      "ruta": "03_rechazo/resultados_por_identidad.csv",
+      "sha256": "a7928699899ff1ed0f0048e7c0f0710c4f6896b0b2389c879318174fabe0fde2",
+      "zip_fuente": "20261023T021746_872267Z.zip",
+      "ruta_en_zip": "20261023T021746_872267Z/resultados_por_identidad.csv",
+      "zip_sha256": "133f58789fea5f720d3aa9e47e5d097a7374b71d27dcea007a80e22030a6403b"
+    },
+    {
+      "ruta": "03_rechazo/distancias_validacion.png",
+      "sha256": "dc9c8de59b0301b7c602e10fcf1c8f91d2c4a3a5f6f3db49a6d59b867ddcc863",
+      "zip_fuente": "20261023T021746_872267Z.zip",
+      "ruta_en_zip": "20261023T021746_872267Z/distancias_validacion.png",
+      "zip_sha256": "133f58789fea5f720d3aa9e47e5d097a7374b71d27dcea007a80e22030a6403b"
+    },
+    {
+      "ruta": "03_rechazo/tasas_por_umbral.png",
+      "sha256": "41f6407eebfbbd79e9afc25bfa87f4366689e0f5f2c23e0153c2a78b5adc2998",
+      "zip_fuente": "20261023T021746_872267Z.zip",
+      "ruta_en_zip": "20261023T021746_872267Z/tasas_por_umbral.png",
+      "zip_sha256": "133f58789fea5f720d3aa9e47e5d097a7374b71d27dcea007a80e22030a6403b"
+    },
+    {
+      "ruta": "03_rechazo/modelo_congelado.npz",
+      "sha256": "9f66134967ab07c885df7ef75d12c84217bf146ce31ea8f92c9f24273696ed4b",
+      "zip_fuente": "20261023T021746_872267Z.zip",
+      "ruta_en_zip": "20261023T021746_872267Z/modelo_congelado.npz",
+      "zip_sha256": "133f58789fea5f720d3aa9e47e5d097a7374b71d27dcea007a80e22030a6403b"
+    },
+    {
+      "ruta": "03_rechazo/correspondencia_congelada.json",
+      "sha256": "af947d116c9c1ac9004af4826595c7897c62bd0c793341b18b1290aa2c3defc8",
+      "zip_fuente": "20261023T021746_872267Z.zip",
+      "ruta_en_zip": "20261023T021746_872267Z/correspondencia_congelada.json",
+      "zip_sha256": "133f58789fea5f720d3aa9e47e5d097a7374b71d27dcea007a80e22030a6403b"
+    },
+    {
+      "ruta": "03_rechazo/rechazo_huellas_v1.json",
+      "sha256": "992aaeff2e56f97213408a0bf9131e3c4bd5d2b8a086b4b498b9e1d42511f8c7",
+      "zip_fuente": "20261023T021746_872267Z.zip",
+      "ruta_en_zip": "20261023T021746_872267Z/rechazo_huellas_v1.json",
+      "zip_sha256": "133f58789fea5f720d3aa9e47e5d097a7374b71d27dcea007a80e22030a6403b"
+    }
+  ]
+}

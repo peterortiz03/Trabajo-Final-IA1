@@ -1,0 +1,228 @@
+{
+  "fecha_utc": "20261023T014705_319737Z",
+  "python": "3.14.0",
+  "plataforma": "Windows-11-10.0.26200-SP0",
+  "dependencias": {
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "Pillow": "12.3.0",
+    "matplotlib": "3.10.8",
+    "scikit-learn": "1.8.0"
+  },
+  "extraccion": "datos/caracteristicas/huellas/glcm_opuestas_v1_89a0f3928fb3/ejecucion_20261023T014643_611595Z",
+  "manifiesto_extraccion_sha256": "92190c57b91b9d49bd132836bae3b22534fc57f03e0f58c8a93fa906bb497716",
+  "config": {
+    "version": "seleccion_huellas_v1",
+    "semilla": 20261022,
+    "fracciones_conservar": [
+      1.0,
+      0.5,
+      0.25
+    ],
+    "divisiones_cv": 5,
+    "criterio": "Mayor ARI medio en CV de entrenamiento; empate a 1e-12: conservar mas columnas",
+    "semillas_estabilidad": [
+      20261022,
+      20261023,
+      20261024
+    ],
+    "kmeans": {
+      "n_clusters": 3,
+      "init": "k-means++",
+      "n_init": 20,
+      "max_iter": 300,
+      "tol": 0.0001,
+      "algorithm": "lloyd"
+    },
+    "nota": "La seleccion utiliza identidades SOLO de entrenamiento. K-means no recibe etiquetas. No usa intrusos ni prueba."
+  },
+  "columnas_originales": 144,
+  "columnas_elegidas": 72,
+  "seleccion_supervisada": true,
+  "prueba_analizada": false,
+  "intrusos_analizados": false,
+  "nota_cv": "CV interna entre variantes de tres bases conocidas; no prueba independencia biométrica.",
+  "cv": [
+    {
+      "columnas": 144,
+      "ari_medio": 0.41605646805492497,
+      "ari_minimo": 0.37295528898582336,
+      "coincidencia_media": 0.6
+    },
+    {
+      "columnas": 72,
+      "ari_medio": 1.0,
+      "ari_minimo": 1.0,
+      "coincidencia_media": 1.0
+    },
+    {
+      "columnas": 36,
+      "ari_medio": 1.0,
+      "ari_minimo": 1.0,
+      "coincidencia_media": 1.0
+    }
+  ],
+  "modelos": {
+    "referencia": {
+      "entrenamiento": {
+        "n": 120,
+        "ari": 0.44768417180411013,
+        "coincidencia": 0.6583333333333333,
+        "acierto_por_identidad": {
+          "A01": 0.325,
+          "A02": 0.925,
+          "A03": 0.725
+        },
+        "tabla_identidad_grupo": [
+          {
+            "identidad": "A01",
+            "G0": 27,
+            "G1": 0,
+            "G2": 13
+          },
+          {
+            "identidad": "A02",
+            "G0": 0,
+            "G1": 37,
+            "G2": 3
+          },
+          {
+            "identidad": "A03",
+            "G0": 29,
+            "G1": 0,
+            "G2": 11
+          }
+        ]
+      },
+      "validacion": {
+        "n": 30,
+        "ari": 0.5436337625178826,
+        "coincidencia": 0.7,
+        "acierto_por_identidad": {
+          "A01": 0.1,
+          "A02": 1.0,
+          "A03": 1.0
+        },
+        "tabla_identidad_grupo": [
+          {
+            "identidad": "A01",
+            "G0": 9,
+            "G1": 0,
+            "G2": 1
+          },
+          {
+            "identidad": "A02",
+            "G0": 0,
+            "G1": 10,
+            "G2": 0
+          },
+          {
+            "identidad": "A03",
+            "G0": 10,
+            "G1": 0,
+            "G2": 0
+          }
+        ]
+      }
+    },
+    "seleccionada": {
+      "entrenamiento": {
+        "n": 120,
+        "ari": 1.0,
+        "coincidencia": 1.0,
+        "acierto_por_identidad": {
+          "A01": 1.0,
+          "A02": 1.0,
+          "A03": 1.0
+        },
+        "tabla_identidad_grupo": [
+          {
+            "identidad": "A01",
+            "G0": 40,
+            "G1": 0,
+            "G2": 0
+          },
+          {
+            "identidad": "A02",
+            "G0": 0,
+            "G1": 40,
+            "G2": 0
+          },
+          {
+            "identidad": "A03",
+            "G0": 0,
+            "G1": 0,
+            "G2": 40
+          }
+        ]
+      },
+      "validacion": {
+        "n": 30,
+        "ari": 1.0,
+        "coincidencia": 1.0,
+        "acierto_por_identidad": {
+          "A01": 1.0,
+          "A02": 1.0,
+          "A03": 1.0
+        },
+        "tabla_identidad_grupo": [
+          {
+            "identidad": "A01",
+            "G0": 10,
+            "G1": 0,
+            "G2": 0
+          },
+          {
+            "identidad": "A02",
+            "G0": 0,
+            "G1": 10,
+            "G2": 0
+          },
+          {
+            "identidad": "A03",
+            "G0": 0,
+            "G1": 0,
+            "G2": 10
+          }
+        ]
+      }
+    }
+  },
+  "mejora_confirmada_en_validacion_desarrollo": true,
+  "familias_seleccionadas": {
+    "contraste": 21,
+    "correlacion": 32,
+    "homogeneidad": 19
+  },
+  "archivos_sha256": {
+    "catalogo_uso.csv": "d160281d4cf9abe8c08dc1070850581f045e0f90e4a0b5c5c178367901589fc0",
+    "clusterizacion_pca.py": "d482c182bd630ec29c633fbcba161fc805e10f57d2821cbed61f4b1e916f14cb",
+    "comparacion_cv_train.csv": "8c77f3dc28559151df26c1017d84bb1cb60fc6d0045fda006b5c5a10c81bec2c",
+    "comparacion_grupos.png": "1ed52c193d8fddf33e6a8c1d1e6ba8b1bb9b740376d07c05c3ae3ec06ecfa298",
+    "config_extractor_efectiva.json": "8f2b75b3c5e9504b508ffd371f873f8238eb488f0e8ed21cde282873e489710e",
+    "decision_solo_train.json": "67a8a7e80bb9b1bc86ae78780f4566c6551dd0f37857b5c21d84937b586709b1",
+    "detalle_cv_train.csv": "e1fda15bfbbbedf8d09b7460ea26d2643f42b6562b08db7a7ddf7fdb2db30811",
+    "estabilidad.csv": "0b9c326dadd7be6db5e649f2db9a5d4f55156d6831a900128e2ace3f73d7ff74",
+    "manifiesto_extraccion.json": "92190c57b91b9d49bd132836bae3b22534fc57f03e0f58c8a93fa906bb497716",
+    "mejorar_clusterizacion_huellas.py": "4f85c1f3228ffbc2afc98708b0a749d124fbf9e275b9d701e650c0ef459a659d",
+    "mejora_huellas_v1.json": "edd4a5ddfde9524e0a5f9b8a0262605ad8b49d1c4367115353f8ba0e2592a984",
+    "pca_seleccionada.png": "1ab91877e2517cdd4b74436df3564cf72061d65a883040cf536a97701fd07772",
+    "pliegues_train.csv": "346b7adb0ca01ff43b7442376a79426d5b33efe33b2cb7256aeda40e8036e48b",
+    "predicciones.csv": "27e64c8a3340c22a5648c12f2b7c9598eafae70762bbbfb7be08b3271e7a37c6",
+    "ranking_y_seleccion.csv": "92018af02b0ab525d9872985e173f612ff88df7f58b844358011d6cbf43822cd",
+    "resultados_por_perfil.csv": "c9d52a3adc34b3c7181bae0357c6e675f0d66db72cd672c9e4c69735619128cb",
+    "verificacion_estadistica.py": "1cf0738c029b09c586cda77af2b788d68dc86bc6342a38c42f76aa45a941c062",
+    "referencia/correspondencia.json": "b3b4d938ae4ea813a463b8e9d854bdd054593d8f30db7df6eb1c0639232b4e5d",
+    "referencia/escalado.csv": "9f0cce9c3531a385eca67151732c3d3b2eb13afae535128665ad6d135b8e45c4",
+    "referencia/identidad_grupo_entrenamiento.csv": "72dbcde2b2950c35d1bd54046bece99b075137d2a96c91d5e13906d8e1df58d1",
+    "referencia/identidad_grupo_validacion.csv": "75ffcec6c660d23e5ede81019d02850f9097ba02e3b9a77081a00b1d182059d4",
+    "referencia/modelo.pkl": "86d92fdc58f2160951b14478a6ce46de4cf91181c6fdc84601bf38925510baf3",
+    "referencia/parametros.npz": "e85566d5e2e60ffa5de86e7136f6a27a016eb88522b9600f1d4e1e433f2a1178",
+    "seleccionada/correspondencia.json": "af947d116c9c1ac9004af4826595c7897c62bd0c793341b18b1290aa2c3defc8",
+    "seleccionada/escalado.csv": "46a6e545d73b71ecd661ddca9ee8cee7edf0959f8a2068fbb15a89fffc6c33d4",
+    "seleccionada/identidad_grupo_entrenamiento.csv": "3162637cfe0e05ce5ffca48426834eab95c825502b18f8eac8b454126c4635eb",
+    "seleccionada/identidad_grupo_validacion.csv": "a372297502d0caffef83d569365e36821251ca1c5ef88f30838efdaee0b79b49",
+    "seleccionada/modelo.pkl": "1ab3f4e992919f12e7f5097e168533bb52db137168c0f810cfe9f793b714af90",
+    "seleccionada/parametros.npz": "9f66134967ab07c885df7ef75d12c84217bf146ce31ea8f92c9f24273696ed4b"
+  }
+}

@@ -1,0 +1,6 @@
+﻿identidad,grupo,n,aceptadas,rechazadas,errores_identidad_aceptada
+A01,autorizado,10,10,0,0
+A02,autorizado,10,9,1,0
+A03,autorizado,10,10,0,0
+I01,intruso,10,0,10,0
+I02,intruso,10,0,10,0

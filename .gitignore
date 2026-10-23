@@ -31,3 +31,8 @@ Thumbs.db
 
 # Diagnósticos locales reproducibles: tablas, gráficos y catálogos de uso
 /resultados/verificacion_estadistica/
+
+# Ejecuciones locales; evidencia seleccionada versionada en documentos/resultados_etapa06/
+/resultados/clusterizacion_pca/
+/resultados/mejora_huellas/
+/resultados/rechazo_huellas/

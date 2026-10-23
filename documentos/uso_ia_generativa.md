@@ -41,3 +41,37 @@ Estos controles comprueban el funcionamiento e integridad del flujo de datos. No
 La fuente de requisitos es `Trabajo Final 2026.pdf`, Inteligencia Artificial I, Facultad de Ingeniería, UNCUYO. La consigna solicita declarar el uso de IA generativa, incluir ejemplos de prompts y explicar su verificación. Las referencias técnicas específicas se conservan en los documentos de cada etapa.
 
 Este registro corresponde al avance de dataset y normalización de huellas del 15/10/2026. Debe completarse con las herramientas, solicitudes y validaciones utilizadas en voz, características, agrupamiento y evaluación.
+
+## Ampliación: PCA, K-means y rechazo de huellas
+
+Se utilizó ChatGPT como apoyo para revisar la consigna y la estructura existente, implementar
+el escalado/PCA, comparar K-means con 144 y 72 columnas, preparar una selección supervisada
+de características basada solo en entrenamiento y calibrar el rechazo con validación.
+También se solicitó explicar las distancias, el umbral y los límites de las métricas, y
+actualizar la bitácora sin presentar desarrollo como evaluación final.
+
+Ejemplos de solicitudes de esta etapa:
+
+> Primero debemos realizar PCA y el análisis inicial utilizando TODAS las características vectorizadas.
+
+> verifica como mejorar la correspondencias para que se distingan mejor los grupos
+
+> la distancia de la que se habla es la distancia euclidiana o como se calcula?
+
+La asistencia propuso tres variantes acotadas (todas, mitad y cuarto de columnas), con
+selección y escalado recalculados dentro de cada pliegue de entrenamiento. La selección
+usa etiquetas conocidas de entrenamiento y se declara supervisada; K-means no recibe
+esas etiquetas para ajustar centroides. No se cambiaron identidades ni se eliminaron
+capturas válidas para mejorar las figuras.
+
+Se verificaron las respuestas mediante ejecuciones del autor en Windows/Python 3.14.0,
+compartidas como los cortes UTC 20261022T160116_346229Z (referencia),
+20261023T014705_319737Z (selección) y 20261023T021746_872267Z (calibración).
+Se contrastaron configuración, tablas por identidad, métricas, selección y hashes.
+El asistente ejecutó comprobaciones de código en Linux: 3 pruebas de la referencia,
+4 de selección y 5 de rechazo, además de comprobaciones de recarga y reutilización.
+Estos controles no equivalen a una evaluación biométrica independiente.
+
+La bitácora final consulta evidencias de esas ejecuciones reales y no vuelve a ajustar
+modelos. Se conserva A02_M22 como falso rechazo. Prueba final, K-NN de voz e integración
+continúan pendientes. La IA no generó nuevas mediciones ni resultados finales no ejecutados.

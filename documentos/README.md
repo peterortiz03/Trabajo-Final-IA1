@@ -2,6 +2,11 @@
 
 ## Documentación vigente
 
+- [Bitácora 06](../notebooks/06_clusterizacion_pca.ipynb): PCA, referencia de 144 columnas, selección de 72, K-means y calibración del rechazo; lectura sin entrenar modelos.
+- [Cierre de la etapa 06](cierre_etapa06.md): decisiones, distancia euclidiana, 51 umbrales candidatos, instrucciones y alcance de las evidencias.
+- [Evidencias de Windows](resultados_etapa06/README.md): tres ejecuciones del autor, tablas, gráficos y parámetros congelados para consulta/reutilización.
+- [PCA y K-means de referencia](clusterizacion_pca_v1.md), [mejora de huellas](mejora_huellas_v1.md) y [rechazo de intrusos](rechazo_huellas_v1.md): métodos y comandos por avance.
+
 - [Verificación estadística](verificacion_estadistica.md): notebook 05, partición de desarrollo de audio y diagnóstico previo a PCA.
 
 - [README del repositorio](../README.md): objetivo completo, estado de etapas e instrucciones de consulta.

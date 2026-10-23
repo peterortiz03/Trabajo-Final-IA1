@@ -1,0 +1,25 @@
+{
+  "muestras_por_particion": {
+    "entrenamiento": 120,
+    "validacion": 30
+  },
+  "caracteristicas_entrada": 144,
+  "constantes_train": [],
+  "pc1_pc2_porcentaje": 80.84235937063117,
+  "pc3_porcentaje": 14.477329257674409,
+  "componentes_90": 3,
+  "componentes_95": 3,
+  "validacion_disponible": true,
+  "prueba_analizada": false,
+  "correspondencia_solo_train": {
+    "2": "A01",
+    "1": "A02",
+    "0": "A03"
+  },
+  "inercia_train": 7156.627052036038,
+  "iteraciones": 2,
+  "ari_entrenamiento": 0.44768417180411013,
+  "coincidencia_mapa_train_entrenamiento": 0.6583333333333333,
+  "ari_validacion": 0.5436337625178826,
+  "coincidencia_mapa_train_validacion": 0.7
+}

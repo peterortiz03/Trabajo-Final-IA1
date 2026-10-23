@@ -1,0 +1,13 @@
+{
+  "version": "rechazo_distancia_global_v1",
+  "umbral": 5.292172575840761,
+  "falsas_aceptaciones": 0,
+  "falsos_rechazos": 1,
+  "FAR": 0.0,
+  "FRR": 0.03333333333333333,
+  "error_balanceado": 0.016666666666666666,
+  "regla": "aceptar_si_distancia_menor_o_igual_al_umbral",
+  "criterio": "Minimizar (FAR + FRR)/2 en validacion; empate: menor FAR y luego menor umbral",
+  "calibrado_con": "validacion",
+  "prueba_evaluada": false
+}
