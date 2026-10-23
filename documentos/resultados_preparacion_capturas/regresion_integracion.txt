@@ -1,0 +1,15 @@
+test_captura_pcm_original_liberada_y_cancelable (test_interfaz_integracion.CapturaCoordinada.test_captura_pcm_original_liberada_y_cancelable) ... ok
+test_negociacion_mantiene_frecuencias_y_canales_existentes (test_interfaz_integracion.CapturaCoordinada.test_negociacion_mantiene_frecuencias_y_canales_existentes) ... ok
+test_sin_voz_util_no_se_consulta_knn (test_interfaz_integracion.CapturaCoordinada.test_sin_voz_util_no_se_consulta_knn) ... ok
+test_operaciones_excluyentes_y_respuestas_tardias (test_interfaz_integracion.Ciclo.test_operaciones_excluyentes_y_respuestas_tardias) ... ok
+test_precondiciones_cancelacion_y_reemplazo (test_interfaz_integracion.Ciclo.test_precondiciones_cancelacion_y_reemplazo) ... ok
+test_rechazo_y_error_no_conservan_autorizacion (test_interfaz_integracion.Ciclo.test_rechazo_y_error_no_conservan_autorizacion) ... ok
+test_control_integridad_tolerasolo_saltos_de_linea (test_interfaz_integracion.InferenciaReal.test_control_integridad_tolerasolo_saltos_de_linea) ... ok
+test_imagen_vacia_es_error_no_rechazo_y_lectura_no_depende_del_nombre (test_interfaz_integracion.InferenciaReal.test_imagen_vacia_es_error_no_rechazo_y_lectura_no_depende_del_nombre) ... ok
+test_original_a_inferencia_coincide_con_modulos_y_distancias_publicadas (test_interfaz_integracion.InferenciaReal.test_original_a_inferencia_coincide_con_modulos_y_distancias_publicadas) ... ok
+test_recursos_ausentes_son_independientes (test_interfaz_integracion.InferenciaReal.test_recursos_ausentes_son_independientes) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 3.669s
+
+OK

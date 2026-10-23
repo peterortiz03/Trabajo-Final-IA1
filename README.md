@@ -25,7 +25,7 @@ La consigna establece K-means con k = 3 para las identidades autorizadas, una di
 | Aceptación y rechazo de huellas | Calibrados con validación | Umbral euclidiano global 5.292172576: 29/30 autorizadas aceptadas y 0/20 intrusos aceptados; prueba reservada |
 | Clasificación de comandos con K-NN | Desarrollo implementado y documentado | 160 columnas; k=1; CV LOSO de selección 169/179; validación con nuevas personas pendiente |
 | Prueba práctica de voz | Ejecutada en Windows | Voz conocida: 15/15 comandos; ensayo sintético adicional documentado por separado |
-| Integración del agente | Pendiente | Conexión entre comandos de voz y reconocimiento de huellas |
+| Integración del agente | Ventana operativa en demostración Windows | Voz, huellas y alternativa manual; preparador de capturas añadido y verificado en Linux, pendiente de comprobar esta ampliación en Windows |
 | Evaluación final e informe | Pendiente | Resultados con datos reservados, conclusiones y defensa |
 
 El extractor de huellas añade acondicionamiento de contraste y cuantización a la normalización geométrica anterior. La versión actual utiliza textura en escala de grises, sin binarización ni esqueletizado.
@@ -325,6 +325,31 @@ a los dos últimos. No ejecutar nuevamente el ajuste para cada consulta.
 
 Se cierra la implementación y documentación de desarrollo de esta etapa. Quedan
 pendientes validación con personas nuevas, rechazo de palabras desconocidas si se
-requiere en la aplicación, integración del agente y evaluación final reservada.
+requiere en una etapa posterior y evaluación final reservada. La integración se implementa en el apartado siguiente; su prueba acústica completa sigue pendiente.
 Las fechas de carpetas están en UTC; la primera corrida K-NN 20261023T033845Z
 corresponde al 23/10/2026 00:38 en Argentina.
+
+## Interfaz de escritorio e integración · 23/10/2026
+
+Primera versión de una ventana única en español, con vista previa de huella, captura guiada por voz, aceptación/rechazo e identificación condicionada a la autorización de la imagen actual. Incluye controles manuales desplegables, detalles técnicos y confirmación para salir. Reutiliza modelos congelados, extractores y preprocesamiento existentes; no incorpora consultas a los datos ni reentrena automáticamente.
+
+Desde la raíz del proyecto, con el entorno existente:
+
+```powershell
+.\.venv\Scripts\python.exe -m pip install --only-binary=:all: -r requirements-interfaz.txt
+.\.venv\Scripts\python.exe -m pip check
+.\.venv\Scripts\python.exe src/interfaz_servicios.py
+.\.venv\Scripts\python.exe src/interfaz.py
+```
+
+Seleccionar una imagen **original**, no una representación normalizada o una máscara. Su normalización y extracción se realizan en memoria; la miniatura nunca se usa para inferir. El paquete de huellas se carga desde la evidencia congelada publicada. El modelo de audio está fijado en `config/interfaz_v1.json` a la corrida local `20261023T033845_362145Z`; requiere también tres archivos de su extracción de origen. Esos recursos de voz no están en el clon público. Si faltan, la ventana explica el problema y conserva el control manual de huellas.
+
+La [guía de integración](documentos/interfaz_integracion.md) describe los seis archivos mínimos de voz, cómo empaquetarlos sin grabaciones, el diagrama de flujo, estados, instrucciones de instalación, pruebas y commits propuestos. Tkinter forma parte de Python para Windows; no se agrega otro paquete gráfico. No hace falta ejecutar un notebook antes de abrir la aplicación.
+
+Se verificaron carga de huellas, concordancia de distancias con desarrollo, gestión de estados y recorrido gráfico en Linux. La coordinación de voz se probó con dobles explícitos y silencio controlado; no se atribuyen aciertos acústicos a esas pruebas. Posteriormente, el autor mostró Reconocer, Identificar, rechazo de intruso, silencio y confirmación de Salir en Windows con Realtek/MME. Es una demostración de desarrollo; las pruebas con personas nuevas y la evaluación final siguen pendientes. No se utilizó prueba final para ajustar esta interfaz. Los cierres anteriores conservan su estado histórico.
+
+### Preparar una captura desde una base de Anguli
+
+El desplegable **Preparar captura sintética desde una base de Anguli** genera automáticamente una captura al seleccionar la base, sorteando un perfil existente y una semilla de captura. **Generar nueva captura** permite otro sorteo. **Opciones avanzadas**, cerrado inicialmente, permite ver los parámetros y activar su elección manual para reproducir un intento. Reutiliza el generador existente sin consultar la decisión del reconocedor durante la generación. Muestra base/captura y permite Usar esta captura, que invalida el resultado anterior y la envía al reconocimiento en memoria. Generar no autoriza, no clasifica ni incorpora consultas al entrenamiento. La normalización se realiza una vez al reconocer. Guardar consulta es opcional: crea base.png, captura.png y receta.json en una carpeta nueva, separada de los datasets.
+
+La [guía del preparador](documentos/preparacion_capturas.md) contiene instalación incremental, diagnóstico reproducible y pruebas para Windows. Con el procedimiento completo y un plan prefijado de tres semillas/cinco perfiles se identificaron correctamente 45/45 capturas autorizadas y se rechazaron 30/30 intrusas de desarrollo, sin reajustar el modelo. No equivale a reconocer directamente bases limpias ni a una evaluación independiente. Esta ampliación se verificó en Linux; su ejecución Windows queda pendiente.

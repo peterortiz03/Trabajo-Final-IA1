@@ -1,0 +1,6 @@
+test_preparar_usar_guardar_cancelar_e_invalidar (test_preparar_captura_ventana.PreparadorVentana.test_preparar_usar_guardar_cancelar_e_invalidar) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 4.003s
+
+OK

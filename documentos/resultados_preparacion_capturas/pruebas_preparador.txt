@@ -1,0 +1,9 @@
+test_consulta_en_memoria_o_guardada_da_misma_inferencia_real (test_preparar_captura.Preparador.test_consulta_en_memoria_o_guardada_da_misma_inferencia_real) ... ok
+test_equivalencia_con_generador_y_repetibilidad_sin_mutar_base (test_preparar_captura.Preparador.test_equivalencia_con_generador_y_repetibilidad_sin_mutar_base) ... ok
+test_guardado_reproducible_sin_sobrescribir_ni_escribir_dataset (test_preparar_captura.Preparador.test_guardado_reproducible_sin_sobrescribir_ni_escribir_dataset) ... ok
+test_validacion_entradas_sin_reescalar (test_preparar_captura.Preparador.test_validacion_entradas_sin_reescalar) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 2.741s
+
+OK

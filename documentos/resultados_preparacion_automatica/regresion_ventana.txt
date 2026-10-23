@@ -1,0 +1,7 @@
+test_recorrido_manual_real_y_cancelacion_sin_perder_sesion (test_interfaz_ventana.Ventana.test_recorrido_manual_real_y_cancelacion_sin_perder_sesion) ... ok
+test_voz_simulada_solo_coordinacion_y_captura_invalida (test_interfaz_ventana.Ventana.test_voz_simulada_solo_coordinacion_y_captura_invalida) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 2.899s
+
+OK

@@ -2,6 +2,13 @@
 
 ## Documentación vigente
 
+- [Preparación de capturas sintéticas](preparacion_capturas.md): ampliación incremental de la ventana; generación reproducible, guardado opcional y verificación Windows.
+- [Actualización automática](resultados_preparacion_automatica/verificacion.md): generación al seleccionar base, opciones avanzadas y 20 pruebas de software.
+- [Diagnóstico del preparador](resultados_preparacion_capturas/verificacion.md): resultados con modelo congelado y cinco bases de desarrollo; sin prueba reservada.
+
+- [Interfaz e integración, etapa 08](interfaz_integracion.md): aplicación de escritorio, estados, recursos, instalación en PowerShell y pruebas pendientes en Windows.
+- [Verificaciones de integración](resultados_etapa08/verificacion.md): alcance de las comprobaciones reales y de las simulaciones de coordinación.
+
 - [Bitácora 07](../notebooks/07_pca_knn_audio.ipynb): PCA de audio, K-NN, evaluación interna y pruebas prácticas.
 - [Cierre de la etapa 07](cierre_etapa07.md): decisiones, resultados, reproducción y pendientes.
 - [Evidencias de voz](resultados_etapa07/README.md): corrida Windows y sesiones prácticas; sin redistribuir grabaciones nuevas.

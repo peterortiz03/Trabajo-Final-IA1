@@ -1,0 +1,11 @@
+test_loso_no_ajusta_con_hablante_retenido (test_knn_audio.ContratosAudio.test_loso_no_ajusta_con_hablante_retenido) ... ok
+test_prueba_no_entra_y_revision_pendiente_detiene (test_knn_audio.ContratosAudio.test_prueba_no_entra_y_revision_pendiente_detiene) ... ok
+test_recarga_no_cambia_predicciones_y_exige_orden (test_knn_audio.ContratosAudio.test_recarga_no_cambia_predicciones_y_exige_orden) ... ok
+test_consulta_no_ajusta_modelo_y_conserva_fallos (test_prueba_knn_audio.ContratosPruebaAudio.test_consulta_no_ajusta_modelo_y_conserva_fallos) ... ok
+test_silencio_sin_vector_no_fuerza_palabra (test_prueba_knn_audio.ContratosPruebaAudio.test_silencio_sin_vector_no_fuerza_palabra) ... ok
+test_vector_igual_al_trayecto_wav_pcm16 (test_prueba_knn_audio.ContratosPruebaAudio.test_vector_igual_al_trayecto_wav_pcm16) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.461s
+
+OK

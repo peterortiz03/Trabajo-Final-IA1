@@ -1,0 +1,7 @@
+test_preparar_usar_guardar_cancelar_e_invalidar (test_preparar_captura_ventana.PreparadorVentana.test_preparar_usar_guardar_cancelar_e_invalidar) ... ok
+test_seleccion_genera_automaticamente_y_avanzadas_no_regenera (test_preparar_captura_ventana.PreparadorVentana.test_seleccion_genera_automaticamente_y_avanzadas_no_regenera) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 5.622s
+
+OK

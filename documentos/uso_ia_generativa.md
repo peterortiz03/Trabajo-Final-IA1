@@ -107,3 +107,33 @@ se grabaron voces ni se evaluó prueba final. La documentación distingue el ens
 con voz humana conocida del ensayo de voces sintéticas reproducidas por celular.
 La aclaración del autor sobre la primera toma sintética se conserva como anotación,
 sin alterar CSV ni resumen original. La evaluación con nuevas personas sigue pendiente.
+
+## Ampliación: interfaz e integración · 23/10/2026
+
+ChatGPT asistió con la revisión de la consigna y del repositorio, la elección de Tkinter, la implementación de presentación/estado/adaptadores y la documentación. Se mantuvieron los algoritmos y parámetros anteriores; la asistencia se concentró en coordinarlos y explicar sus precondiciones. No se utilizaron subagentes ni se publicaron cambios automáticamente.
+
+Ejemplos del pedido utilizado:
+
+> Esta etapa consiste en integrar lo existente. No rediseñes los extractores, cambies parámetros del reconocimiento ni reentrenes modelos automáticamente.
+
+> Ambas formas de interacción deben ejecutar las mismas funciones y respetar las mismas condiciones. No dupliques la lógica de reconocimiento.
+
+> No conviertas excepciones técnicas en rechazos biométricos.
+
+Se verificaron contratos de estados, recursos ausentes, bloqueo de operaciones y concordancia del recorrido de huellas con módulos y distancias publicadas de desarrollo. También se ejecutó la ventana en un escritorio virtual Linux y se recorrieron selección, cancelaciones, autorización, rechazo, identidad y error. La coordinación de voz y PortAudio se simularon de manera explícita en pruebas de software; no se presentaron como reconocimiento acústico real. El silencio controlado se procesó con el procedimiento existente.
+
+El modelo local de voz y su extracción no estaban disponibles en el clon. No se generó un reemplazo ni se entrenó para ocultar esa ausencia. La aplicación lo informa y conserva el modo manual. Permanecen pendientes las pruebas reales con micrófono y modelo del autor en Windows, personas nuevas y evaluación final. El registro detallado de esta verificación está en `documentos/resultados_etapa08/verificacion.md`.
+
+## Ampliación: preparación de consultas sintéticas · 23/10/2026
+
+ChatGPT asistió con el diagnóstico del rechazo de bases limpias, la separación entre generación de capturas e inferencia, y la implementación de un preparador en la ventana existente. El pedido se apoyó en esta decisión del autor:
+
+> lo ultimo que tengo implementado es el ultimo zip que me mandaste, para que tengas en cuenta y me envies el zip correspondiente y las instrucciones de verificacion
+
+Se reutilizó `generar_conjunto.producir`, sin copiar sus algoritmos dentro de la interfaz. Antes de construir los controles se fijaron tres semillas y los cinco perfiles existentes y se compararon cuatro condiciones con las cinco bases de desarrollo. Se conservaron los 170 resultados, sin seleccionar semillas para conseguir acceso. La evidencia indica 45/45 capturas autorizadas correctas y 30/30 intrusas rechazadas para el procedimiento completo; no equivale a una evaluación independiente o reconocimiento directo de bases limpias.
+
+Se verificaron equivalencia con el generador original, reproducción de consultas guardadas, inferencia real de huellas y recorrido de la ventana en Linux. La etapa anterior fue demostrada por el autor en Windows con voz; no se atribuye esa ejecución a este nuevo preparador. La ampliación queda pendiente de comprobación Windows y la evaluación con personas nuevas sigue pendiente. No se cambiaron datasets, modelos, selección de características o umbral.
+
+## Ajuste del flujo automático · 23/10/2026
+
+A pedido del autor, ChatGPT ajustó la selección de base para generar automáticamente una captura con perfil existente y semilla aleatorios. Se mantuvo la elección manual en Opciones avanzadas para reproducción. No se combinan perfiles nuevos ni se consulta la autorización para elegir parámetros. Se ejecutaron 20 pruebas de software en Linux y se inspeccionó la ventana con sorteo y generador reales. Una prueba controla explícitamente el sorteo para verificar la coordinación. No constituye una nueva evaluación estadística ni validación acústica en Windows. Se conservaron modelos, umbrales y datasets.

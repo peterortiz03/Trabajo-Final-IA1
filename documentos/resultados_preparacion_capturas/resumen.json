@@ -1,0 +1,102 @@
+{
+  "modelo": "20261023T021746_872267Z",
+  "modelo_sha256": {
+    "modelo_congelado.npz": "9f66134967ab07c885df7ef75d12c84217bf146ce31ea8f92c9f24273696ed4b",
+    "umbral.json": "fbfc122f548a8de95b608a03936063881d45339d6fcb7414268c7b5b4689486a",
+    "correspondencia_congelada.json": "c44acd7ffc74b27c7f978578aaaa2b6ffdd064ad08175845382c5bd9be5f1f6b"
+  },
+  "python": "3.12.14",
+  "umbral": 5.292172575840761,
+  "semillas": [
+    2026102301,
+    2026102302,
+    2026102303
+  ],
+  "codigo": {
+    "preparar_captura.py": "766108ebf747ea242b5239ca7b5b366691907752e42620d3daa71d3be3c0a5c3",
+    "generar_conjunto.py": "f592938178eb88c616cd0d0a3bb4856892d7b4358177de36286c5981943b24ce",
+    "piloto_deformaciones.py": "0c6497181c0c862333631c7c5583932b488319dcafde7cb77644ec1ce2188fe7"
+  },
+  "dependencias": {
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "Pillow": "12.3.0"
+  },
+  "entradas": 170,
+  "identidades": [
+    "A01",
+    "A02",
+    "A03",
+    "I01",
+    "I02"
+  ],
+  "prueba_utilizada": false,
+  "modelo_modificado": false,
+  "seleccion_semillas_por_resultado": false,
+  "resultados": [
+    {
+      "condicion": "base_limpia",
+      "grupo": "autorizado",
+      "n": 3,
+      "aceptadas": 0,
+      "correctas": 0,
+      "errores": 0
+    },
+    {
+      "condicion": "base_limpia",
+      "grupo": "intruso",
+      "n": 2,
+      "aceptadas": 0,
+      "correctas": 2,
+      "errores": 0
+    },
+    {
+      "condicion": "solo_contacto",
+      "grupo": "autorizado",
+      "n": 9,
+      "aceptadas": 0,
+      "correctas": 0,
+      "errores": 0
+    },
+    {
+      "condicion": "solo_contacto",
+      "grupo": "intruso",
+      "n": 6,
+      "aceptadas": 0,
+      "correctas": 6,
+      "errores": 0
+    },
+    {
+      "condicion": "contacto_y_calidad",
+      "grupo": "autorizado",
+      "n": 45,
+      "aceptadas": 3,
+      "correctas": 3,
+      "errores": 0
+    },
+    {
+      "condicion": "contacto_y_calidad",
+      "grupo": "intruso",
+      "n": 30,
+      "aceptadas": 0,
+      "correctas": 30,
+      "errores": 0
+    },
+    {
+      "condicion": "procedimiento_completo",
+      "grupo": "autorizado",
+      "n": 45,
+      "aceptadas": 45,
+      "correctas": 45,
+      "errores": 0
+    },
+    {
+      "condicion": "procedimiento_completo",
+      "grupo": "intruso",
+      "n": 30,
+      "aceptadas": 0,
+      "correctas": 30,
+      "errores": 0
+    }
+  ]
+}

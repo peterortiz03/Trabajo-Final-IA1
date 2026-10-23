@@ -1,0 +1,10 @@
+test_borde_inclusivo_identidad_oculta_y_sin_reajuste (test_rechazo_huellas.RechazoHuellas.test_borde_inclusivo_identidad_oculta_y_sin_reajuste) ... ok
+test_calibracion_no_incluye_entrenamiento_ni_prueba (test_rechazo_huellas.RechazoHuellas.test_calibracion_no_incluye_entrenamiento_ni_prueba) ... ok
+test_distancias_iguales_no_se_separan_por_etiqueta (test_rechazo_huellas.RechazoHuellas.test_distancias_iguales_no_se_separan_por_etiqueta) ... ok
+test_separacion_perfecta_elige_punto_medio (test_rechazo_huellas.RechazoHuellas.test_separacion_perfecta_elige_punto_medio) ... ok
+test_solapamiento_y_desempate_priorizan_menor_far (test_rechazo_huellas.RechazoHuellas.test_solapamiento_y_desempate_priorizan_menor_far) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.015s
+
+OK
