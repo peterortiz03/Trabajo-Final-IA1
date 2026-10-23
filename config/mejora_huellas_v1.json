@@ -1,0 +1,17 @@
+{
+  "version": "seleccion_huellas_v1",
+  "semilla": 20261022,
+  "fracciones_conservar": [1.0, 0.5, 0.25],
+  "divisiones_cv": 5,
+  "criterio": "Mayor ARI medio en CV de entrenamiento; empate a 1e-12: conservar mas columnas",
+  "semillas_estabilidad": [20261022, 20261023, 20261024],
+  "kmeans": {
+    "n_clusters": 3,
+    "init": "k-means++",
+    "n_init": 20,
+    "max_iter": 300,
+    "tol": 0.0001,
+    "algorithm": "lloyd"
+  },
+  "nota": "La seleccion utiliza identidades SOLO de entrenamiento. K-means no recibe etiquetas. No usa intrusos ni prueba."
+}
