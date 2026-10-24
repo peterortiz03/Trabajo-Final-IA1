@@ -18,7 +18,7 @@ class PreparadorVentana(unittest.TestCase):
         import tkinter as tk
         from interfaz import Aplicacion
         from interfaz_estado import EstadoHuella as E
-        r=tk.Tk();a=Aplicacion(r,RAIZ/'config/interfaz_v1.json')
+        r=tk.Tk();a=Aplicacion(r,RAIZ/'config/aplicacion_respaldo.json')
         errores=[]
         r.report_callback_exception=lambda *args:errores.append(args)
         def esperar():
@@ -101,7 +101,7 @@ class PreparadorVentana(unittest.TestCase):
         import tkinter as tk
         from interfaz import Aplicacion
         from preparar_captura import preparar_captura,huella_pixeles
-        r=tk.Tk();a=Aplicacion(r,RAIZ/'config/interfaz_v1.json')
+        r=tk.Tk();a=Aplicacion(r,RAIZ/'config/aplicacion_respaldo.json')
         errores=[];r.report_callback_exception=lambda *args:errores.append(args)
         def esperar():
             limite=time.monotonic()+20

@@ -867,7 +867,7 @@ class Aplicacion:
 
 def main():
     p = argparse.ArgumentParser(description=__doc__)
-    p.add_argument('--config', type=Path, default=RAIZ / 'config/interfaz_v1.json')
+    p.add_argument('--config', type=Path, default=RAIZ / 'config/aplicacion.json')
     args = p.parse_args()
     os.environ.setdefault('MPLBACKEND', 'Agg')  # No se abren ventanas de gráficos.
     if os.name == 'nt':

@@ -91,7 +91,7 @@ class Servicios:
         self.errores = {}
 
     @classmethod
-    def cargar(cls, ruta_config=RAIZ / 'config/interfaz_v1.json', raiz=RAIZ):
+    def cargar(cls, ruta_config=RAIZ / 'config/aplicacion.json', raiz=RAIZ):
         servicio = cls()
         try:
             cfg = leer_json(ruta_config)
@@ -104,7 +104,7 @@ class Servicios:
             servicio.huellas = cargar_huellas(cfg['huellas'], raiz)
         except Exception as e:
             servicio.errores['huellas'] = (f'{type(e).__name__}: {e}. '
-                'Restaurar los archivos de huellas indicados en config/interfaz_v1.json; no recalibrar.')
+                'Restaurar los archivos de huellas indicados en config/aplicacion.json; no recalibrar.')
         try:
             from probar_knn_audio import cargar_sistema, COMANDOS
             voz = cargar_sistema(Path(raiz) / cfg['audio']['modelo'], raiz)
@@ -114,7 +114,7 @@ class Servicios:
         except Exception as e:
             servicio.errores['voz'] = (f'{type(e).__name__}: {e}. '
                 f"Restaurar {cfg['audio']['modelo']} y la extracción indicada en su resumen.json. "
-                'Ver documentos/interfaz_integracion.md; el control manual sigue disponible.')
+                'Ver documentos/guias/interfaz_integracion.md; el control manual sigue disponible.')
         try:
             from grabar_audio import cargar_config
             servicio.cfg_captura = cargar_config(Path(raiz) / cfg['audio']['captura'])
@@ -164,7 +164,7 @@ if __name__ == '__main__':
     import platform
     os.environ.setdefault('MPLBACKEND', 'Agg')
     p = argparse.ArgumentParser(description='Verificar recursos de la interfaz sin abrir ventana ni grabar.')
-    p.add_argument('--config', type=Path, default=RAIZ/'config/interfaz_v1.json')
+    p.add_argument('--config', type=Path, default=RAIZ/'config/aplicacion.json')
     args = p.parse_args()
     ruta = args.config if args.config.is_absolute() else RAIZ / args.config
     s = Servicios.cargar(ruta)

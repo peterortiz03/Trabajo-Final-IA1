@@ -1,0 +1,8 @@
+{
+  "version": "rechazo_distancia_global_v1",
+  "metrica": "euclidiana_en_caracteristicas_seleccionadas_estandarizadas",
+  "regla": "aceptar_si_distancia_menor_o_igual_al_umbral",
+  "criterio_umbral": "Minimizar (FAR + FRR)/2 en validacion; empate: menor FAR y luego menor umbral",
+  "candidatos": "Cero, puntos medios entre distancias consecutivas distintas y distancia maxima",
+  "nota": "Un unico umbral global de desarrollo. Modelo congelado. Sin prueba ni reajuste."
+}

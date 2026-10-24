@@ -10,17 +10,17 @@ RAIZ=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(RAIZ/'src'))
 from interfaz_servicios import cargar_huellas,leer_json,evaluar_huella,abrir_imagen
 
-PAQUETE=RAIZ/'documentos/resultados_adaptacion_anguli_v1'
+PAQUETE=RAIZ/'documentos/evidencias/08_huellas_combinadas'
 
 
 class ModeloAnguli(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.cfg=leer_json(PAQUETE/'config_interfaz_experimental.json')
+        cls.cfg=leer_json(RAIZ/'config/aplicacion.json')
         cls.s=cargar_huellas(cls.cfg['huellas'])
 
     def test_configuracion_conserva_audio_y_normalizacion(self):
-        base=leer_json(RAIZ/'config/interfaz_v1.json')
+        base=leer_json(RAIZ/'config/aplicacion_respaldo.json')
         self.assertEqual(self.cfg['audio'],base['audio'])
         for k in base['huellas'].keys()-{'modelo','seleccion'}:
             self.assertEqual(self.cfg['huellas'][k],base['huellas'][k])

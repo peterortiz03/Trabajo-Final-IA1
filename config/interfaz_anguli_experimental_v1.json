@@ -1,8 +1,8 @@
 {
   "version": "interfaz_v1",
   "huellas": {
-    "modelo": "documentos/resultados_adaptacion_anguli_v1/modelo",
-    "seleccion": "documentos/resultados_adaptacion_anguli_v1/seleccion.json",
+    "modelo": "modelos/huellas/combinado_v1",
+    "seleccion": "modelos/huellas/combinado_v1/seleccion.json",
     "extractor": "config/caracteristicas_huellas_glcm_v1.json",
     "normalizacion": "config/roi_normalizacion_v1.json",
     "entorno_normalizacion": "datos/procesados/normalizacion_final_v1/entorno.json",

@@ -122,7 +122,7 @@ Ejemplos del pedido utilizado:
 
 Se verificaron contratos de estados, recursos ausentes, bloqueo de operaciones y concordancia del recorrido de huellas con módulos y distancias publicadas de desarrollo. También se ejecutó la ventana en un escritorio virtual Linux y se recorrieron selección, cancelaciones, autorización, rechazo, identidad y error. La coordinación de voz y PortAudio se simularon de manera explícita en pruebas de software; no se presentaron como reconocimiento acústico real. El silencio controlado se procesó con el procedimiento existente.
 
-El modelo local de voz y su extracción no estaban disponibles en el clon. No se generó un reemplazo ni se entrenó para ocultar esa ausencia. La aplicación lo informa y conserva el modo manual. Permanecen pendientes las pruebas reales con micrófono y modelo del autor en Windows, personas nuevas y evaluación final. El registro detallado de esta verificación está en `documentos/resultados_etapa08/verificacion.md`.
+El modelo local de voz y su extracción no estaban disponibles en el clon. No se generó un reemplazo ni se entrenó para ocultar esa ausencia. La aplicación lo informa y conserva el modo manual. Permanecen pendientes las pruebas reales con micrófono y modelo del autor en Windows, personas nuevas y evaluación final. El registro detallado de esta verificación está en `documentos/evidencias/08_integracion/verificacion.md`.
 
 ## Ampliación: preparación de consultas sintéticas · 23/10/2026
 

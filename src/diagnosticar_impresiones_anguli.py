@@ -115,7 +115,7 @@ def ejecutar(originales=EXPERIMENTO/'originales', salida=None):
     if not originales.is_dir():
         raise ValueError(f'No existe {originales}. Revisar dónde se extrajo originales del ZIP.')
     filas, bases = verificar_lote(originales)
-    s = cargar_huellas(leer_json(RAIZ/'config/interfaz_v1.json')['huellas'])
+    s = cargar_huellas(leer_json(RAIZ/'config/aplicacion_respaldo.json')['huellas'])
     modelo_dir = RAIZ/s['carpeta']
     def hashes_modelo():
         return {p.name:sha_archivo(p) for p in sorted(modelo_dir.iterdir()) if p.is_file()}

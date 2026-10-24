@@ -23,7 +23,7 @@ def ejecutar(salida=None):
     import numpy as np
     from PIL import Image
     preparador = cargar_preparador()
-    sistema = cargar_huellas(leer_json(RAIZ/'config/interfaz_v1.json')['huellas'])
+    sistema = cargar_huellas(leer_json(RAIZ/'config/aplicacion_respaldo.json')['huellas'])
     modelo_dir=RAIZ/sistema['carpeta']
     def hashes_modelo():
         return {n:hashlib.sha256((modelo_dir/n).read_bytes()).hexdigest() for n in

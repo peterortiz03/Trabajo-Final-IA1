@@ -87,7 +87,7 @@ class Preparador(unittest.TestCase):
 
     def test_consulta_en_memoria_o_guardada_da_misma_inferencia_real(self):
         from interfaz_servicios import cargar_huellas,evaluar_huella
-        sistema=cargar_huellas(leer_json(RAIZ/'config/interfaz_v1.json')['huellas'])
+        sistema=cargar_huellas(leer_json(RAIZ/'config/aplicacion_respaldo.json')['huellas'])
         cfg=leer_json(RAIZ/'config/conjunto_v1.json')
         for i in cfg['identidades']:
             if i['grupo']!='autorizado' and i['particion']!='validacion':

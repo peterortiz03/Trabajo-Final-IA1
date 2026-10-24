@@ -113,7 +113,7 @@ def ejecutar(diagnostico, salida=None):
     salida=Path(salida).resolve() if salida else EXPERIMENTO/'modelos_combinados'/fecha
     if salida.exists():
         raise ValueError(f'La salida ya existe: {salida}. Elegir una carpeta nueva.')
-    cfg_base=leer_json(RAIZ/'config/interfaz_v1.json')
+    cfg_base=leer_json(RAIZ/'config/aplicacion_respaldo.json')
     s=cargar_huellas(cfg_base['huellas'])
     modelo_actual=RAIZ/s['carpeta']
     antes={p.name:sha_archivo(p) for p in modelo_actual.iterdir() if p.is_file()}

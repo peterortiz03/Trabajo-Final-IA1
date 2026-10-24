@@ -1,0 +1,60 @@
+{
+  "fecha_utc": "20261023T021746_872267Z",
+  "python": "3.14.0",
+  "plataforma": "Windows-11-10.0.26200-SP0",
+  "dependencias": {
+    "numpy": "2.3.5",
+    "matplotlib": "3.10.8"
+  },
+  "config": {
+    "version": "rechazo_distancia_global_v1",
+    "metrica": "euclidiana_en_caracteristicas_seleccionadas_estandarizadas",
+    "regla": "aceptar_si_distancia_menor_o_igual_al_umbral",
+    "criterio_umbral": "Minimizar (FAR + FRR)/2 en validacion; empate: menor FAR y luego menor umbral",
+    "candidatos": "Cero, puntos medios entre distancias consecutivas distintas y distancia maxima",
+    "nota": "Un unico umbral global de desarrollo. Modelo congelado. Sin prueba ni reajuste."
+  },
+  "modelo_origen": "resultados/mejora_huellas/20261023T014705_319737Z",
+  "modelo_resumen_sha256": "885b2fb0b18fb813996579615f8fb0f5db57d0d9c8df3cde42b810708584a522",
+  "extraccion": "datos/caracteristicas/huellas/glcm_opuestas_v1_89a0f3928fb3/ejecucion_20261023T014643_611595Z",
+  "extraccion_manifiesto_sha256": "92190c57b91b9d49bd132836bae3b22534fc57f03e0f58c8a93fa906bb497716",
+  "columnas_entrada": 144,
+  "columnas_utilizadas": 72,
+  "cantidades": {
+    "autorizado": 30,
+    "intruso": 20
+  },
+  "identidades_intrusas_validacion": 2,
+  "resultado_calibracion": {
+    "umbral": 5.292172575840761,
+    "falsas_aceptaciones": 0,
+    "falsos_rechazos": 1,
+    "FAR": 0.0,
+    "FRR": 0.03333333333333333,
+    "error_balanceado": 0.016666666666666666
+  },
+  "identidades_incorrectas_entre_aceptadas": 0,
+  "identificacion_sin_umbral_autorizados": 1.0,
+  "max_distancia_autorizada": 10.769863514562502,
+  "min_distancia_intrusa": 6.222982006550652,
+  "separacion_perfecta_con_umbral_global": false,
+  "modelo_reajustado": false,
+  "seleccion_modificada": false,
+  "prueba_evaluada": false,
+  "advertencia": "Resultado en los mismos datos usados para calibrar; no evaluación final independiente.",
+  "archivos_sha256": {
+    "calibrar_rechazo_huellas.py": "b789d7542d5adde9b032b449ebe651e48259bde422fb35b546fbe2bc4eef3df1",
+    "catalogo_uso.csv": "84c766a112a11e571e223444c1e7040c02d84c480e74e885a236a8a25c5c7757",
+    "correspondencia_congelada.json": "af947d116c9c1ac9004af4826595c7897c62bd0c793341b18b1290aa2c3defc8",
+    "decisiones_validacion.csv": "990a71b6e43e58acf9a92d2e977d56784a561d285dc1f59e32c4debedc308b98",
+    "distancias_validacion.png": "dc9c8de59b0301b7c602e10fcf1c8f91d2c4a3a5f6f3db49a6d59b867ddcc863",
+    "errores_validacion.csv": "cb171260de003fe7478565d2d89de77f55ebb8555a521cd41c4677c1558246b6",
+    "matriz_acceso.csv": "e01c49bbadf2f77d8597e5d72f08c0945cc695592020183f60f4cc00482d532d",
+    "modelo_congelado.npz": "9f66134967ab07c885df7ef75d12c84217bf146ce31ea8f92c9f24273696ed4b",
+    "rechazo_huellas_v1.json": "992aaeff2e56f97213408a0bf9131e3c4bd5d2b8a086b4b498b9e1d42511f8c7",
+    "resultados_por_identidad.csv": "a7928699899ff1ed0f0048e7c0f0710c4f6896b0b2389c879318174fabe0fde2",
+    "tasas_por_umbral.csv": "4b962e664cd8903740edcadea01ceea3122aca60b80ed7638cfb90abd42b13bb",
+    "tasas_por_umbral.png": "41f6407eebfbbd79e9afc25bfa87f4366689e0f5f2c23e0153c2a78b5adc2998",
+    "umbral.json": "b20cb9997768defa42fbe934e28ce1ca21d2870ddecb503506efa0bb0369b8c0"
+  }
+}

@@ -1,3 +1,5 @@
+> **Organización actualizada:** iniciar con `iniciar.ps1` o `python src/interfaz.py`. Ambos usan el modelo combinado. Configuración principal: `config/aplicacion.json`; respaldo: `config/aplicacion_respaldo.json`. Los comandos posteriores que describen versiones previas conservan contexto histórico. Consultar [guía actual](documentos/guias/README.md).
+
 # Trabajo Final — Inteligencia Artificial I · 2026
 
 **Sistema de reconocimiento de huellas dactilares controlado por reconocimiento de voz**  
@@ -42,9 +44,9 @@ Con las dependencias y recursos locales ya disponibles, iniciar el modelo princi
 .\.venv\Scripts\python.exe src/interfaz.py --config config/interfaz_anguli_experimental_v1.json
 ```
 
-El nombre `experimental` se conserva para mantener rutas y trazabilidad; este es el modelo elegido para la muestra. **El comando sin --config sigue abriendo el modelo anterior** (72 columnas), conservado como respaldo. No se reorganizaron archivos ni se cambiaron los parámetros al cerrar la documentación. No hace falta entrenar o abrir un notebook antes de usar la aplicación.
+El nombre `experimental` se conserva para mantener rutas y trazabilidad; este es el modelo elegido para la muestra. **El inicio sin argumentos abre ahora el combinado**. El respaldo se elige con config/aplicacion_respaldo.json. No se reorganizaron archivos ni se cambiaron los parámetros al cerrar la documentación. No hace falta entrenar o abrir un notebook antes de usar la aplicación.
 
-Consultar el [cierre de la etapa 08](documentos/cierre_etapa08.md), la [bitácora 08](notebooks/08_interfaz_integracion_ampliacion_anguli.ipynb) y la [guía del modelo combinado](documentos/modelo_combinado_anguli_v1.md). El autor reprodujo el control en Windows: mismas 25 decisiones y distancias que Linux, 14/15 autorizadas correctamente identificadas y 10/10 intrusas rechazadas. A03/Impression_26 sigue siendo un falso rechazo; no se reajustó con el control.
+Consultar el [cierre de la etapa 08](documentos/etapas/cierre_etapa08.md), la [bitácora 08](notebooks/08_interfaz_integracion_ampliacion_anguli.ipynb) y la [guía del modelo combinado](documentos/guias/modelo_combinado_anguli_v1.md). El autor reprodujo el control en Windows: mismas 25 decisiones y distancias que Linux, 14/15 autorizadas correctamente identificadas y 10/10 intrusas rechazadas. A03/Impression_26 sigue siendo un falso rechazo; no se reajustó con el control.
 
 ## Lectura recomendada
 
@@ -102,7 +104,7 @@ Instalar dependencias en ese entorno:
 
 `resultados/` y `datos/procesados/conjunto_v1/` corresponden a salidas intermedias locales que no se incluyen en esta publicación. Se pueden reconstruir con los programas correspondientes; no se requieren para la verificación final del notebook.
 
-Los modelos y ejecuciones completas de PCA, mejora y rechazo permanecen locales bajo `resultados/`. Una selección de tablas, resúmenes y gráficos de las ejecuciones reales de Windows se publica en [`documentos/resultados_etapa06/`](documentos/resultados_etapa06/) para consultar el notebook 06 sin regenerar modelos. Se conservan también los parámetros NPZ/JSON congelados de rechazo en ese registro; son los usados en la calibración, no resultados de prueba.
+Los modelos y ejecuciones completas de PCA, mejora y rechazo permanecen locales bajo `resultados/`. Una selección de tablas, resúmenes y gráficos de las ejecuciones reales de Windows se publica en [`documentos/evidencias/06_huellas_referencia/`](documentos/evidencias/06_huellas_referencia/) para consultar el notebook 06 sin regenerar modelos. Se conservan también los parámetros NPZ/JSON congelados de rechazo en ese registro; son los usados en la calibración, no resultados de prueba.
 
 El catálogo vigente es [`catalogo_normalizado.csv`](datos/procesados/normalizacion_final_v1/catalogo_normalizado.csv). Para las siguientes etapas se utilizan las columnas **normalizada** y **alternativa_180**. La columna heredada `procesado` conserva rutas del procesamiento preliminar; esas imágenes no se distribuyen en esta versión.
 
@@ -156,7 +158,7 @@ el NumPy de huellas y no se modifica `requirements.txt`. Los datos se crean en
 `config/audio_v1.json`. No se capturan datos antes de confirmar y finalizar la
 cuenta regresiva. El programa no implementa K-NN ni escucha continua.
 
-La [documentación de audio](documentos/dataset_audio.md) explica flujo, numeración,
+La [documentación de audio](documentos/etapas/dataset_audio.md) explica flujo, numeración,
 metadatos, limitaciones y prueba local. El
 [notebook de revisión](notebooks/02_dataset_audio_preprocesamiento.ipynb) lee
 las capturas cuando existen y presenta un resumen textual del corte de 150 muestras.
@@ -179,7 +181,7 @@ de la misma versión. La configuración está en `config/preprocesamiento_audio_
 Las decisiones humanas se registran en `config/revisiones_audio_v1.json` y no borran
 avisos. Los cambios de método generan otra carpeta versionada conservando las anteriores.
 
-La [documentación del hito](documentos/preprocesamiento_audio.md) explica método,
+La [documentación del hito](documentos/etapas/preprocesamiento_audio.md) explica método,
 metadatos y límites. El notebook 02 compara los originales y procesados. El
 procesamiento local en Windows quedó registrado con 150 muestras de H001–H005:
 127 sin avisos y 23 con avisos. Repetir el lote verificó y omitió los 150 resultados,
@@ -227,9 +229,9 @@ Al cerrar ese hito de extracción del 20/10 todavía no se habían ajustado esca
 
 ### Documentación de esta etapa
 
-- [Características de huellas](documentos/caracteristicas_huellas_hito1.md).
-- [Características de audio](documentos/caracteristicas_audio_hito2.md).
-- [Guía de vectorización y clasificación](documentos/guia_vectorizacion_y_clasificacion.md).
+- [Características de huellas](documentos/etapas/caracteristicas_huellas_hito1.md).
+- [Características de audio](documentos/etapas/caracteristicas_audio_hito2.md).
+- [Guía de vectorización y clasificación](documentos/guias/guia_vectorizacion_y_clasificacion.md).
 - [Notebook de huellas](notebooks/03_caracteristicas_huellas.ipynb).
 - [Notebook de audio](notebooks/04_caracteristicas_audio.ipynb).
 
@@ -256,7 +258,7 @@ no mide generalización a hablantes desconocidos. H001/H002 participaron en desa
 Las matrices pueden regenerarse con los extractores existentes. Abrir el notebook 05
 con el kernel `.venv` y ejecutar sus celdas. Las salidas se guardan en una carpeta nueva
 bajo `resultados/verificacion_estadistica/`. Las cantidades no están fijadas en código.
-Ver [método, instrucciones y resultados del asistente](documentos/verificacion_estadistica.md).
+Ver [método, instrucciones y resultados del asistente](documentos/etapas/verificacion_estadistica.md).
 Los párrafos anteriores conservan sus cortes históricos.
 
 ## Cierre de desarrollo: PCA, K-means y rechazo — 22/10/2026
@@ -284,7 +286,7 @@ acepta 29/30 autorizados y 0/20 intrusos. A02_M22 es el falso rechazo conservado
 FAR observada=0 %, FRR=3.33 %; son resultados de la misma calibración y no de prueba final.
 Los intrusos analizados provienen de dos bases; no se afirma seguridad biométrica real.
 
-La bitácora lee [evidencias de las ejecuciones Windows](documentos/resultados_etapa06/README.md)
+La bitácora lee [evidencias de las ejecuciones Windows](documentos/evidencias/06_huellas_referencia/README.md)
 y puede ejecutarse sin regenerar matrices o modelos. Para reproducir los análisis completos:
 
 ```powershell
@@ -299,7 +301,7 @@ y puede ejecutarse sin regenerar matrices o modelos. Para reproducir los anális
 Esta secuencia crea cortes nuevos: no hace falta repetirla para leer la bitácora o
 reutilizar el modelo publicado. No utilizar `--incluir-prueba` durante desarrollo.
 La inferencia de un vector nuevo con el modelo y umbral congelados está documentada en
-[cierre_etapa06.md](documentos/cierre_etapa06.md). Las 51 candidatas son valores de umbral,
+[cierre_etapa06.md](documentos/etapas/cierre_etapa06.md). Las 51 candidatas son valores de umbral,
 no muestras ni grupos; la cantidad se deriva de las distancias observadas.
 
 Se conserva esta versión de desarrollo para continuar con voz, integración y planificación
@@ -327,8 +329,8 @@ se documenta como exploración: 14/17 intentos; 14/16 audios efectivamente repro
 tras aclarar un inicio fuera de tiempo. No sustituye validación humana.
 
 La documentación y evidencia seleccionada están en
-[cierre_etapa07.md](documentos/cierre_etapa07.md) y
-[resultados_etapa07/README.md](documentos/resultados_etapa07/README.md).
+[cierre_etapa07.md](documentos/etapas/cierre_etapa07.md) y
+[resultados_etapa07/README.md](documentos/evidencias/07_comandos_voz/README.md).
 El notebook puede consultarse sin WAV ni matrices locales y no vuelve a entrenar.
 Para reproducir el ajuste o realizar otra prueba con las herramientas ya instaladas:
 
@@ -351,7 +353,7 @@ corresponde al 23/10/2026 00:38 en Argentina.
 
 ## Interfaz de escritorio e integración · 23/10/2026
 
-**Estado de cierre:** versión para la muestra documentada en [cierre_etapa08.md](documentos/cierre_etapa08.md). Los comandos siguientes sin --config describen la integración original y conservan su modelo anterior; para la muestra usar el comando principal indicado al inicio.
+**Estado de cierre:** versión para la muestra documentada en [cierre_etapa08.md](documentos/etapas/cierre_etapa08.md). Los comandos siguientes sin --config describen la integración original y conservan su modelo anterior; para la muestra usar el comando principal indicado al inicio.
 
 Primera versión de una ventana única en español, con vista previa de huella, captura guiada por voz, aceptación/rechazo e identificación condicionada a la autorización de la imagen actual. Incluye controles manuales desplegables, detalles técnicos y confirmación para salir. Reutiliza modelos congelados, extractores y preprocesamiento existentes; no incorpora consultas a los datos ni reentrena automáticamente.
 
@@ -366,7 +368,7 @@ Desde la raíz del proyecto, con el entorno existente:
 
 Seleccionar una imagen **original**, no una representación normalizada o una máscara. Su normalización y extracción se realizan en memoria; la miniatura nunca se usa para inferir. El paquete de huellas se carga desde la evidencia congelada publicada. El modelo de audio está fijado en `config/interfaz_v1.json` a la corrida local `20261023T033845_362145Z`; requiere también tres archivos de su extracción de origen. Esos recursos de voz no están en el clon público. Si faltan, la ventana explica el problema y conserva el control manual de huellas.
 
-La [guía de integración](documentos/interfaz_integracion.md) describe los seis archivos mínimos de voz, cómo empaquetarlos sin grabaciones, el diagrama de flujo, estados, instrucciones de instalación, pruebas y commits propuestos. Tkinter forma parte de Python para Windows; no se agrega otro paquete gráfico. No hace falta ejecutar un notebook antes de abrir la aplicación.
+La [guía de integración](documentos/guias/interfaz_integracion.md) describe los seis archivos mínimos de voz, cómo empaquetarlos sin grabaciones, el diagrama de flujo, estados, instrucciones de instalación, pruebas y commits propuestos. Tkinter forma parte de Python para Windows; no se agrega otro paquete gráfico. No hace falta ejecutar un notebook antes de abrir la aplicación.
 
 Se verificaron carga de huellas, concordancia de distancias con desarrollo, gestión de estados y recorrido gráfico en Linux. La coordinación de voz se probó con dobles explícitos y silencio controlado; no se atribuyen aciertos acústicos a esas pruebas. Posteriormente, el autor mostró Reconocer, Identificar, rechazo de intruso, silencio y confirmación de Salir en Windows con Realtek/MME. Es una demostración de desarrollo; las pruebas con personas nuevas y la evaluación final siguen pendientes. No se utilizó prueba final para ajustar esta interfaz. Los cierres anteriores conservan su estado histórico.
 
@@ -374,4 +376,4 @@ Se verificaron carga de huellas, concordancia de distancias con desarrollo, gest
 
 El desplegable **Preparar captura sintética desde una base de Anguli** genera automáticamente una captura al seleccionar la base, sorteando un perfil existente y una semilla de captura. **Generar nueva captura** permite otro sorteo. **Opciones avanzadas**, cerrado inicialmente, permite ver los parámetros y activar su elección manual para reproducir un intento. Reutiliza el generador existente sin consultar la decisión del reconocedor durante la generación. Muestra base/captura y permite Usar esta captura, que invalida el resultado anterior y la envía al reconocimiento en memoria. Generar no autoriza, no clasifica ni incorpora consultas al entrenamiento. La normalización se realiza una vez al reconocer. Guardar consulta es opcional: crea base.png, captura.png y receta.json en una carpeta nueva, separada de los datasets.
 
-La [guía del preparador](documentos/preparacion_capturas.md) contiene instalación incremental, diagnóstico reproducible y pruebas para Windows. Con el procedimiento completo y un plan prefijado de tres semillas/cinco perfiles se identificaron correctamente 45/45 capturas autorizadas y se rechazaron 30/30 intrusas de desarrollo, sin reajustar el modelo. No equivale a reconocer directamente bases limpias ni a una evaluación independiente. El preparador se verificó en Linux y el autor informó funcionamiento en Windows. La evidencia individual del control combinado Windows se conserva por separado; las pruebas finales y con personas nuevas siguen pendientes.
+La [guía del preparador](documentos/guias/preparacion_capturas.md) contiene instalación incremental, diagnóstico reproducible y pruebas para Windows. Con el procedimiento completo y un plan prefijado de tres semillas/cinco perfiles se identificaron correctamente 45/45 capturas autorizadas y se rechazaron 30/30 intrusas de desarrollo, sin reajustar el modelo. No equivale a reconocer directamente bases limpias ni a una evaluación independiente. El preparador se verificó en Linux y el autor informó funcionamiento en Windows. La evidencia individual del control combinado Windows se conserva por separado; las pruebas finales y con personas nuevas siguen pendientes.

@@ -11,7 +11,7 @@ from interfaz_servicios import RAIZ, leer_json, cargar_huellas, evaluar_huella, 
 from diagnosticar_impresiones_anguli import verificar_lote, escribir_csv, sha_archivo
 from adaptar_modelo_anguli import guardar_json, leer_csv
 
-CONFIG=RAIZ/'documentos/resultados_adaptacion_anguli_v1/config_interfaz_experimental.json'
+CONFIG=RAIZ/'config/aplicacion.json'
 EXPERIMENTO=RAIZ/'experimentos/anguli_impresiones_v1'
 
 

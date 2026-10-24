@@ -26,7 +26,7 @@ class Ventana(unittest.TestCase):
         self.r = tk.Tk()
         self.errores_tk = []
         self.r.report_callback_exception = lambda *args: self.errores_tk.append(args)
-        self.a = Aplicacion(self.r, RAIZ/'config/interfaz_v1.json')
+        self.a = Aplicacion(self.r, RAIZ/'config/aplicacion_respaldo.json')
         self.esperar()
         with (RAIZ/'datos/metadatos_con_rotaciones_train_v1.csv').open(encoding='utf-8-sig') as f:
             self.filas = {r['muestra']:r for r in csv.DictReader(f) if r['particion'] != 'prueba'}

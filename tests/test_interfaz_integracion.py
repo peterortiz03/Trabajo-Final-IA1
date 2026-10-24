@@ -83,7 +83,7 @@ class Ciclo(unittest.TestCase):
 class InferenciaReal(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.cfg = leer_json(RAIZ / 'config/interfaz_v1.json')
+        cls.cfg = leer_json(RAIZ / 'config/aplicacion_respaldo.json')
         cls.sistema = cargar_huellas(cls.cfg['huellas'])
         with (RAIZ / 'datos/metadatos_con_rotaciones_train_v1.csv').open(encoding='utf-8-sig') as f:
             cls.filas = {r['muestra']: r for r in csv.DictReader(f) if r['particion'] != 'prueba'}
@@ -92,7 +92,7 @@ class InferenciaReal(unittest.TestCase):
         from normalizacion_final import normalizar_huella
         from caracteristicas_huellas import extraer_huella, nombres_caracteristicas
         from calibrar_rechazo_huellas import decidir_acceso
-        with (RAIZ / 'documentos/resultados_etapa06/03_rechazo/decisiones_validacion.csv').open(encoding='utf-8-sig') as f:
+        with (RAIZ / 'documentos/evidencias/06_huellas_referencia/03_rechazo/decisiones_validacion.csv').open(encoding='utf-8-sig') as f:
             evidencia = {r['muestra']: r for r in csv.DictReader(f)}
         muestras = ['A01_M21', 'A02_M21', 'A03_M21', 'I01_M01']
         # También el rechazo de una autorizada: no ocultar esa limitación previa.
