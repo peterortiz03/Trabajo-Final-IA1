@@ -45,3 +45,5 @@ Thumbs.db
 # Consultas opcionales del preparador; nunca se incorporan al entrenamiento.
 /consultas/
 /resultados/diagnostico_preparacion/
+
+/experimentos/anguli_impresiones_v1/

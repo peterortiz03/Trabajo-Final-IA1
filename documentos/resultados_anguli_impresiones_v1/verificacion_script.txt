@@ -1,0 +1,7 @@
+OK: 150 entradas; particiones 60/65/25; 5 bases idénticas.
+OK: se bloquea duplicado entre desarrollo y control.
+OK: se bloquea semilla de configuración incorrecta.
+OK: se bloquea base que no coincide.
+OK: concordancia con evaluar_huella de la interfaz en 10 entradas (inicio/final de cada identidad).
+OK: X=(125,144); ningún vector o resultado de las 25 imágenes de control.
+OK: hash de la versión final del script y modelo sin modificar.

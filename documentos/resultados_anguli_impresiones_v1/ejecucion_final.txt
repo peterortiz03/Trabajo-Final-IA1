@@ -1,0 +1,8 @@
+A01: 25 evaluadas; 0 aceptadas; 0 errores
+A02: 25 evaluadas; 0 aceptadas; 0 errores
+A03: 25 evaluadas; 0 aceptadas; 0 errores
+I01: 25 evaluadas; 0 aceptadas; 0 errores
+I02: 25 evaluadas; 0 aceptadas; 0 errores
+150 impresiones verificadas; 5 bases idénticas; 0 duplicados exactos.
+125 consultas de desarrollo; 25 controles sin inferencia. Modelo sin modificar.
+Salida: /workspace/scratch/d602009f68cb/experimento_anguli_tmp/diagnostico_final

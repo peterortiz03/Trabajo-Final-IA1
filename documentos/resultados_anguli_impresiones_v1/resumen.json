@@ -1,0 +1,117 @@
+{
+  "fecha_utc": "20261023T220102_482684Z",
+  "python": "3.12.14",
+  "dependencias": {
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "Pillow": "12.3.0"
+  },
+  "modelo": "20261023T021746_872267Z",
+  "umbral": 5.292172575840761,
+  "modelo_sha256": {
+    "correspondencia_congelada.json": "c44acd7ffc74b27c7f978578aaaa2b6ffdd064ad08175845382c5bd9be5f1f6b",
+    "decisiones_validacion.csv": "e3ae27e8e662682e193d83c6850d4bc314e2e886b735ed69509237eabfa76a29",
+    "distancias_validacion.png": "dc9c8de59b0301b7c602e10fcf1c8f91d2c4a3a5f6f3db49a6d59b867ddcc863",
+    "errores_validacion.csv": "c4a068338dc091106c41c34f74a2dfb515d8a91476627ccf658ffd578e7d8082",
+    "matriz_acceso.csv": "86e2c035c446e8a4d1b37f715885020a825ea6c0bb445a05eb139d4a4a359c68",
+    "modelo_congelado.npz": "9f66134967ab07c885df7ef75d12c84217bf146ce31ea8f92c9f24273696ed4b",
+    "rechazo_huellas_v1.json": "992aaeff2e56f97213408a0bf9131e3c4bd5d2b8a086b4b498b9e1d42511f8c7",
+    "resultados_por_identidad.csv": "0763e419b927207238a0df6bb52fe8149c0344ca276d86d79001ec5cbd81d3fa",
+    "resumen.json": "c6152622f43088b1f29f72e3b2be073356626c7264c3735d63310277fcbf2fce",
+    "tasas_por_umbral.csv": "df28d030f23223ea6035bfe668a83eae348c4719afaf8fb76f1e04bbdad303e4",
+    "tasas_por_umbral.png": "41f6407eebfbbd79e9afc25bfa87f4366689e0f5f2c23e0153c2a78b5adc2998",
+    "umbral.json": "fbfc122f548a8de95b608a03936063881d45339d6fcb7414268c7b5b4689486a"
+  },
+  "codigo_script_sha256": "e382683609048e7af9a7d1aedbf2b804dae517f355a19c6e0f171f124efb3fe8",
+  "bases": [
+    {
+      "identidad": "A01",
+      "coincide": true,
+      "sha256_pixeles": "e766d452de2e038bd5e1455a5f9feaee62f7206ba4a2354dbb0b2f6444dd57f1",
+      "sha256_config": "65aa617f6f2fa1f78cf3dceb09c75b6a838244adcf793563a19b95abb2f8545a"
+    },
+    {
+      "identidad": "A02",
+      "coincide": true,
+      "sha256_pixeles": "00838aa0437d7f77ec72bdb7312b2408f3180bbbdae17314fd3892c477806af9",
+      "sha256_config": "16ec4bd0142fc2f1bf29630284a0072d7513f501ef5718d473e4eaf46b20604d"
+    },
+    {
+      "identidad": "A03",
+      "coincide": true,
+      "sha256_pixeles": "f0ae3019c64fd29c807214ba0fa83ad11f0eebf1d7b137b57c4d0e93d7322725",
+      "sha256_config": "0431f857fe6eab9f297ee8b2f3f8aeafa1d3d71bafd222518354ae3af31f1ff8"
+    },
+    {
+      "identidad": "I01",
+      "coincide": true,
+      "sha256_pixeles": "5e35a08f077056b14f2c1de61aff1537f0e007f3cfe0808e78b7966d5aa4a819",
+      "sha256_config": "280725df6f8e9ca6b66a9a24eba3568440eb8b3c6bea3071d6757c4796a959ca"
+    },
+    {
+      "identidad": "I02",
+      "coincide": true,
+      "sha256_pixeles": "9aa60aaea68e75731c4b5c66027e8fc062a5eac72d567687fa6023fb9b77016b",
+      "sha256_config": "cfd1aeb8d493115f8e66afb91733e325c46fc6fc65dad5c1eaaa6103d312db83"
+    }
+  ],
+  "impresiones_verificadas": 150,
+  "duplicados_exactos": 0,
+  "consultas_evaluadas": 125,
+  "controles_sin_inferencia": 25,
+  "modelo_modificado": false,
+  "entrenamiento_ejecutado": false,
+  "prueba_final_utilizada": false,
+  "resultados": [
+    {
+      "identidad": "A01",
+      "evaluadas": 25,
+      "errores": 0,
+      "con_avisos": 0,
+      "aceptadas": 0,
+      "identificadas_correctamente": 0,
+      "distancia_min": 10.928469206281015,
+      "distancia_max": 16.612923144851962
+    },
+    {
+      "identidad": "A02",
+      "evaluadas": 25,
+      "errores": 0,
+      "con_avisos": 0,
+      "aceptadas": 0,
+      "identificadas_correctamente": 0,
+      "distancia_min": 8.957637683102899,
+      "distancia_max": 14.313403328363053
+    },
+    {
+      "identidad": "A03",
+      "evaluadas": 25,
+      "errores": 0,
+      "con_avisos": 0,
+      "aceptadas": 0,
+      "identificadas_correctamente": 0,
+      "distancia_min": 10.187600853726108,
+      "distancia_max": 16.562476210513967
+    },
+    {
+      "identidad": "I01",
+      "evaluadas": 25,
+      "errores": 0,
+      "con_avisos": 0,
+      "aceptadas": 0,
+      "identificadas_correctamente": 0,
+      "distancia_min": 20.625599527450277,
+      "distancia_max": 23.21823522769208
+    },
+    {
+      "identidad": "I02",
+      "evaluadas": 25,
+      "errores": 0,
+      "con_avisos": 0,
+      "aceptadas": 0,
+      "identificadas_correctamente": 0,
+      "distancia_min": 10.467816407243276,
+      "distancia_max": 18.35925393083191
+    }
+  ]
+}
