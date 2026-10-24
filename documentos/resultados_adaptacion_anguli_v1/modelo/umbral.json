@@ -1,0 +1,8 @@
+{
+  "umbral": 4.136012624996962,
+  "falsas_aceptaciones": 0,
+  "falsos_rechazos": 1,
+  "FAR": 0.0,
+  "FRR": 0.022222222222222223,
+  "error_balanceado": 0.011111111111111112
+}

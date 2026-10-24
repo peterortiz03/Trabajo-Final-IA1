@@ -1,0 +1,1 @@
+OK: ventana real con configuración alternativa; Anguli autoriza/identifica, intrusa rechaza y limpia identidad; Preparar captura conserva reconocimiento; sin errores Tk. Sin micrófono real.

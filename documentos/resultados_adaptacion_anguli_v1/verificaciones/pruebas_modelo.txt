@@ -1,0 +1,9 @@
+test_configuracion_conserva_audio_y_normalizacion (test_modelo_anguli.ModeloAnguli.test_configuracion_conserva_audio_y_normalizacion) ... ok
+test_inferencia_real_autorizada_e_intrusa_anteriores (test_modelo_anguli.ModeloAnguli.test_inferencia_real_autorizada_e_intrusa_anteriores) ... ok
+test_modelo_alterado_se_bloquea (test_modelo_anguli.ModeloAnguli.test_modelo_alterado_se_bloquea) ... ok
+test_no_se_usaron_controles_o_intrusos_en_centroides (test_modelo_anguli.ModeloAnguli.test_no_se_usaron_controles_o_intrusos_en_centroides) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.572s
+
+OK

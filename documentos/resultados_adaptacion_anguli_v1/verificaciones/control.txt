@@ -1,0 +1,7 @@
+A01: 5 controles; 5 aceptadas; 5 identificaciones correctas; 0 errores
+A02: 5 controles; 5 aceptadas; 5 identificaciones correctas; 0 errores
+A03: 5 controles; 4 aceptadas; 4 identificaciones correctas; 0 errores
+I01: 5 controles; 0 aceptadas; 0 identificaciones correctas; 0 errores
+I02: 5 controles; 0 aceptadas; 0 identificaciones correctas; 0 errores
+Modelo sin modificar. Prueba final original sin utilizar.
+Salida: /workspace/scratch/d602009f68cb/adaptacion_anguli_tmp/control_fijado

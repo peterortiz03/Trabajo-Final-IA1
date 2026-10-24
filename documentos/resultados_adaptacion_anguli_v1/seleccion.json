@@ -1,0 +1,28 @@
+{
+  "columnas_elegidas": 36,
+  "seleccion_supervisada": true,
+  "cv": [
+    {
+      "columnas": 144,
+      "ari_medio": 0.29307668166080986,
+      "ari_minimo": 0.26482701812191106,
+      "coincidencia_media": 0.49444444444444446
+    },
+    {
+      "columnas": 72,
+      "ari_medio": 0.8129287568664854,
+      "ari_minimo": 0.5259287925696594,
+      "coincidencia_media": 0.8333333333333334
+    },
+    {
+      "columnas": 36,
+      "ari_medio": 1.0,
+      "ari_minimo": 1.0,
+      "coincidencia_media": 1.0
+    }
+  ],
+  "archivos_sha256": {
+    "seleccionada/parametros.npz": "fab6dd69d17a1788623eb0fd1f8e9cf4e1ccd8ef6a4900bb13cebd722a8ede65",
+    "config_extractor_efectiva.json": "f57fcff7982592a563fcb7d4bd8abee7b2d3a20c891776a0b01f908b90f19774"
+  }
+}

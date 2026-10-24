@@ -1,0 +1,52 @@
+{
+  "fecha_utc": "20261023T223300_873346Z",
+  "modelo": "20261023T222326_850333Z",
+  "modelo_sha256": {
+    "modelo_congelado.npz": "fab6dd69d17a1788623eb0fd1f8e9cf4e1ccd8ef6a4900bb13cebd722a8ede65",
+    "umbral.json": "b9663e4d565dc06eac623d7e1b4a48bf1da1b39d14852424ea868f802112ca29",
+    "correspondencia_congelada.json": "33ab90e6a2190a72f50cca4b4f7dbc84ec90c26bc62354f1e66f22b7cd10654d",
+    "resumen.json": "ac25a922724d4adbe07e23192245d657839bfe3411cb650a3b4fcd2e60ab3ead"
+  },
+  "umbral": 4.136012624996962,
+  "entrenamiento_ejecutado": false,
+  "modelo_modificado": false,
+  "prueba_final_original_utilizada": false,
+  "advertencia": "Control posterior al ajuste, mismas bases y corrida de Anguli. No es prueba con nuevas identidades.",
+  "resultados": [
+    {
+      "identidad": "A01",
+      "n": 5,
+      "errores": 0,
+      "aceptadas": 5,
+      "identificadas_correctamente": 5
+    },
+    {
+      "identidad": "A02",
+      "n": 5,
+      "errores": 0,
+      "aceptadas": 5,
+      "identificadas_correctamente": 5
+    },
+    {
+      "identidad": "A03",
+      "n": 5,
+      "errores": 0,
+      "aceptadas": 4,
+      "identificadas_correctamente": 4
+    },
+    {
+      "identidad": "I01",
+      "n": 5,
+      "errores": 0,
+      "aceptadas": 0,
+      "identificadas_correctamente": 0
+    },
+    {
+      "identidad": "I02",
+      "n": 5,
+      "errores": 0,
+      "aceptadas": 0,
+      "identificadas_correctamente": 0
+    }
+  ]
+}

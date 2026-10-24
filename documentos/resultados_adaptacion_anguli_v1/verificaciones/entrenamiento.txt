@@ -1,0 +1,8 @@
+Modelo combinado: 36/144 características; 180 muestras de entrenamiento.
+Umbral experimental: 4.136012624997
+anterior / autorizado: 30 consultas; 29 aceptadas; 29 identificaciones correctas
+anterior / intruso: 20 consultas; 0 aceptadas; 0 identificaciones correctas
+anguli / autorizado: 15 consultas; 15 aceptadas; 15 identificaciones correctas
+anguli / intruso: 50 consultas; 0 aceptadas; 0 identificaciones correctas
+Modelo anterior intacto. Control Anguli y prueba final sin evaluar.
+Configuración: /workspace/scratch/d602009f68cb/repo/documentos/resultados_adaptacion_anguli_v1/config_interfaz_experimental.json
