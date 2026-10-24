@@ -1,0 +1,14 @@
+{
+  "commit": "eb97d38ab95d1f3a776734b2b2fa36ed54df37b9",
+  "modelo_sha256": "fab6dd69d17a1788623eb0fd1f8e9cf4e1ccd8ef6a4900bb13cebd722a8ede65",
+  "modelo": "20261023T222326_850333Z",
+  "fecha": "2026-10-24",
+  "origen": "170 vectores reextraidos de desarrollo del repositorio + 125 vectores del diagnostico Anguli original compartido por el autor. Orden alineado por identificador con el catalogo combinado.",
+  "ajuste_nuevo": "PCA sobre las 180 autorizadas de entrenamiento; no se reajustaron seleccion, escalas, centroides ni umbral. No se abrieron imagenes de control ni prueba final. Control mostrado solo como resultados historicos publicados.",
+  "versiones": {
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "sklearn": "1.8.0",
+    "pandas": "2.2.3"
+  }
+}

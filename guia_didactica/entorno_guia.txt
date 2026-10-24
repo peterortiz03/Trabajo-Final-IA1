@@ -1,0 +1,15 @@
+Versiones utilizadas al generar las salidas:
+Python 3.12
+numpy 2.3.5
+scipy 1.17.0
+scikit-learn 1.8.0
+pandas 2.2.3
+
+Las celdas requieren numpy, pandas, matplotlib, scikit-learn e IPython.
+Para ejecutar desde Jupyter/VS Code también se necesita ipykernel.
+No hace falta ejecutar para leer las salidas ya guardadas.
+
+Opcional: crear un entorno aislado desde PowerShell (no altera .venv del proyecto):
+py -3.12 -m venv .venv-guia
+.\.venv-guia\Scripts\python.exe -m pip install numpy pandas matplotlib scikit-learn ipykernel
+Seleccionar ese intérprete como kernel de los notebooks.
