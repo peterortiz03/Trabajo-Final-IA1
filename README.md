@@ -3,9 +3,9 @@
 **Sistema de reconocimiento de huellas dactilares controlado por reconocimiento de voz**  
 Ingeniería en Mecatrónica · Facultad de Ingeniería · Universidad Nacional de Cuyo
 
-El proyecto desarrolla un agente de control de acceso basado en identidades de huellas sintéticas. El sistema deberá reconocer si una muestra corresponde a una identidad autorizada, identificarla y responder a los comandos de voz **Reconocer**, **Identificar** y **Salir**.
+El proyecto desarrolla un agente de control de acceso basado en identidades de huellas sintéticas. El sistema permite evaluar si una muestra corresponde a una identidad autorizada, identificarla y responder a los comandos de voz **Reconocer**, **Identificar** y **Salir**.
 
-La consigna establece K-means con k = 3 para las identidades autorizadas, una distancia y un umbral de aceptación/rechazo, y K-NN para los comandos de voz. Este repositorio registra el desarrollo progresivo; los módulos pendientes todavía no están implementados.
+La consigna establece K-means con k = 3 para las identidades autorizadas, una distancia y un umbral de aceptación/rechazo, y K-NN para los comandos de voz. Este repositorio registra el desarrollo progresivo. La interfaz y los módulos están integrados; la versión para la muestra es el modelo combinado de desarrollo, con evaluación final independiente pendiente.
 
 ## Estado del proyecto
 
@@ -13,7 +13,7 @@ La consigna establece K-means con k = 3 para las identidades autorizadas, una di
 |---|---|---|
 | Dataset de huellas sintéticas | Implementado | 220 capturas con procedencia, semillas y parámetros |
 | Normalización geométrica de huellas | Implementada | Región de interés, centrado, orientación y máscaras |
-| Extracción de características de huellas | Implementada y verificada | Descriptor GLCM de 144 componentes; 170 muestras de desarrollo vectorizadas y 50 de prueba reservadas |
+| Extracción de características de huellas | Implementada y verificada | Descriptor GLCM de 144 componentes; 170 muestras originales de desarrollo y 125 impresiones Anguli vectorizadas; prueba original reservada, control Anguli evaluado por separado |
 | Dataset de comandos de voz | Disponible y ampliable | 180 grabaciones de seis hablantes |
 | Preprocesamiento de audio | Implementado | 180 grabaciones procesadas: 152 sin avisos y 28 con avisos |
 | Revisión auditiva registrada | Completada para el corte actual | 179 muestras con decisión conservar y una con decisión excluir |
@@ -21,16 +21,30 @@ La consigna establece K-means con k = 3 para las identidades autorizadas, una di
 | Particiones de audio | Mapa de desarrollo definido | Seis hablantes actuales a entrenamiento; nuevas voces requieren asignación explícita |
 | Verificación estadística | Implementada | Notebook 05: medias y DE por clase, separación y revisión por hablante; prueba reservada |
 | Escalado y gráficos PCA | Implementados | Referencia con todas las características; PCA de huellas y audio ajustado solo con entrenamiento |
-| Agrupamiento de huellas con K-means | Versión de desarrollo verificada | k = 3 sobre 72 columnas seleccionadas de 144; identificación 120/120 en entrenamiento y 30/30 en validación autorizada |
-| Aceptación y rechazo de huellas | Calibrados con validación | Umbral euclidiano global 5.292172576: 29/30 autorizadas aceptadas y 0/20 intrusos aceptados; prueba reservada |
+| Agrupamiento de huellas con K-means | Modelo combinado final de desarrollo | k = 3, 36/144 columnas, sin PCA; ajuste con 180 capturas autorizadas de ambas fuentes |
+| Aceptación y rechazo de huellas | Modelo combinado fijado | Umbral 4.136012625; validación anterior 29/30 autorizadas y 20/20 intrusas; Anguli 15/15 y 50/50; control Anguli 14/15 y 10/10 |
 | Clasificación de comandos con K-NN | Desarrollo implementado y documentado | 160 columnas; k=1; CV LOSO de selección 169/179; validación con nuevas personas pendiente |
 | Prueba práctica de voz | Ejecutada en Windows | Voz conocida: 15/15 comandos; ensayo sintético adicional documentado por separado |
-| Integración del agente | Ventana operativa en demostración Windows | Voz, huellas y alternativa manual; preparador de capturas añadido y verificado en Linux, pendiente de comprobar esta ampliación en Windows |
+| Integración del agente | Cerrada para la muestra de desarrollo | Ventana, voz, alternativa manual y preparador; autor informó funcionamiento Windows; control combinado reproducido con archivos recibidos |
 | Evaluación final e informe | Pendiente | Resultados con datos reservados, conclusiones y defensa |
 
 El extractor de huellas añade acondicionamiento de contraste y cuantización a la normalización geométrica anterior. La versión actual utiliza textura en escala de grises, sin binarización ni esqueletizado.
 
 Se verificaron integridad, dimensiones, repetibilidad y funcionamiento del código, y se midieron identificación y rechazo en desarrollo. La calibración usa la misma validación con la que se informa su resultado; todavía no se realizó una evaluación final independiente. Las variantes de unas pocas bases sintéticas no prueban generalización a huellas reales.
+
+## Versión para la muestra
+
+Se fija como **modelo final de desarrollo entregable** el combinado `20261023T222326_850333Z`: admite capturas de nuestro generador e impresiones de Anguli con la configuración ensayada. Conserva 36/144 características, K-means con k=3 y umbral 4.136012624996962. Audio conserva 160 características y K-NN k=1; no se identifica al hablante. No es una validación biométrica general ni la evaluación final reservada.
+
+Con las dependencias y recursos locales ya disponibles, iniciar el modelo principal desde PowerShell:
+
+```powershell
+.\.venv\Scripts\python.exe src/interfaz.py --config config/interfaz_anguli_experimental_v1.json
+```
+
+El nombre `experimental` se conserva para mantener rutas y trazabilidad; este es el modelo elegido para la muestra. **El comando sin --config sigue abriendo el modelo anterior** (72 columnas), conservado como respaldo. No se reorganizaron archivos ni se cambiaron los parámetros al cerrar la documentación. No hace falta entrenar o abrir un notebook antes de usar la aplicación.
+
+Consultar el [cierre de la etapa 08](documentos/cierre_etapa08.md), la [bitácora 08](notebooks/08_interfaz_integracion_ampliacion_anguli.ipynb) y la [guía del modelo combinado](documentos/modelo_combinado_anguli_v1.md). El autor reprodujo el control en Windows: mismas 25 decisiones y distancias que Linux, 14/15 autorizadas correctamente identificadas y 10/10 intrusas rechazadas. A03/Impression_26 sigue siendo un falso rechazo; no se reajustó con el control.
 
 ## Lectura recomendada
 
@@ -41,9 +55,13 @@ Se verificaron integridad, dimensiones, repetibilidad y funcionamiento del códi
 5. [Bitácora de PCA, K-means y rechazo](notebooks/06_clusterizacion_pca.ipynb): referencia de 144 columnas, mejora a 72 y calibración; consulta de solo lectura con evidencias incluidas.
 6. [Bitácora de PCA y K-NN de audio](notebooks/07_pca_knn_audio.ipynb): método, evaluación por hablante, pruebas con micrófono y cierre de desarrollo; lectura sin entrenar ni grabar.
 
+7. [Bitácora de interfaz y ampliación Anguli](notebooks/08_interfaz_integracion_ampliacion_anguli.ipynb): integración, estados, preparación, modelo combinado y cierre de desarrollo; solo lectura.
+
 ## Dataset de huellas
 
 Se utilizan siete bases de Anguli: tres identidades autorizadas y cuatro intrusas. El conjunto contiene **220 capturas: 120 de entrenamiento, 50 de validación y 50 de prueba**. Las ampliaciones incorporan deformaciones locales, cambios de calidad y rotaciones hasta ±90°. No se utilizan huellas reales.
+
+La ampliación agrega 150 impresiones de Anguli de cinco bases ya conocidas, separadas del conjunto de 220: 60 para ajuste, 65 para validación y 25 para control posterior. Las 150 no se suman como si todas fueran entrenamiento. El experimento local permanece bajo `experimentos/anguli_impresiones_v1/`; se publica evidencia seleccionada y el pequeño modelo congelado.
 
 Las identidades autorizadas comparten sus bases entre particiones para representar capturas distintas de dedos conocidos. Los intrusos de validación y prueba son identidades distintas. La diversidad se limita a siete bases; no se afirma generalización a datos reales.
 
@@ -243,6 +261,8 @@ Los párrafos anteriores conservan sus cortes históricos.
 
 ## Cierre de desarrollo: PCA, K-means y rechazo — 22/10/2026
 
+**Antecedente conservado:** esta sección describe el modelo de 72 columnas. La versión fijada para la muestra usa el combinado de 36 columnas, documentado al inicio y en el cierre 08.
+
 La [bitácora 06](notebooks/06_clusterizacion_pca.ipynb) documenta el recorrido completo,
 incluyendo la referencia inicial que mezclaba A01/A03. Los identificadores de ejecución
 están en UTC: algunos comienzan con 20261023 aunque el trabajo se realizó el 22/10 en Argentina.
@@ -331,6 +351,8 @@ corresponde al 23/10/2026 00:38 en Argentina.
 
 ## Interfaz de escritorio e integración · 23/10/2026
 
+**Estado de cierre:** versión para la muestra documentada en [cierre_etapa08.md](documentos/cierre_etapa08.md). Los comandos siguientes sin --config describen la integración original y conservan su modelo anterior; para la muestra usar el comando principal indicado al inicio.
+
 Primera versión de una ventana única en español, con vista previa de huella, captura guiada por voz, aceptación/rechazo e identificación condicionada a la autorización de la imagen actual. Incluye controles manuales desplegables, detalles técnicos y confirmación para salir. Reutiliza modelos congelados, extractores y preprocesamiento existentes; no incorpora consultas a los datos ni reentrena automáticamente.
 
 Desde la raíz del proyecto, con el entorno existente:
@@ -352,4 +374,4 @@ Se verificaron carga de huellas, concordancia de distancias con desarrollo, gest
 
 El desplegable **Preparar captura sintética desde una base de Anguli** genera automáticamente una captura al seleccionar la base, sorteando un perfil existente y una semilla de captura. **Generar nueva captura** permite otro sorteo. **Opciones avanzadas**, cerrado inicialmente, permite ver los parámetros y activar su elección manual para reproducir un intento. Reutiliza el generador existente sin consultar la decisión del reconocedor durante la generación. Muestra base/captura y permite Usar esta captura, que invalida el resultado anterior y la envía al reconocimiento en memoria. Generar no autoriza, no clasifica ni incorpora consultas al entrenamiento. La normalización se realiza una vez al reconocer. Guardar consulta es opcional: crea base.png, captura.png y receta.json en una carpeta nueva, separada de los datasets.
 
-La [guía del preparador](documentos/preparacion_capturas.md) contiene instalación incremental, diagnóstico reproducible y pruebas para Windows. Con el procedimiento completo y un plan prefijado de tres semillas/cinco perfiles se identificaron correctamente 45/45 capturas autorizadas y se rechazaron 30/30 intrusas de desarrollo, sin reajustar el modelo. No equivale a reconocer directamente bases limpias ni a una evaluación independiente. Esta ampliación se verificó en Linux; su ejecución Windows queda pendiente.
+La [guía del preparador](documentos/preparacion_capturas.md) contiene instalación incremental, diagnóstico reproducible y pruebas para Windows. Con el procedimiento completo y un plan prefijado de tres semillas/cinco perfiles se identificaron correctamente 45/45 capturas autorizadas y se rechazaron 30/30 intrusas de desarrollo, sin reajustar el modelo. No equivale a reconocer directamente bases limpias ni a una evaluación independiente. El preparador se verificó en Linux y el autor informó funcionamiento en Windows. La evidencia individual del control combinado Windows se conserva por separado; las pruebas finales y con personas nuevas siguen pendientes.

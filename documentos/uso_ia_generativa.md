@@ -137,3 +137,11 @@ Se verificaron equivalencia con el generador original, reproducción de consulta
 ## Ajuste del flujo automático · 23/10/2026
 
 A pedido del autor, ChatGPT ajustó la selección de base para generar automáticamente una captura con perfil existente y semilla aleatorios. Se mantuvo la elección manual en Opciones avanzadas para reproducción. No se combinan perfiles nuevos ni se consulta la autorización para elegir parámetros. Se ejecutaron 20 pruebas de software en Linux y se inspeccionó la ventana con sorteo y generador reales. Una prueba controla explícitamente el sorteo para verificar la coordinación. No constituye una nueva evaluación estadística ni validación acústica en Windows. Se conservaron modelos, umbrales y datasets.
+
+## Cierre de interfaz y modelo combinado · 23/10/2026
+
+A pedido del autor se prepararon diagnóstico, ajuste separado del módulo de huellas y documentación de cierre. Se reutilizaron normalización, extractor GLCM, selección, K-means y calibración existentes. El usuario generó las 150 impresiones en Anguli y ejecutó las herramientas en su Windows; el asistente trabajó sobre archivos recibidos y una copia del repositorio, sin acceso a su computadora.
+
+La selección 144/72/36 se decidió con entrenamiento; se conservaron 36 columnas. Se congeló el modelo antes de evaluar el control 26–30. No se modificó después del falso rechazo A03/Impression_26. Se conservan pruebas Linux y archivos del control Windows por separado. La coincidencia Windows/Linux es reproducción del mismo ensayo, no aumento de la muestra independiente. La bitácora 08 solo lee configuraciones, hashes y evidencias; no entrena ni graba.
+
+Se documenta el modelo como final de desarrollo para la muestra, conservando límites de fuentes/configuraciones, pruebas con personas nuevas y evaluación final pendientes. No se usaron subagentes, no se hizo push ni se reorganizaron archivos durante este cierre.

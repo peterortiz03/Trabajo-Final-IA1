@@ -1,6 +1,8 @@
 # Interfaz e integración de módulos · etapa 08
 
-**Fecha:** 23/10/2026. **Estado actualizado:** primera versión demostrada por el autor en Windows con voz, autorización/identificación, rechazo, silencio y confirmación de salida. La ampliación [Preparar captura](preparacion_capturas.md) está implementada y verificada en Linux; resta comprobarla en Windows. La validación con personas nuevas sigue pendiente. Las verificaciones y la lista de pendientes de esta guía conservan el alcance de la primera entrega; el estado y las instrucciones de la ampliación se consultan en su guía.
+> **Cierre actualizado · 23/10/2026:** La interfaz y el preparador fueron probados por el autor en Windows. El modelo combinado es la versión final de desarrollo para la muestra; iniciar con --config config/interfaz_anguli_experimental_v1.json. Esta guía conserva el diseño y las verificaciones de la integración inicial; sus parámetros 72/144 y umbral 5.292172576 pertenecen al respaldo anterior. Véase [cierre de la etapa 08](cierre_etapa08.md).
+
+**Fecha:** 23/10/2026. La primera integración y sus verificaciones se conservan como antecedente. El estado vigente es el cierre indicado arriba; evaluación independiente y pruebas acústicas con personas nuevas siguen pendientes.
 
 ## Fuentes y decisiones
 

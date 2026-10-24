@@ -1,5 +1,7 @@
 # Preparación de capturas sintéticas · ampliación de la etapa 08
 
+> **Cierre actualizado · 23/10/2026:** El autor informó funcionamiento de la generación automática y las opciones avanzadas en Windows. El preparador se conserva en la muestra con el modelo combinado de 36 columnas. El diagnóstico de 170 consultas y la distancia A01 3.284720 de esta guía corresponden al modelo anterior de 72 columnas, no al combinado. Véase [cierre de la etapa 08](cierre_etapa08.md).
+
 **Fecha:** 23/10/2026. **Base de instalación actual:** interfaz inicial y `ia1_preparar_captura_incremental.zip` ya instalados por el autor. La actualización automática se entrega en `ia1_preparacion_automatica_incremental.zip`. Esta entrega es incremental: contiene archivos completos nuevos/modificados para copiar sobre esa versión, sin sustituir modelos ni datasets.
 
 ## Objetivo y alcance
@@ -8,7 +10,7 @@ Se incorpora el desplegable **Preparar captura sintética desde una base de Angu
 
 La ventana anterior ya normalizaba entradas y comparaba sus características con centroides congelados. Las bases limpias se rechazaban aunque fueran el origen de una identidad autorizada. Este preparador permite recorrer **base → captura sintética → normalización e inferencia**. No resuelve ni afirma reconocimiento directo de bases limpias.
 
-El autor compartió capturas de la versión anterior ejecutada en Windows/Python 3.14.0, con modelos disponibles y micrófono Realtek mediante MME: Reconocer autorizó A01, Identificar reveló A01, I02_M10 fue rechazado, el silencio produjo «sin comando» y Salir mostró la confirmación. El autor informó funcionamiento correcto. Son evidencias de una demostración de desarrollo, sin conteo de todos los intentos ni evaluación con personas nuevas. La ampliación del preparador se verificó en Linux y queda pendiente de ejecutar en Windows.
+El autor compartió capturas de la versión anterior ejecutada en Windows/Python 3.14.0, con modelos disponibles y micrófono Realtek mediante MME: Reconocer autorizó A01, Identificar reveló A01, I02_M10 fue rechazado, el silencio produjo «sin comando» y Salir mostró la confirmación. El autor informó funcionamiento correcto. Son evidencias de una demostración de desarrollo, sin conteo de todos los intentos ni evaluación con personas nuevas. La ampliación del preparador se verificó en Linux; posteriormente el autor informó funcionamiento en Windows, sin registro individual de todos sus intentos.
 
 ## Funcionamiento
 
@@ -121,7 +123,7 @@ Si la primera entrega aún no está en commits, registrar primero sus cambios si
 
 La configuración y los cinco perfiles existentes no cambian. El perfil/semilla iniciales del JSON siguen siendo valores de arranque para los controles; el modo automático los sustituye por el sorteo al generar. La receta agrega `eleccion_parametros` (`automatica` o `manual`) y conserva los valores efectivos para repetir el intento. No se añade una dependencia ni se modifica la inferencia.
 
-Se ejecutaron **20 pruebas de software en Linux**, incluidas generación real, reproducción, concordancia de huellas, controles y recorridos gráficos. El sorteo se controló explícitamente en una prueba gráfica para comprobar la coordinación; no reemplazó al generador ni al reconocedor. Además se inspeccionó visualmente una generación con sorteo real. Véase [evidencia de la actualización](resultados_preparacion_automatica/verificacion.md). No se repitió el diagnóstico estadístico ni se atribuye una nueva precisión al modo aleatorio. Windows, escalado de pantalla y micrófono del autor quedan pendientes para esta actualización.
+Se ejecutaron **20 pruebas de software en Linux**, incluidas generación real, reproducción, concordancia de huellas, controles y recorridos gráficos. El sorteo se controló explícitamente en una prueba gráfica para comprobar la coordinación; no reemplazó al generador ni al reconocedor. Además se inspeccionó visualmente una generación con sorteo real. Véase [evidencia de la actualización](resultados_preparacion_automatica/verificacion.md). No se repitió el diagnóstico estadístico ni se atribuye una nueva precisión al modo aleatorio. El autor posteriormente informó funcionamiento Windows; no se cuenta con una evaluación controlada de todos los factores de escalado y audio de esa actualización.
 
 Commits propuestos para esta actualización (si las entregas anteriores ya están registradas):
 

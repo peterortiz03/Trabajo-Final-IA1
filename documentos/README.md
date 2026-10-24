@@ -2,11 +2,17 @@
 
 ## Documentación vigente
 
+- [Cierre de la etapa 08](cierre_etapa08.md): versión final de desarrollo para la muestra, evidencia Windows, límites y próximos pasos.
+- [Bitácora 08](../notebooks/08_interfaz_integracion_ampliacion_anguli.ipynb): interfaz, estados, preparación de capturas y adaptación del modelo; lectura sin entrenamiento.
+- [Modelo combinado](modelo_combinado_anguli_v1.md): 36/144 características, parámetros congelados y comandos de uso/reproducción.
+- [Control del autor en Windows](resultados_adaptacion_anguli_v1/control_windows/README.md): las 25 consultas y su resumen, concordantes con Linux.
+- [Diagnóstico de impresiones de Anguli](experimento_anguli_impresiones_v1.md): antecedente del ajuste combinado; no reemplaza el cierre vigente.
+
 - [Preparación de capturas sintéticas](preparacion_capturas.md): ampliación incremental de la ventana; generación reproducible, guardado opcional y verificación Windows.
 - [Actualización automática](resultados_preparacion_automatica/verificacion.md): generación al seleccionar base, opciones avanzadas y 20 pruebas de software.
 - [Diagnóstico del preparador](resultados_preparacion_capturas/verificacion.md): resultados con modelo congelado y cinco bases de desarrollo; sin prueba reservada.
 
-- [Interfaz e integración, etapa 08](interfaz_integracion.md): aplicación de escritorio, estados, recursos, instalación en PowerShell y pruebas pendientes en Windows.
+- [Interfaz e integración, etapa 08](interfaz_integracion.md): aplicación de escritorio, estados, recursos, instalación en PowerShell y verificaciones iniciales; estado actualizado en el cierre 08.
 - [Verificaciones de integración](resultados_etapa08/verificacion.md): alcance de las comprobaciones reales y de las simulaciones de coordinación.
 
 - [Bitácora 07](../notebooks/07_pca_knn_audio.ipynb): PCA de audio, K-NN, evaluación interna y pruebas prácticas.
