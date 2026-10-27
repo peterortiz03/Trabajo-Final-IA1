@@ -69,7 +69,7 @@ def abrir_imagen(ruta):
         return imagen.copy()
 
 
-def evaluar_huella(imagen, sistema):
+def evaluar_huella(imagen, sistema, incluir_vistas=False):
     from normalizacion_final import normalizar_huella
     from caracteristicas_huellas import extraer_huella, nombres_caracteristicas
     from calibrar_rechazo_huellas import decidir_acceso
@@ -77,8 +77,13 @@ def evaluar_huella(imagen, sistema):
     vector, detalle = extraer_huella(normal, info['mascara_normalizada'], sistema['cfg_ext'])
     resultado = decidir_acceso(vector, nombres_caracteristicas(sistema['cfg_ext']),
                                sistema['modelo'], sistema['umbral'])[0]
-    return dict(resultado, umbral=sistema['umbral'], modelo=sistema['identificador'],
-                avisos=info['avisos'] + detalle['avisos'])
+    salida = dict(resultado, umbral=sistema['umbral'], modelo=sistema['identificador'],
+                  avisos=info['avisos'] + detalle['avisos'])
+    if incluir_vistas:
+        from PIL import Image
+        salida['_vista_normalizada'] = Image.fromarray(normal).copy()
+        salida['_vista_mascara'] = Image.fromarray(info['mascara_normalizada'].astype('uint8') * 255)
+    return salida
 
 
 class Servicios:

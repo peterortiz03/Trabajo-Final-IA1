@@ -1,0 +1,5 @@
+{
+  "k": 5,
+  "votos": "uniform",
+  "desempate": "mayoria_vecino_cercano_v1"
+}

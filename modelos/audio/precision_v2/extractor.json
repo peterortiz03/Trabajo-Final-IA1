@@ -1,0 +1,14 @@
+{
+  "version": "audio_segmentos_v1",
+  "frecuencia_hz": 16000,
+  "segmentos": 10,
+  "ventana_ms": 25,
+  "salto_ms": 10,
+  "n_fft": 512,
+  "n_mel": 26,
+  "fmin_hz": 0,
+  "fmax_hz": 8000,
+  "indices_mfcc": [1, 2, 4, 5],
+  "piso_potencia": 1e-12,
+  "rms_minimo": 1e-5
+}

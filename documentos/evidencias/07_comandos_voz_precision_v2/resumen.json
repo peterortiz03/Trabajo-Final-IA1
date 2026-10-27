@@ -1,0 +1,43 @@
+{
+  "formato": "knn_audio_precision_v2",
+  "fecha_utc": "precision_v2_20261027",
+  "parametros": {
+    "k": 5,
+    "votos": "uniform",
+    "desempate": "mayoria_vecino_cercano_v1"
+  },
+  "dimension": 160,
+  "muestras": 179,
+  "dependencias": {
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "scikit-learn": "1.8.0"
+  },
+  "codigo": {
+    "caracteristicas_audio.py": "277908aa35d5e33386e3ab96a82715edb547bc09ef97460fd330e7ed7f81287b",
+    "preprocesamiento_audio.py": "88292178f4e49eee02cae00652ed5ff0a3493787c4b0b9c0f1de2091ae8efadc"
+  },
+  "exactitud": 0.9273743016759777,
+  "precision_macro_media_hablante": 0.9451258617925284,
+  "recall_macro_medio_hablante": 0.9271604938271606,
+  "advertencia": "Selección interna LOSO de desarrollo; no prueba independiente ni ensayo nuevo de micrófono.",
+  "archivos_sha256": {
+    "detalle_loso.csv": "25c2494823aaa8305aed58862a973b9ddbd8230d7978c0bce61340764b7504b7",
+    "entrada_desarrollo.npz": "9c74c5f557dbac6c0281bc770c080f52c496c12bb720f03ae3d4bdb556e96a95",
+    "predicciones_cv_seleccion.csv": "d55852315cd5fa2cb24c3d4f9efe70be141a0b643854b92a00bd691d35b09dce",
+    "parametros_elegidos.json": "4a15db72188da7b4153c09417083b28b7c47b208a67c449ee50c7a922649cbf0",
+    "preprocesamiento.json": "885c589bd7ab11227ecc8657443bdfc5bf31c12f602d284ea33d76c0ad7502fd",
+    "modelo.npz": "f745158c43ccd556b5c293284584d4894d773bccab84d7afbbb68aaec476fbb9",
+    "predicciones_todas.csv": "8957a7e7c8b96864095adbd6cc28e3dae7587994e92d23575c58c420ca05724a",
+    "comparacion_precision_recall.csv": "64c1bec136f43aea642d29ae7baebcdb1155cc6f7bcbcd97797f0eafb2134506",
+    "extractor.json": "9c37261235e425b081a3c0e407d3410d2a27b545d5246ec8094116dfff999183"
+  },
+  "hablantes_entrenamiento": [
+    "H001",
+    "H002",
+    "H003",
+    "H004",
+    "H005",
+    "H006"
+  ]
+}

@@ -18,6 +18,7 @@ from tkinter import filedialog, ttk
 from PIL import Image, ImageTk
 
 from interfaz_estado import EstadoHuella, Sesion
+from referencia_muestra import comparar_referencia
 from interfaz_servicios import RAIZ, Servicios, abrir_imagen, evaluar_huella
 
 FONDO = '#F3F7FC'
@@ -43,10 +44,12 @@ class Aplicacion:
         self.formato = None
         self.imagen = None
         self.foto = None
+        self.normalizada = self.mascara = self.foto_normal = None
         self.base_preparacion = None
         self.captura_preparada = None
         self.receta_preparada = None
         self.receta_entrada = None
+        self.referencia_visible = False
         self.fotos_preparacion = {}
         self.ultimo_guardado = ''
         self.cola = Queue()
@@ -63,6 +66,8 @@ class Aplicacion:
         self.ultimo_comando = tk.StringVar(value='Último comando de voz: —')
         self.nombre_archivo = tk.StringVar(value='Todavía no hay una imagen seleccionada.')
         self.microfono = tk.StringVar(value='Buscando micrófonos…')
+        self.tipo_muestra = tk.StringVar(value='Aleatoria')
+        self.ver_mascara = tk.BooleanVar(value=False)
         self.manual_visible = tk.BooleanVar(value=False)
         self.detalles_visibles = tk.BooleanVar(value=False)
         self.preparacion_visible = tk.BooleanVar(value=False)
@@ -128,7 +133,7 @@ class Aplicacion:
         r.bind_all('<Button-4>', lambda e: self.canvas.yview_scroll(-3, 'units'))
         r.bind_all('<Button-5>', lambda e: self.canvas.yview_scroll(3, 'units'))
 
-        self.preparacion_control = ttk.Checkbutton(self.contenido, text='Preparar captura sintética desde una base de Anguli',
+        self.preparacion_control = ttk.Checkbutton(self.contenido, text='Opciones avanzadas · elegir base, parámetros y guardar captura',
             variable=self.preparacion_visible, command=self._desplegar)
         self.preparacion_control.pack(anchor='w', pady=(0,8))
         self.preparacion_panel = self.tarjeta(self.contenido)
@@ -138,11 +143,30 @@ class Aplicacion:
         self.izquierdo = self.tarjeta(self.paneles)
         self.derecho = self.tarjeta(self.paneles)
         self.etiqueta(self.izquierdo, '01  Huella seleccionada', 13, True).pack(anchor='w')
-        self.etiqueta(self.izquierdo, 'Abrí una imagen original de huella sintética.', 10, fg=GRIS).pack(anchor='w', pady=(5, 12))
-        self.previa = tk.Canvas(self.izquierdo, height=self.px(270), bg=FONDO, highlightthickness=0)
-        self.previa.pack(fill='x', expand=True)
+        self.etiqueta(self.izquierdo, 'Generá una muestra o seleccioná una captura desde archivo.', 10, fg=GRIS).pack(anchor='w', pady=(5, 12))
+        fila_generar = tk.Frame(self.izquierdo, bg='white')
+        fila_generar.pack(fill='x', pady=(0,12))
+        self.tipo_combo = ttk.Combobox(fila_generar, textvariable=self.tipo_muestra,
+            values=['Aleatoria','Autorizada','Intrusa'], state='readonly', width=13)
+        self.tipo_combo.pack(side='left', padx=(0,8))
+        self.automatica_boton = ttk.Button(fila_generar, text='Generar muestra',
+            style='Principal.TButton', command=self.generar_muestra_automatica)
+        self.automatica_boton.pack(side='left', fill='x', expand=True)
+        self.vistas_entrada = tk.Frame(self.izquierdo, bg='white')
+        self.vistas_entrada.pack(fill='x')
+        for col in (0,1): self.vistas_entrada.columnconfigure(col,weight=1,uniform='entrada')
+        self.etiqueta(self.vistas_entrada,'Captura de entrada',10,True).grid(row=0,column=0,sticky='w')
+        self.titulo_normal = self.etiqueta(self.vistas_entrada,'Huella normalizada',10,True)
+        self.titulo_normal.grid(row=0,column=1,sticky='w')
+        self.previa = tk.Canvas(self.vistas_entrada, height=self.px(240), width=self.px(150), bg=FONDO, highlightthickness=0)
+        self.previa.grid(row=1,column=0,sticky='ew',padx=(0,5),pady=(6,0))
+        self.normal_previa = tk.Canvas(self.vistas_entrada,height=self.px(240),width=self.px(150),bg=FONDO,highlightthickness=0)
+        self.normal_previa.grid(row=1,column=1,sticky='ew',padx=(5,0),pady=(6,0))
+        self.normal_previa.bind('<Configure>',lambda e:self._dibujar_normal())
+        ttk.Checkbutton(self.izquierdo,text='Ver máscara en la vista procesada',
+            variable=self.ver_mascara,command=self._dibujar_normal).pack(anchor='w',pady=(6,0))
         self.previa.bind('<Configure>', lambda e: self._dibujar_previa())
-        self.seleccionar_boton = ttk.Button(self.izquierdo, text='Seleccionar huella', command=self.seleccionar)
+        self.seleccionar_boton = ttk.Button(self.izquierdo, text='Seleccionar desde archivo', command=self.seleccionar)
         self.seleccionar_boton.pack(fill='x', pady=(14, 8))
         self.archivo_label = self.etiqueta(self.izquierdo, variable=self.nombre_archivo, tamano=10, fg=GRIS)
         self.archivo_label.pack(fill='x')
@@ -162,11 +186,18 @@ class Aplicacion:
         self.resultado_marco.pack(fill='x')
         self.resultado_titulo = self.etiqueta(self.resultado_marco, 'Sin imagen', 20, True, bg='#EEF3F9')
         self.resultado_titulo.pack(fill='x')
-        self.resultado_texto = self.etiqueta(self.resultado_marco, 'Seleccioná una huella para comenzar.', 11, bg='#EEF3F9')
+        self.resultado_texto = self.etiqueta(self.resultado_marco, 'Generá una muestra o seleccioná una captura para comenzar.', 11, bg='#EEF3F9')
         self.resultado_texto.pack(fill='x', pady=(8, 0))
         self.identidad_marco = tk.Frame(self.derecho, bg='#EAF2FF', padx=self.px(14), pady=self.px(12))
         self.identidad_label = self.etiqueta(self.identidad_marco, '', 14, True, bg='#EAF2FF')
         self.identidad_label.pack(fill='x')
+        self.referencia_boton = ttk.Button(self.derecho, text='Mostrar referencia de la muestra',
+                                           command=self.mostrar_referencia)
+        self.referencia_boton.pack(fill='x', pady=(10, 0))
+        self.referencia_marco = tk.Frame(self.derecho, bg='#EEF3F9', padx=self.px(14), pady=self.px(12))
+        self.referencia_label = self.etiqueta(self.referencia_marco, '', 11, bg='#EEF3F9')
+        self.referencia_label.pack(fill='x')
+        self.referencia_label.bind('<Configure>', lambda e: self.referencia_label.configure(wraplength=max(80, e.width)))
         self.origen_label = self.etiqueta(self.derecho, self.accion, 9, fg=GRIS)
         self.origen_label.pack(fill='x', pady=(10, 0))
         for label in (self.instruccion_label, self.resultado_titulo, self.resultado_texto,
@@ -321,6 +352,61 @@ class Aplicacion:
         # mantienen sus valores; editarlos sí invalida el borrador como antes.
         self._controles()
 
+    def mostrar_referencia(self):
+        if self.sesion.operacion or self.sesion.cerrada or not self.sesion.resultado:
+            return
+        self.referencia_visible = not self.referencia_visible
+        self._actualizar_referencia()
+
+    def _actualizar_referencia(self):
+        self.referencia_marco.pack_forget()
+        visible = self.referencia_visible and bool(self.sesion.resultado)
+        self.referencia_boton.configure(text='Ocultar referencia de la muestra' if visible else 'Mostrar referencia de la muestra')
+        if not visible:
+            return
+        evaluacion = comparar_referencia(self.receta_entrada, self.sesion.resultado)
+        bg, fg = {'correcto': ('#E7F5EC', '#166534'),
+                  'error': ('#FDECEE', '#991B1B'),
+                  'desconocido': ('#EEF3F9', GRIS)}[evaluacion['estado']]
+        self.referencia_marco.configure(bg=bg)
+        self.referencia_label.configure(text=evaluacion['texto'], bg=bg, fg=fg)
+        self.referencia_marco.pack(fill='x', pady=(10, 0), before=self.origen_label)
+
+    def _limpiar_normal(self):
+        self.referencia_visible = False
+        self._actualizar_referencia()
+        self.normalizada = self.mascara = self.foto_normal = None
+        self._dibujar_normal()
+
+    def _dibujar_normal(self):
+        if self.sesion.cerrada:
+            return
+        self.normal_previa.delete('all')
+        w,h=self.normal_previa.winfo_width(),self.normal_previa.winfo_height()
+        mascara=self.ver_mascara.get()
+        self.titulo_normal.configure(text='Máscara de la huella' if mascara else 'Huella normalizada')
+        imagen=self.mascara if mascara else self.normalizada
+        if imagen is None:
+            self.normal_previa.create_text(w/2,h/2,text='Se mostrará después\nde Reconocer',
+                width=max(50,w-20),justify='center',fill=GRIS,font=('Segoe UI',10))
+            return
+        mini=imagen.copy()
+        mini.thumbnail((max(1,w-12),max(1,h-12)),Image.Resampling.LANCZOS)
+        self.foto_normal=ImageTk.PhotoImage(mini)
+        self.normal_previa.create_image(w/2,h/2,image=self.foto_normal)
+
+    def generar_muestra_automatica(self):
+        if self.sesion.operacion or self.sesion.cerrada or not self.servicios or not self.servicios.preparador:
+            return
+        from generacion_muestra import generar_muestra
+        tipo=self.tipo_muestra.get()
+        token=self.sesion.iniciar('generacion_automatica')
+        self.estado_general.set('PROCESANDO')
+        self.instruccion.set('Generando una muestra sintética…')
+        self.aviso.set('Se sortea una base de desarrollo y se genera una captura, sin evaluarla.')
+        self._enviar(token,'generacion_automatica',
+            lambda:generar_muestra(tipo,self.servicios.preparador,RAIZ))
+
     def seleccionar_base(self):
         if self.sesion.operacion or self.sesion.cerrada or not self.servicios or not self.servicios.preparador:
             return
@@ -381,6 +467,7 @@ class Aplicacion:
         nombre = f"captura_{r['perfil']}_{r['semilla_captura']}.png"
         self.sesion.seleccionar(nombre)
         self.imagen = self.captura_preparada.copy()
+        self._limpiar_normal()
         self.receta_entrada = deepcopy(r)
         self.nombre_archivo.set('Captura sintética preparada')
         self.ultimo_error = ''
@@ -423,6 +510,7 @@ class Aplicacion:
             self.derecho.grid(row=1 if apilado else 0, column=0 if apilado else 1, sticky='nsew',
                               pady=(self.px(14) if apilado else 0, 0))
         self.raiz.after_idle(self._dibujar_previa)
+        self.raiz.after_idle(self._dibujar_normal)
 
     def _rueda(self, evento):
         if self.dialogo is None and not isinstance(evento.widget, (tk.Text, ttk.Combobox)):
@@ -497,6 +585,10 @@ class Aplicacion:
                                                   'Captura terminada · Procesando audio…'))
                     continue
                 if tipo == 'huella':
+                    if error is None:
+                        self.normalizada = valor.pop('_vista_normalizada',None)
+                        self.mascara = valor.pop('_vista_mascara',None)
+                        self._dibujar_normal()
                     self.sesion.evaluada(token, valor, error)
                 else:
                     self.sesion.terminar(token)
@@ -509,6 +601,11 @@ class Aplicacion:
                     self._configurar_preparador()
                     self._mostrar_microfonos(problema)
                     self._disponibilidad()
+                elif tipo == 'generacion_automatica':
+                    self.base_preparacion,self.captura_preparada,self.receta_preparada=valor
+                    self.nombre_base.set('Base sorteada · referencia guardada en la receta')
+                    self._dibujar_preparacion()
+                    self.usar_captura()
                 elif tipo == 'imagen':
                     self.imagen = valor
                     self._dibujar_previa()
@@ -573,6 +670,9 @@ class Aplicacion:
 
     def _error_operacion(self, tipo, error):
         self.ultimo_error = f'{tipo}: {type(error).__name__}: {error}'
+        if tipo == 'generacion_automatica':
+            self.aviso.set('No se pudo generar la muestra: ' + str(error) + ' La consulta anterior se conserva.')
+            return
         if tipo in ('base_preparacion','preparar_captura','guardar_captura'):
             self.preparacion_mensaje.set('No se pudo completar la preparación: ' + str(error))
             if tipo == 'base_preparacion':
@@ -603,7 +703,7 @@ class Aplicacion:
         self.resultado_marco.configure(bg=bg)
         self.resultado_titulo.configure(bg=bg, fg=fg, text=texto)
         mensajes = {
-            EstadoHuella.SIN_IMAGEN: 'Seleccioná una huella para comenzar.',
+            EstadoHuella.SIN_IMAGEN: 'Generá una muestra o seleccioná una captura para comenzar.',
             EstadoHuella.PENDIENTE: 'Esta imagen todavía no tiene una autorización vigente.',
             EstadoHuella.AUTORIZADA: 'Huella autorizada. Podés decir Identificar para conocer la identidad.',
             EstadoHuella.RECHAZADA: 'La huella no corresponde a una identidad autorizada.',
@@ -625,7 +725,7 @@ class Aplicacion:
             self.progreso.configure(mode='determinate', value=0)
             self.indicador.configure(text='Esperá la señal visual para hablar.' if voz_lista else 'Control manual disponible.' if not problema else 'Revisá Detalles técnicos.')
             if estado == EstadoHuella.SIN_IMAGEN:
-                self.instruccion.set('Seleccioná una huella para comenzar.')
+                self.instruccion.set('Generá una muestra o seleccioná una captura para comenzar.')
             elif estado == EstadoHuella.AUTORIZADA:
                 self.instruccion.set('Pulsá Hablar y decí Identificar después de la cuenta regresiva.')
             else:
@@ -634,11 +734,13 @@ class Aplicacion:
                 self.instruccion.set('No se pudo cargar el módulo de huellas. Revisá Detalles técnicos.')
             elif self.servicios and (not self.servicios.voz or not self.formato):
                 self.instruccion.set('Usá el panel Controles manuales para continuar con la huella.')
+        self._actualizar_referencia()
         self._controles()
         self._detalles()
 
     def _controles(self):
         libre = not self.sesion.operacion and not self.sesion.cerrada
+        self.referencia_boton.configure(state='normal' if libre and self.sesion.resultado else 'disabled')
         huellas = bool(self.servicios and self.servicios.huellas)
         voz = bool(self.servicios and self.servicios.voz and self.formato)
         self.seleccionar_boton.configure(state='normal' if libre else 'disabled')
@@ -650,6 +752,8 @@ class Aplicacion:
         self.actualizar_boton.configure(state='normal' if libre and self.servicios and self.servicios.sd else 'disabled')
         preparador = bool(self.servicios and self.servicios.preparador)
         manual = self.parametros_manuales.get()
+        self.automatica_boton.configure(state='normal' if libre and preparador else 'disabled')
+        self.tipo_combo.configure(state='readonly' if libre and preparador else 'disabled')
         self.base_boton.configure(state='normal' if libre and preparador else 'disabled')
         self.parametros_manuales_boton.configure(state='normal' if libre and preparador else 'disabled')
         self.perfil_combo.configure(state='readonly' if libre and preparador and manual else 'disabled')
@@ -704,6 +808,7 @@ class Aplicacion:
         self.receta_entrada = None
         self.nombre_archivo.set(Path(ruta).name)
         self.imagen = self.foto = None
+        self._limpiar_normal()
         self.ultimo_error = ''
         self._dibujar_previa()
         self._actualizar()
@@ -726,6 +831,7 @@ class Aplicacion:
                 if self.imagen is None and self.sesion.imagen is not None:
                     raise ValueError('No se pudo abrir la imagen. Seleccioná otro archivo.')
                 token = self.sesion.reconocer()
+                self._limpiar_normal()
                 imagen = self.imagen  # Instantánea de la entrada, nunca la miniatura.
                 self.ultimo_error = ''
                 self._actualizar()
@@ -734,7 +840,7 @@ class Aplicacion:
                 self.indicador.configure(text='Evaluando huella…')
                 self.progreso.configure(mode='indeterminate')
                 self.progreso.start(15)
-                self._enviar(token, 'huella', lambda: evaluar_huella(imagen, self.servicios.huellas))
+                self._enviar(token, 'huella', lambda: evaluar_huella(imagen, self.servicios.huellas, incluir_vistas=True))
             elif comando == 'identificar':
                 self.sesion.identificar()
                 self.aviso.set('Identificación completada para la huella autorizada actual.')
@@ -860,6 +966,7 @@ class Aplicacion:
         for tarea in self.raiz.tk.splitlist(self.raiz.tk.call('after', 'info')):
             self.raiz.after_cancel(tarea)
         self.imagen = self.foto = None
+        self.normalizada = self.mascara = self.foto_normal = None
         self.base_preparacion = self.captura_preparada = self.receta_preparada = None
         self.fotos_preparacion.clear()
         self.raiz.destroy()

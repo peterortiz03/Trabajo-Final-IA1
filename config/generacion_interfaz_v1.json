@@ -1,0 +1,4 @@
+{
+  "version": "generacion_interfaz_v1",
+  "bases_desarrollo": ["A01", "A02", "A03", "I01", "I02"]
+}

@@ -1,0 +1,5 @@
+{
+  "commit": "c0ead406b330ced49c2fb208508aabb959e4f22e",
+  "origen": "179 vectores reextraidos de WAV procesados conservados con extractor vigente. PCA calculado de nuevo. Predicciones LOSO y comparación de configuraciones: evidencia histórica publicada. No se consultó prueba final.",
+  "sklearn": "1.8.0"
+}

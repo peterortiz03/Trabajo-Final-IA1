@@ -9,7 +9,7 @@
     "codigo_extractor_sha256": "5dd9d59add7bc7110589a6e1be992afc3fe32da671fa74122a6414012659f602"
   },
   "audio": {
-    "modelo": "resultados/knn_audio/20261023T033845_362145Z",
+    "modelo": "modelos/audio/precision_v2",
     "captura": "config/audio_v1.json"
   }
 }

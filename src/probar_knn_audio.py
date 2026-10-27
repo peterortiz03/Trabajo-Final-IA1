@@ -24,6 +24,9 @@ def cargar_sistema(carpeta, raiz=RAIZ):
     """Reutilizar el procedimiento exacto del modelo, sin leer audios del dataset."""
     carpeta, raiz = Path(carpeta).resolve(), Path(raiz).resolve()
     r = leer_json(carpeta / "resumen.json")
+    if r.get('formato') == 'knn_audio_precision_v2':
+        from knn_audio_precision import cargar_paquete
+        return cargar_paquete(carpeta)
     modelo = cargar_modelo(carpeta)
     extraccion = (raiz / r["extraccion"]).resolve()
     if not extraccion.is_relative_to(raiz):

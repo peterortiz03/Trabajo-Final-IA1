@@ -1,5 +1,8 @@
 > **Organización actualizada:** iniciar con `iniciar.ps1` o `python src/interfaz.py`. Ambos usan el modelo combinado. Configuración principal: `config/aplicacion.json`; respaldo: `config/aplicacion_respaldo.json`. Los comandos posteriores que describen versiones previas conservan contexto histórico. Consultar [guía actual](documentos/guias/README.md).
 
+> **Actualización de audio · 27/10/2026:** el lanzamiento normal usa K-NN k=5, voto uniforme y desempate por el vecino más cercano entre clases empatadas. Seleccionado por precisión macro media LOSO entre k=5 y k=7. Huellas no cambia. Ver [instalación, comparación y pruebas](documentos/etapas/actualizacion_audio_precision_v2.md). Las cifras k=1 anteriores se conservan como historia de desarrollo.
+
+
 # Trabajo Final — Inteligencia Artificial I · 2026
 
 **Sistema de reconocimiento de huellas dactilares controlado por reconocimiento de voz**  
